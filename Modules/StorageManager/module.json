@@ -1,0 +1,16 @@
+{
+    "name": "StorageManager",
+    "alias": "storagemanager",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\StorageManager\\Providers\\StorageManagerServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

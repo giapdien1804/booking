@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/taxonomy",
+    "description": "",
+    "authors": [
+        {
+            "name": "Diengiap",
+            "email": "giapdien1804@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Taxonomy\\Providers\\TaxonomyServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Taxonomy\\": ""
+        }
+    }
+}

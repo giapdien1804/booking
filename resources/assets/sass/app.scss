@@ -1,0 +1,725 @@
+/*!
+ * Copyright (c) 2017. giapdien1804@gmail.com|+841648392803
+ */
+@import "variables";
+@import "~bulma";
+@import "~font-awesome/scss/font-awesome";
+@import "ext/switch";
+@import "ext/tooltip";
+@import "ext/divider";
+@import "ext/checkradio";
+@import "ext/badge";
+@import "ext/flex";
+
+.border-radius-0 {
+  border-radius: 0;
+}
+
+#global-errors-view {
+  position: fixed;
+  right: 5px;
+  top: 60px;
+  width: 350px;
+}
+
+.flex-content-right {
+  justify-content: flex-end;
+}
+
+.has-text-small {
+  font-size: 0.75rem;
+}
+
+.image.is-256x256 {
+  height: 256px;
+  width: 256px;
+}
+
+.top-link {
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      padding: 5px 10px;
+    }
+  }
+}
+
+@each $color_name, $color in $colors {
+  .has-hover-#{$color_name} {
+    &:hover {
+      background-color: darken(nth($color, 1), 7);
+      color: darken(nth($color, 2), 7);
+    }
+    &:active {
+      background-color: darken(nth($color, 1), 12);
+    }
+  }
+
+  .bg-#{$color_name} {
+    background-color: nth($color, 1);
+    color: nth($color, 2);
+    .menu-label {
+      color: darken(nth($color, 2), 5);
+    }
+    .menu-list a:not(:hover), > a {
+      color: darken(nth($color, 2), 10);
+    }
+    .label {
+      color: darken(nth($color, 2), 10);
+    }
+  }
+}
+
+.navbar-fixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+.modal {
+  &.modal-full-with {
+    .modal-content,
+    .modal-card {
+      margin: 0 20px;
+      max-height: calc(100vh - 160px);
+      overflow: auto;
+      position: relative;
+      width: 99% !important;
+    }
+
+    @media screen and (min-width: 769px) {
+      .modal-content,
+      .modal-card {
+        margin: 0 auto;
+        max-height: calc(100vh - 40px);
+        width: 640px;
+      }
+    }
+  }
+}
+
+.card {
+  &.card-equal-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .card-footer {
+      margin-top: auto;
+    }
+  }
+  .show-content {
+    overflow: hidden;
+  }
+
+  .card-header {
+    @each $type, $color in $colors {
+      &.is-#{$type} {
+        background-color: darken(nth($color, 1), 7%);
+        color: nth($color, 2);
+        a {
+          color: darken(nth($color, 2), 7);
+          &:hover {
+            color: darken(nth($color, 2), 10);;
+          }
+        }
+      }
+    }
+  }
+}
+
+//region Margin and Padding
+$d_spacer: 1rem;
+$d_spacers: (
+        0: 0,
+        1: ($d_spacer * .25),
+        2: ($d_spacer * .5),
+        3: $d_spacer,
+        4: ($d_spacer * 1.5),
+        5: ($d_spacer * 3),
+        6: ($d_spacer * 3.25)
+);
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $length in $d_spacers {
+    .#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+    }
+    .#{$abbrev}t-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-top: $length !important;
+    }
+    .#{$abbrev}r-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-right: $length !important;
+    }
+    .#{$abbrev}b-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-bottom: $length !important;
+    }
+    .#{$abbrev}l-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length !important;
+    }
+  }
+}
+
+//endregion
+
+.has-absolute {
+  position: absolute;
+}
+
+.has-relative {
+  position: relative;
+}
+
+.left-layout {
+  height: 100vh;
+  margin-left: -20px;
+}
+
+.modal-card {
+  max-height: inherit;
+  overflow: auto;
+
+  .modal-card-title {
+    font-size: 1.2rem;
+  }
+  .modal-card-head, .modal-card-foot {
+    padding: 12px;
+  }
+}
+
+.tree-view {
+  .menu-list li ul {
+    a {
+      padding: 3px 2px;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    margin-top: 0;
+    padding: 0;
+    li a span.tree-line {
+      border-top: 1px dotted #dbdbdb;
+      width: 10px;
+      display: inline-block !important;
+      margin-bottom: 4px;
+      margin-left: -2px;
+    }
+  }
+}
+
+.dropdown-item.is-disabled {
+  color: $grey-light;
+  cursor: not-allowed;
+  background-color: transparent;
+
+  &:hover {
+    color: $grey-light;;
+    background-color: transparent;
+  }
+}
+
+.card-fmg {
+  .has-item-select {
+    box-shadow: inset 0px 0px 0px 5px $primary;
+  }
+
+  .item-column {
+    //max-height: 90px;
+    overflow: hidden;
+  }
+  .item-title {
+    font-size: 14px;
+    word-break: break-all;
+    word-wrap: break-word;
+    small {
+      font-size: 10px;
+    }
+  }
+  position: inherit;
+  .fmg-upload {
+    border: 2px dashed $primary;
+    .file {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+
+      .button {
+        margin: 0 7px;
+      }
+    }
+
+    .fmg-upload .thum {
+      position: relative;
+      .file-view {
+        width: 128px;
+        height: 128px;
+      }
+    }
+  }
+
+  .fmg-top-box {
+    position: absolute;
+    z-index: 4;
+    right: 1.5rem;
+    left: 1.5rem;
+  }
+
+  .left-col-toggle {
+    position: absolute;
+    left: 230px;
+    top: 5px;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+
+.no-overflow {
+  overflow: hidden !important;
+}
+
+//region breadcrumb
+.pull-left, .pull-right {
+  .my-breadcrumb > li {
+    margin-right: 30px;
+  }
+}
+
+.my-breadcrumb {
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  li {
+    float: left;
+    a {
+      text-decoration: none;
+      padding: 5px 0 5px 50px;
+      position: relative;
+      display: block;
+      float: left;
+      &:after {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        /* Go big on the size, and let overflow hide */
+        border-bottom: 50px solid transparent;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        left: 100%;
+        z-index: 2;
+      }
+      &:before {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        /* Go big on the size, and let overflow hide */
+        border-bottom: 50px solid transparent;
+        border-left: 30px solid white;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: 1px;
+        left: 100%;
+        z-index: 1;
+      }
+    }
+    &:first-child a {
+      padding-left: 10px;
+    }
+    &:last-child a {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+  @each $color_name, $color in $colors {
+    &.is-#{$color_name} {
+      li {
+        a {
+          color: nth($color, 2);
+          background: nth($color, 1);
+          &:after {
+            border-left: 30px solid nth($color, 1);
+          }
+        }
+        &:first-child a {
+          padding-left: 10px;
+        }
+        @for $i from 2 through 10 {
+          &:nth-child(#{$i}) a {
+            background: lighten(nth($color, 1), $i*5);
+            color: nth($color, 2);
+            &:after {
+              border-left-color: lighten(nth($color, 1), $i*5);
+            }
+            &:hover {
+              color: lighten(nth($color, 2), 10);
+            }
+          }
+        }
+        /*&:last-child a {
+          background: lighten($color, 60) !important;
+          color: $grey-dark;
+          &:after {
+            border-left-color: lighten($color, 60) !important;;
+          }
+        }*/
+        a:hover {
+          background: darken(nth($color, 1), 10);
+          &:after {
+            border-left-color: darken(nth($color, 1), 10) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.steps {
+  margin: 40px;
+  padding: 0;
+  overflow: hidden;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  em {
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  li {
+    float: left;
+    margin-left: 0;
+    width: 150px;
+    /* 100 / number of steps */
+    height: 70px;
+    /* total height */
+    list-style-type: none;
+    padding: 5px 5px 5px 30px;
+    /* padding around text, last should include arrow width */
+    border-right: 3px solid white;
+    /* width: gap between arrows, color: background of document */
+    position: relative;
+    &:first-child {
+      padding-left: 5px;
+    }
+    &:nth-child(n+2)::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-left: 25px solid white;
+      /* width: arrow width, color: background of document */
+      border-top: 40px solid transparent;
+      /* width: half height */
+      border-bottom: 40px solid transparent;
+      /* width: half height */
+      width: 0;
+      height: 0;
+      content: " ";
+    }
+    &::after {
+      z-index: 1;
+      /* need to bring this above the next item */
+      position: absolute;
+      top: 0;
+      right: -25px;
+      /* arrow width (negated) */
+      display: block;
+      border-left: 25px solid #7c8437;
+      /* width: arrow width */
+      border-top: 40px solid transparent;
+      /* width: half height */
+      border-bottom: 40px solid transparent;
+      /* width: half height */
+      width: 0;
+      height: 0;
+      content: " ";
+      border-left-color: #7c8437;
+    }
+    background-color: #7C8437;
+    &.current {
+      background-color: #C36615;
+      &::after {
+        border-left-color: #C36615;
+      }
+      ~ li {
+        background-color: #EBEBEB;
+        &::after {
+          border-left-color: #EBEBEB;
+        }
+      }
+    }
+    &:hover {
+      background-color: #696;
+      &::after {
+        border-left-color: #696;
+      }
+    }
+  }
+}
+
+/* remove extra padding on the first object since it doesn't have an arrow to the left */
+
+/* white arrow to the left to "erase" background (starting from the 2nd object) */
+
+/* colored arrow to the right */
+
+/* Setup colors (both the background and the arrow) */
+
+/* Completed */
+
+/* Current */
+
+/* Following */
+
+/* Hover for completed and current */
+
+.arrows {
+  white-space: nowrap;
+  li {
+    display: inline-block;
+    line-height: 26px;
+    margin: 0 9px 0 -10px;
+    padding: 0 20px;
+    position: relative;
+    &::before {
+      border-right: 1px solid #666666;
+      content: '';
+      display: block;
+      height: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      transform: skewX(45deg);
+    }
+    &::after {
+      border-right: 1px solid #666666;
+      content: '';
+      display: block;
+      height: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      transform: skewX(45deg);
+      bottom: 0;
+      top: auto;
+      transform: skewX(-45deg);
+    }
+    &:last-of-type {
+      &::before, &::after {
+        display: none;
+      }
+    }
+    a {
+      font: bold 24px Sans-Serif;
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+    &:nth-of-type(1) a {
+      color: hsl(0, 0%, 70%);
+    }
+    &:nth-of-type(2) a {
+      color: hsl(0, 0%, 65%);
+    }
+    &:nth-of-type(3) a {
+      color: hsl(0, 0%, 50%);
+    }
+    &:nth-of-type(4) a {
+      color: hsl(0, 0%, 45%);
+    }
+  }
+}
+
+//endregion
+
+//region Scrollbar
+/*
+ * Container style
+ */
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+/*
+ * Scrollbar rail styles
+ */
+.ps__rail-x {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  height: 15px;
+  /* there must be 'bottom' or 'top' for ps__rail-x */
+  bottom: 0px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__rail-y {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  width: 15px;
+  /* there must be 'right' or 'left' for ps__rail-y */
+  right: 0;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: transparent;
+}
+
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 0.6;
+}
+
+.ps__rail-x:hover,
+.ps__rail-y:hover,
+.ps__rail-x:focus,
+.ps__rail-y:focus {
+  background-color: #eee;
+  opacity: 0.9;
+}
+
+/*
+ * Scrollbar thumb styles
+ */
+.ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, height .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, height .2s ease-in-out;
+  height: 6px;
+  /* there must be 'bottom' for ps__thumb-x */
+  bottom: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__thumb-y {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, width .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+  width: 6px;
+  /* there must be 'right' for ps__thumb-y */
+  right: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x {
+  background-color: #999;
+  height: 11px;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y {
+  background-color: #999;
+  width: 11px;
+}
+
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+.is-flex-stretch {
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+//endregion
+
+//region table
+.table {
+  tr.is-selected {
+    .has-text-grey-light {
+      color: darken($light, 7) !important;
+    }
+    &:hover {
+      color: $light;
+      background-color: darken($primary, 10) !important;
+    }
+  }
+
+  th, td {
+    &.is-expanded {
+      width: 100%;
+    }
+    &.is-half-1 {
+      width: ((1 / 12)/2) * 100%
+    }
+    @for $i from 1 through 12 {
+      &.is-#{$i} {
+        width: ($i / 12) * 100%
+      }
+      &.is-offset-#{$i} {
+        margin-left: ($i / 12) * 100%
+      }
+    }
+  }
+}
+
+//endregion
+
+.columns {
+  @for $i from 1 through 12 {
+    &.has-width-#{$i} {
+      > .column {
+        flex: none;
+        width: (100/$i)*1%;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .z-index-#{$i} {
+    z-index: #{$i};
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/storagemanager",
+    "description": "",
+    "authors": [
+        {
+            "name": "Diengiap",
+            "email": "giapdien1804@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\StorageManager\\Providers\\StorageManagerServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\StorageManager\\": ""
+        }
+    }
+}

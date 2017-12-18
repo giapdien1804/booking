@@ -1,0 +1,3511 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Real Places\n"
+"POT-Creation-Date: 2017-07-21 09:52+0500\n"
+"PO-Revision-Date: 2017-07-21 09:52+0500\n"
+"Last-Translator: M Saqib Sarwar <saqib@inspirythemes.com>\n"
+"Language-Team: M Saqib Sarwar <saqib@inspirythemes.com>\n"
+"Language: vi_VI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: inc/ReduxFramework\n"
+"X-Poedit-SearchPathExcluded-2: css\n"
+"X-Poedit-SearchPathExcluded-3: fonts\n"
+"X-Poedit-SearchPathExcluded-4: images\n"
+"X-Poedit-SearchPathExcluded-5: inc/plugins\n"
+"X-Poedit-SearchPathExcluded-6: inc/tgm\n"
+"X-Poedit-SearchPathExcluded-7: inc/theme-options/extension-loader\n"
+"X-Poedit-SearchPathExcluded-8: js\n"
+"X-Poedit-SearchPathExcluded-9: languages\n"
+"X-Poedit-SearchPathExcluded-10: less\n"
+
+#: 404.php:28
+msgid "Look like something went wrong!"
+msgstr ""
+
+#: 404.php:30
+msgid "The page you were looking for is not here"
+msgstr ""
+
+#: 404.php:32
+msgid "Go to Home"
+msgstr ""
+
+#: author.php:75 single-agent.php:78
+msgid "Properties by"
+msgstr ""
+
+#: comments.php:15
+msgid "No Comment"
+msgstr ""
+
+#: comments.php:15
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:15
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:34
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:72
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:184
+msgctxt "Varela Round font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:624 functions.php:648
+msgid "Valid file formats"
+msgstr ""
+
+#: functions.php:780
+msgid "Default Sidebar"
+msgstr ""
+
+#: functions.php:782
+msgid "Widget area for default sidebar on news and post pages."
+msgstr ""
+
+#: functions.php:791
+msgid "Pages Sidebar"
+msgstr ""
+
+#: functions.php:793
+msgid "Widget area for default page template sidebar."
+msgstr ""
+
+#: functions.php:802
+msgid "Properties List Sidebar"
+msgstr ""
+
+#: functions.php:804
+msgid "Widget area for properties list template with sidebar support."
+msgstr ""
+
+#: functions.php:813
+msgid "Properties Grid Sidebar"
+msgstr ""
+
+#: functions.php:815
+msgid "Widget area for properties grid template with sidebar support."
+msgstr ""
+
+#: functions.php:824
+msgid "Property Sidebar"
+msgstr ""
+
+#: functions.php:826
+msgid "Widget area for property detail page sidebar."
+msgstr ""
+
+#: functions.php:848
+msgid "dsIDXpress Sidebar"
+msgstr ""
+
+#: functions.php:850
+msgid "Widget area for dsIDX related pages."
+msgstr ""
+
+#: functions.php:859
+msgid "Footer First Column"
+msgstr ""
+
+#: functions.php:861
+msgid "Widget area for first column in footer."
+msgstr ""
+
+#: functions.php:870
+msgid "Footer Second Column"
+msgstr ""
+
+#: functions.php:872
+msgid "Widget area for second column in footer."
+msgstr ""
+
+#: functions.php:881
+msgid "Footer Third Column"
+msgstr ""
+
+#: functions.php:883
+msgid "Widget area for third column in footer."
+msgstr ""
+
+#: functions.php:892
+msgid "Footer Fourth Column"
+msgstr ""
+
+#: functions.php:894
+msgid "Widget area for fourth column in footer."
+msgstr ""
+
+#: inc/meta-boxes/config.php:37 inc/meta-boxes/config.php:46
+msgid "Video Embed Code"
+msgstr ""
+
+#: inc/meta-boxes/config.php:47
+msgid ""
+"If you are not using self hosted videos then please provide the video embed "
+"code and remove the width and height attributes."
+msgstr ""
+
+#: inc/meta-boxes/config.php:62
+msgid "Gallery Images"
+msgstr ""
+
+#: inc/meta-boxes/config.php:71
+msgid "Upload Gallery Images"
+msgstr ""
+
+#: inc/meta-boxes/config.php:73
+msgid ""
+"Images should have minimum width of 850px and minimum height of 567px, "
+"Bigger size images will be cropped automatically."
+msgstr ""
+
+#: inc/meta-boxes/config.php:85
+msgid "Contact Page Information"
+msgstr ""
+
+#: inc/meta-boxes/config.php:91 inc/theme-options/archive-options.php:18
+#: inc/theme-options/home-options.php:17
+#: inc/theme-options/search-options.php:145
+msgid "Google Map"
+msgstr ""
+
+#: inc/meta-boxes/config.php:95 page-templates/contact.php:250
+msgid "Contact Details"
+msgstr ""
+
+#: inc/meta-boxes/config.php:99
+msgid "Contact Form"
+msgstr ""
+
+#: inc/meta-boxes/config.php:112 inc/util/real-estate-functions.php:279
+msgid "Office Address"
+msgstr ""
+
+#: inc/meta-boxes/config.php:113
+msgid "Leaving it empty will hide the google map."
+msgstr ""
+
+#: inc/meta-boxes/config.php:121
+msgid "Office Location"
+msgstr ""
+
+#: inc/meta-boxes/config.php:122
+msgid ""
+"Drag the marker to point your office location. You can also use the address "
+"field above to search for your address."
+msgstr ""
+
+#: inc/meta-boxes/config.php:133
+msgid "Map Zoom Level"
+msgstr ""
+
+#: inc/meta-boxes/config.php:134
+msgid "Zoom level for resulted map on contact page."
+msgstr ""
+
+#: inc/meta-boxes/config.php:146
+msgid "Office Address to Display"
+msgstr ""
+
+#: inc/meta-boxes/config.php:147
+msgid "Given address will be displayed on contact page."
+msgstr ""
+
+#: inc/meta-boxes/config.php:153
+msgid "Phone"
+msgstr ""
+
+#: inc/meta-boxes/config.php:159
+msgid "Mobile"
+msgstr ""
+
+#: inc/meta-boxes/config.php:165
+msgid "Fax"
+msgstr ""
+
+#: inc/meta-boxes/config.php:171
+msgid "Email to Display"
+msgstr ""
+
+#: inc/meta-boxes/config.php:172
+msgid "Given email address will be displayed on contact page."
+msgstr ""
+
+#: inc/meta-boxes/config.php:179 page-templates/contact.php:311
+msgid "Working Hours"
+msgstr ""
+
+#: inc/meta-boxes/config.php:186
+msgid "Contact Form Heading"
+msgstr ""
+
+#: inc/meta-boxes/config.php:188
+msgid "Send Us a Message"
+msgstr ""
+
+#: inc/meta-boxes/config.php:193
+msgid "Contact Form Email"
+msgstr ""
+
+#: inc/meta-boxes/config.php:194
+msgid "Given email address will receive messages from theme based contact form"
+msgstr ""
+
+#: inc/meta-boxes/config.php:201
+msgid "Contact Form 7 Shortcode"
+msgstr ""
+
+#: inc/meta-boxes/config.php:202
+msgid ""
+"You can provide contact form 7 shortcode, If you want to use a custom form. "
+"It will be displayed if above given email address is empty."
+msgstr ""
+
+#: inc/meta-boxes/config.php:216 inc/meta-boxes/config.php:239
+msgid "Banner Settings"
+msgstr ""
+
+#: inc/meta-boxes/config.php:225 inc/meta-boxes/config.php:250
+#: inc/theme-options/header-options.php:151
+msgid "Banner Image"
+msgstr ""
+
+#: inc/meta-boxes/config.php:227 inc/meta-boxes/config.php:252
+#: inc/theme-options/header-options.php:152
+msgid ""
+"Banner image should have minimum width of 2000px and minimum height of 320px."
+msgstr ""
+
+#: inc/meta-boxes/config.php:257 inc/theme-options/home-options.php:71
+msgid "Revolution Slider Alias"
+msgstr ""
+
+#: inc/meta-boxes/config.php:259
+msgid ""
+"If you want to replace banner with revolution slider then provide its alias "
+"here."
+msgstr ""
+
+#: inc/meta-boxes/config.php:266
+msgid "Choose a sidebar"
+msgstr ""
+
+#: inc/meta-boxes/config.php:277
+msgid "Sidebar Settings"
+msgstr ""
+
+#: inc/meta-boxes/config.php:292
+msgid "Sidebar (optional)"
+msgstr ""
+
+#: inc/meta-boxes/config.php:294
+msgid ""
+"Choose a custom sidebar for this entry. Otherwise, default entry's sidebar "
+"will be displayed."
+msgstr ""
+
+#: inc/meta-boxes/config.php:307
+msgid "Gallery Settings"
+msgstr ""
+
+#: inc/meta-boxes/config.php:321 inc/meta-boxes/config.php:363
+msgid "Number of Properties Per Page"
+msgstr ""
+
+#: inc/meta-boxes/config.php:348
+msgid "Properties Settings"
+msgstr ""
+
+#: inc/meta-boxes/config.php:371
+msgid "Order Properties By"
+msgstr ""
+
+#: inc/meta-boxes/config.php:374
+msgid "Date New to Old"
+msgstr ""
+
+#: inc/meta-boxes/config.php:375
+msgid "Date Old to New"
+msgstr ""
+
+#: inc/meta-boxes/config.php:376
+msgid "Price Low to High"
+msgstr ""
+
+#: inc/meta-boxes/config.php:377
+msgid "Price High to Low"
+msgstr ""
+
+#: inc/meta-boxes/config.php:378 inc/theme-options/home-options.php:297
+#: inc/widgets/featured-properties-widget.php:123
+msgid "Random"
+msgstr ""
+
+#: inc/meta-boxes/config.php:385 inc/theme-options/home-options.php:315
+msgid "Locations"
+msgstr ""
+
+#: inc/meta-boxes/config.php:393 inc/theme-options/home-options.php:327
+msgid "Statuses"
+msgstr ""
+
+#: inc/meta-boxes/config.php:401 inc/theme-options/home-options.php:339
+msgid "Types"
+msgstr ""
+
+#: inc/meta-boxes/config.php:409 inc/theme-options/property-options.php:91
+#: partials/property/templates/edit-form.php:326
+#: partials/property/templates/submit-form.php:295
+msgid "Features"
+msgstr ""
+
+#: inc/meta-boxes/config.php:417
+msgid "Minimum Beds"
+msgstr ""
+
+#: inc/meta-boxes/config.php:425
+msgid "Minimum Baths"
+msgstr ""
+
+#: inc/meta-boxes/config.php:433
+msgid "Minimum Price"
+msgstr ""
+
+#: inc/meta-boxes/config.php:441
+msgid "Maximum Price"
+msgstr ""
+
+#: inc/meta-boxes/config.php:449
+msgid "Google Map in Header"
+msgstr ""
+
+#: inc/meta-boxes/config.php:451
+msgid "Display Google Map with Properties Markers"
+msgstr ""
+
+#: inc/meta-boxes/config.php:462
+msgid "Agents Settings"
+msgstr ""
+
+#: inc/meta-boxes/config.php:476
+msgid "Number of Agents Per Page"
+msgstr ""
+
+#: inc/sidebars/inspiry-sidebars.php:19
+msgid "Custom Widget Area"
+msgstr ""
+
+#: inc/sidebars/inspiry-sidebars.php:44
+msgid "Enter new Widget Area name here"
+msgstr ""
+
+#: inc/sidebars/inspiry-sidebars.php:45
+msgid "Add Widget Area"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:7
+msgid "Archives"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:9
+msgid ""
+"This section contains options related property post type archive and "
+"taxonomy archives pages like property city, property status, property type "
+"and property feature."
+msgstr ""
+
+#: inc/theme-options/archive-options.php:15
+msgid "What to Display Below Header on Archive Pages"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:17
+#: inc/theme-options/home-options.php:16
+#: inc/theme-options/search-options.php:144
+msgid "Image Banner"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:25
+msgid "Number of Properties on an Archive Page"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:44
+msgid "Archive Page Layout"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:46
+#: inc/theme-options/search-options.php:175
+msgid "List Layout - Full Width"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:47
+#: inc/theme-options/search-options.php:176
+msgid "Grid Layout - Full Width"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:55
+msgid "Default Order of Properties on an Archive Page."
+msgstr ""
+
+#: inc/theme-options/archive-options.php:57
+#: inc/theme-options/home-options.php:283
+#: inc/theme-options/search-options.php:186
+#: partials/property/templates/listing-control.php:34
+msgid "Sort by Price Low to High"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:58
+#: inc/theme-options/home-options.php:284
+#: inc/theme-options/search-options.php:187
+#: partials/property/templates/listing-control.php:35
+msgid "Sort by Price High to Low"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:59
+#: inc/theme-options/home-options.php:285
+#: inc/theme-options/search-options.php:188
+#: partials/property/templates/listing-control.php:36
+msgid "Sort by Date Old to New"
+msgstr ""
+
+#: inc/theme-options/archive-options.php:60
+#: inc/theme-options/home-options.php:286
+#: inc/theme-options/search-options.php:189
+#: partials/property/templates/listing-control.php:37
+msgid "Sort by Date New to Old"
+msgstr ""
+
+#: inc/theme-options/footer-options.php:7
+#: inc/theme-options/styles-options/footer-styles-options.php:8
+msgid "Footer"
+msgstr ""
+
+#: inc/theme-options/footer-options.php:9
+msgid "This section contains options for footer."
+msgstr ""
+
+#: inc/theme-options/footer-options.php:16
+msgid "Footer Logo"
+msgstr ""
+
+#: inc/theme-options/footer-options.php:17
+msgid "Upload footer logo."
+msgstr ""
+
+#: inc/theme-options/footer-options.php:22
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: inc/theme-options/footer-options.php:23
+msgid "Allowed html tags are a, br, em and strong."
+msgstr ""
+
+#: inc/theme-options/header-options.php:7
+#: inc/theme-options/styles-options/header-styles-options.php:8
+msgid "Header"
+msgstr ""
+
+#: inc/theme-options/header-options.php:9
+msgid "This section contains options for header."
+msgstr ""
+
+#: inc/theme-options/header-options.php:15
+msgid "Header Design Variation"
+msgstr ""
+
+#: inc/theme-options/header-options.php:16
+msgid "Select the design variation that you want to use for site header."
+msgstr ""
+
+#: inc/theme-options/header-options.php:19
+#: inc/theme-options/home-options.php:147
+#: inc/theme-options/home-options.php:591
+msgid "1st Variation"
+msgstr ""
+
+#: inc/theme-options/header-options.php:23
+#: inc/theme-options/home-options.php:151
+#: inc/theme-options/home-options.php:595
+msgid "2nd Variation"
+msgstr ""
+
+#: inc/theme-options/header-options.php:27
+#: inc/theme-options/home-options.php:155
+#: inc/theme-options/home-options.php:599
+msgid "3rd Variation"
+msgstr ""
+
+#: inc/theme-options/header-options.php:36
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/theme-options/header-options.php:37
+msgid "This feature only works above 992px screen size."
+msgstr ""
+
+#: inc/theme-options/header-options.php:39
+#: inc/theme-options/header-options.php:171
+#: inc/theme-options/home-options.php:398 inc/theme-options/misc-options.php:17
+#: inc/theme-options/misc-options.php:123
+#: inc/theme-options/payments-options.php:18
+#: inc/theme-options/payments-options.php:42
+#: inc/theme-options/styles-options/basic-styles-options.php:130
+msgid "Enable"
+msgstr ""
+
+#: inc/theme-options/header-options.php:40
+#: inc/theme-options/header-options.php:172
+#: inc/theme-options/home-options.php:399 inc/theme-options/misc-options.php:18
+#: inc/theme-options/misc-options.php:124
+#: inc/theme-options/payments-options.php:19
+#: inc/theme-options/payments-options.php:43
+#: inc/theme-options/styles-options/basic-styles-options.php:131
+msgid "Disable"
+msgstr ""
+
+#: inc/theme-options/header-options.php:45
+msgid "Menu Button Title"
+msgstr ""
+
+#: inc/theme-options/header-options.php:46 partials/header/variation-one.php:7
+msgid "Menu"
+msgstr ""
+
+#: inc/theme-options/header-options.php:53
+msgid "Favicon"
+msgstr ""
+
+#: inc/theme-options/header-options.php:54
+msgid "Upload your website favicon."
+msgstr ""
+
+#: inc/theme-options/header-options.php:60
+msgid "Logo"
+msgstr ""
+
+#: inc/theme-options/header-options.php:61
+msgid ""
+"Upload logo image for your Website. Otherwise site title will be displayed "
+"in place of logo."
+msgstr ""
+
+#: inc/theme-options/header-options.php:66
+msgid "Email Address"
+msgstr ""
+
+#: inc/theme-options/header-options.php:74
+msgid "Phone Number"
+msgstr ""
+
+#: inc/theme-options/header-options.php:80
+#: inc/util/real-estate-functions.php:280
+#: inc/widgets/social-icons-widget.php:19 page-templates/edit-profile.php:189
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:87
+#: inc/util/real-estate-functions.php:281
+#: inc/widgets/social-icons-widget.php:18 page-templates/edit-profile.php:198
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:94
+#: inc/util/real-estate-functions.php:282
+#: inc/widgets/social-icons-widget.php:21 page-templates/edit-profile.php:213
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:101
+#: inc/util/real-estate-functions.php:283
+#: inc/widgets/social-icons-widget.php:20 page-templates/edit-profile.php:222
+msgid "LinkedIn URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:108
+#: inc/util/real-estate-functions.php:285
+#: inc/widgets/social-icons-widget.php:22
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:115
+#: inc/widgets/social-icons-widget.php:23
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:122
+#: inc/theme-options/header-options.php:129
+msgid "Skype URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:136
+#: inc/util/real-estate-functions.php:284
+#: inc/widgets/social-icons-widget.php:24
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:143
+msgid "Rss URL"
+msgstr ""
+
+#: inc/theme-options/header-options.php:153
+msgid ""
+"This banner image will be displayed on all the pages where banner image is "
+"not overridden by page specific banner settings."
+msgstr ""
+
+#: inc/theme-options/header-options.php:158
+msgid "WPML/POLYLANG Language Switcher Flags"
+msgstr ""
+
+#: inc/theme-options/header-options.php:159
+msgid ""
+"Do you want to display WPML or POLYLANG language switcher flags in header "
+"top bar ?"
+msgstr ""
+
+#: inc/theme-options/header-options.php:160
+msgid ""
+"This option only works if WPML or POLYLANG plugin is installed and activated."
+msgstr ""
+
+#: inc/theme-options/header-options.php:162
+#: inc/theme-options/home-options.php:553
+msgid "Display"
+msgstr ""
+
+#: inc/theme-options/header-options.php:163
+#: inc/theme-options/home-options.php:104
+#: inc/theme-options/home-options.php:554
+#: inc/theme-options/members-options.php:18
+#: inc/theme-options/property-options.php:33
+#: inc/theme-options/property-options.php:45
+#: inc/theme-options/property-options.php:65
+#: inc/theme-options/property-options.php:85
+#: inc/theme-options/property-options.php:104
+#: inc/theme-options/property-options.php:123
+#: inc/theme-options/property-options.php:143
+#: inc/theme-options/property-options.php:163
+#: inc/theme-options/property-options.php:183
+#: inc/theme-options/property-options.php:203
+#: inc/theme-options/property-options.php:223
+#: inc/theme-options/property-options.php:236
+#: inc/theme-options/property-options.php:244
+#: inc/theme-options/property-options.php:265
+#: inc/theme-options/search-options.php:46
+msgid "Hide"
+msgstr ""
+
+#: inc/theme-options/header-options.php:168
+msgid "Page Loader"
+msgstr ""
+
+#: inc/theme-options/header-options.php:169
+msgid "You can enable or disable page loader."
+msgstr ""
+
+#: inc/theme-options/header-options.php:178
+msgid "Page Loader Gif"
+msgstr ""
+
+#: inc/theme-options/header-options.php:179
+msgid ""
+"You can upload your page loader gif here or default one will be displayed."
+msgstr ""
+
+#: inc/theme-options/header-options.php:185
+msgid "Quick JavaScript"
+msgstr ""
+
+#: inc/theme-options/header-options.php:186
+msgid "You can paste your JavaScript code here."
+msgstr ""
+
+#: inc/theme-options/home-options.php:7 inc/util/breadcrumbs-functions.php:15
+msgid "Home"
+msgstr ""
+
+#: inc/theme-options/home-options.php:9
+msgid "This section contains options for homepage."
+msgstr ""
+
+#: inc/theme-options/home-options.php:14
+msgid "What to display below header"
+msgstr ""
+
+#: inc/theme-options/home-options.php:18
+#: inc/theme-options/styles-options/slider-styles-options.php:8
+msgid "Slider"
+msgstr ""
+
+#: inc/theme-options/home-options.php:25
+msgid "Select the type of slider"
+msgstr ""
+
+#: inc/theme-options/home-options.php:27
+msgid "Properties Slider"
+msgstr ""
+
+#: inc/theme-options/home-options.php:28
+msgid "Properties Slider Two"
+msgstr ""
+
+#: inc/theme-options/home-options.php:29
+msgid "Properties Slider Three"
+msgstr ""
+
+#: inc/theme-options/home-options.php:30
+msgid "Revolution Slider"
+msgstr ""
+
+#: inc/theme-options/home-options.php:39
+msgid "Number of slides to display"
+msgstr ""
+
+#: inc/theme-options/home-options.php:64
+msgid "Slider Button Text"
+msgstr ""
+
+#: inc/theme-options/home-options.php:65
+msgid "More Details"
+msgstr ""
+
+#: inc/theme-options/home-options.php:81
+msgid "Layout"
+msgstr ""
+
+#: inc/theme-options/home-options.php:83
+msgid "This section contains homepage layout related options."
+msgstr ""
+
+#: inc/theme-options/home-options.php:89
+msgid "Home sections width"
+msgstr ""
+
+#: inc/theme-options/home-options.php:90
+msgid "Some section can appear in full width."
+msgstr ""
+
+#: inc/theme-options/home-options.php:92
+msgid "Keep Boxed"
+msgstr ""
+
+#: inc/theme-options/home-options.php:93
+msgid "Allow Full Width"
+msgstr ""
+
+#: inc/theme-options/home-options.php:100
+msgid "Property Search Form"
+msgstr ""
+
+#: inc/theme-options/home-options.php:101
+msgid ""
+"The 1st header variation already includes it, So this applies only with "
+"other header variations."
+msgstr ""
+
+#: inc/theme-options/home-options.php:103
+#: inc/theme-options/members-options.php:17
+#: inc/theme-options/property-options.php:32
+#: inc/theme-options/property-options.php:44
+#: inc/theme-options/property-options.php:64
+#: inc/theme-options/property-options.php:84
+#: inc/theme-options/property-options.php:103
+#: inc/theme-options/property-options.php:122
+#: inc/theme-options/property-options.php:142
+#: inc/theme-options/property-options.php:162
+#: inc/theme-options/property-options.php:182
+#: inc/theme-options/property-options.php:202
+#: inc/theme-options/property-options.php:222
+#: inc/theme-options/property-options.php:235
+#: inc/theme-options/property-options.php:243
+#: inc/theme-options/property-options.php:264
+#: inc/theme-options/search-options.php:45
+msgid "Show"
+msgstr ""
+
+#: inc/theme-options/home-options.php:110
+msgid "Homepage layout manager"
+msgstr ""
+
+#: inc/theme-options/home-options.php:111
+msgid "Organize homepage sections in the way you want them to appear."
+msgstr ""
+
+#: inc/theme-options/home-options.php:114
+msgid "Page Contents"
+msgstr ""
+
+#: inc/theme-options/home-options.php:117
+#: inc/theme-options/home-options.php:134
+msgid "Properties"
+msgstr ""
+
+#: inc/theme-options/home-options.php:118
+#: inc/theme-options/home-options.php:298
+msgid "Featured"
+msgstr ""
+
+#: inc/theme-options/home-options.php:119
+msgid "How It Works"
+msgstr ""
+
+#: inc/theme-options/home-options.php:120
+#: inc/theme-options/home-options.php:685
+msgid "Partners"
+msgstr ""
+
+#: inc/theme-options/home-options.php:121
+#: inc/theme-options/home-options.php:730
+msgid "News"
+msgstr ""
+
+#: inc/theme-options/home-options.php:136
+msgid "This section contains homepage properties related options."
+msgstr ""
+
+#: inc/theme-options/home-options.php:143
+msgid "Properties design variation"
+msgstr ""
+
+#: inc/theme-options/home-options.php:144
+msgid ""
+"Select the design variation that you want to use for homepage properties."
+msgstr ""
+
+#: inc/theme-options/home-options.php:159
+msgid "4th Variation"
+msgstr ""
+
+#: inc/theme-options/home-options.php:168
+#: inc/theme-options/home-options.php:210
+#: inc/theme-options/home-options.php:251
+#: inc/theme-options/home-options.php:266
+msgid "Number of properties to display"
+msgstr ""
+
+#: inc/theme-options/home-options.php:184
+msgid "Multiple Photos"
+msgstr ""
+
+#: inc/theme-options/home-options.php:185
+msgid "* This can slow website performance"
+msgstr ""
+
+#: inc/theme-options/home-options.php:186
+msgid "Each property can display multiple photos sliding over each other"
+msgstr ""
+
+#: inc/theme-options/home-options.php:188
+#: inc/theme-options/members-options.php:168
+msgid "Enabled"
+msgstr ""
+
+#: inc/theme-options/home-options.php:189
+#: inc/theme-options/members-options.php:169
+msgid "Disabled"
+msgstr ""
+
+#: inc/theme-options/home-options.php:195
+msgid "Max number of photos"
+msgstr ""
+
+#: inc/theme-options/home-options.php:225
+msgid "Welcome Board Title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:226
+msgid "We are Offering the Best Real Estate Deals"
+msgstr ""
+
+#: inc/theme-options/home-options.php:232
+msgid "Welcome Board Text"
+msgstr ""
+
+#: inc/theme-options/home-options.php:233
+#: inc/theme-options/home-options.php:380
+#: inc/theme-options/home-options.php:458
+#: inc/theme-options/home-options.php:496
+#: inc/theme-options/home-options.php:534
+msgid "Following html tags are allowed: a, br, em and strong."
+msgstr ""
+
+#: inc/theme-options/home-options.php:281
+msgid "Sort Order"
+msgstr ""
+
+#: inc/theme-options/home-options.php:294
+msgid "Select the kind of properties you want to display"
+msgstr ""
+
+#: inc/theme-options/home-options.php:296
+msgid "Default ( No Filtration )"
+msgstr ""
+
+#: inc/theme-options/home-options.php:299
+msgid "Based on my selection of Locations, Statuses and Types."
+msgstr ""
+
+#: inc/theme-options/home-options.php:306
+msgid "Exclude Featured Properties?"
+msgstr ""
+
+#: inc/theme-options/home-options.php:307
+msgid ""
+"Check this option if you want to exclude Featured Properties from Recent "
+"Properties on Homepage ."
+msgstr ""
+
+#: inc/theme-options/home-options.php:358
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:8
+msgid "How it Works"
+msgstr ""
+
+#: inc/theme-options/home-options.php:360
+msgid "This section contains options related to \"How It Works\" section."
+msgstr ""
+
+#: inc/theme-options/home-options.php:367
+msgid "Welcome Text"
+msgstr ""
+
+#: inc/theme-options/home-options.php:368
+msgid "Welcome"
+msgstr ""
+
+#: inc/theme-options/home-options.php:373
+#: inc/theme-options/home-options.php:673
+#: inc/widgets/social-icons-widget.php:126
+#: partials/property/templates/edit-form.php:377
+#: partials/property/templates/submit-form.php:329
+msgid "Title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:374
+msgid "An Awesome title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:379
+#: inc/theme-options/property-card-options.php:40
+#: inc/theme-options/property-options.php:51
+#: partials/property/templates/property-for-list.php:27
+msgid "Description"
+msgstr ""
+
+#: inc/theme-options/home-options.php:396
+msgid "Background Image"
+msgstr ""
+
+#: inc/theme-options/home-options.php:406
+msgid "Provide a background image for \"How it Works\" section."
+msgstr ""
+
+#: inc/theme-options/home-options.php:413
+msgid "Number of Columns"
+msgstr ""
+
+#: inc/theme-options/home-options.php:414
+msgid ""
+"Choose the number of columns to display below basic introduction on \"How it "
+"Works\" section."
+msgstr ""
+
+#: inc/theme-options/home-options.php:416
+#: inc/util/real-estate-functions.php:621
+#: inc/util/real-estate-functions.php:623
+#: partials/property/templates/edit-form.php:46
+#: partials/property/templates/edit-form.php:266
+#: partials/property/templates/submit-form.php:29
+#: partials/property/templates/submit-form.php:71
+#: partials/property/templates/submit-form.php:92
+#: partials/property/templates/submit-form.php:113
+#: partials/property/templates/submit-form.php:244
+msgid "None"
+msgstr ""
+
+#: inc/theme-options/home-options.php:417
+msgid "1 Column"
+msgstr ""
+
+#: inc/theme-options/home-options.php:418
+msgid "2 Columns"
+msgstr ""
+
+#: inc/theme-options/home-options.php:419
+msgid "3 Columns"
+msgstr ""
+
+#: inc/theme-options/home-options.php:426
+msgid "Content alignment in a column"
+msgstr ""
+
+#: inc/theme-options/home-options.php:428
+msgid "Left"
+msgstr ""
+
+#: inc/theme-options/home-options.php:429
+msgid "Center"
+msgstr ""
+
+#: inc/theme-options/home-options.php:442
+msgid "1st Column Icon"
+msgstr ""
+
+#: inc/theme-options/home-options.php:450
+msgid "1st Column Title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:451 partials/members/register.php:4
+#: partials/members/register.php:27
+msgid "Register"
+msgstr ""
+
+#: inc/theme-options/home-options.php:457
+msgid "1st Column Description"
+msgstr ""
+
+#: inc/theme-options/home-options.php:480
+msgid "2nd Column Icon"
+msgstr ""
+
+#: inc/theme-options/home-options.php:488
+msgid "2nd Column Title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:489
+msgid "Fill Up Property Details"
+msgstr ""
+
+#: inc/theme-options/home-options.php:495
+msgid "2nd Column Description"
+msgstr ""
+
+#: inc/theme-options/home-options.php:518
+msgid "3rd Column Icon"
+msgstr ""
+
+#: inc/theme-options/home-options.php:526
+msgid "3rd Column Title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:527
+msgid "You are Done!"
+msgstr ""
+
+#: inc/theme-options/home-options.php:533
+msgid "3rd Column Description"
+msgstr ""
+
+#: inc/theme-options/home-options.php:551
+msgid "Submit Property Button"
+msgstr ""
+
+#: inc/theme-options/home-options.php:559
+msgid "Button Text"
+msgstr ""
+
+#: inc/theme-options/home-options.php:560
+msgid "Submit Your Property"
+msgstr ""
+
+#: inc/theme-options/home-options.php:566
+msgid "Button Target URL"
+msgstr ""
+
+#: inc/theme-options/home-options.php:578
+#: inc/theme-options/home-options.php:674
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:8
+msgid "Featured Properties"
+msgstr ""
+
+#: inc/theme-options/home-options.php:580
+msgid ""
+"This section contains options related to featured properties on homepage."
+msgstr ""
+
+#: inc/theme-options/home-options.php:587
+msgid "Featured properties design variation"
+msgstr ""
+
+#: inc/theme-options/home-options.php:588
+msgid ""
+"Select the design variation that you want to use for featured properties."
+msgstr ""
+
+#: inc/theme-options/home-options.php:608
+msgid "Number of columns"
+msgstr ""
+
+#: inc/theme-options/home-options.php:621
+#: inc/theme-options/home-options.php:639
+#: inc/theme-options/home-options.php:657
+msgid "Number of properties"
+msgstr ""
+
+#: inc/theme-options/home-options.php:687
+msgid "This section contains options related to partners on homepage."
+msgstr ""
+
+#: inc/theme-options/home-options.php:693
+msgid "Number of partners"
+msgstr ""
+
+#: inc/theme-options/home-options.php:713
+msgid "Partners Title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:714
+msgid "You can use span tag to highlight a part of title."
+msgstr ""
+
+#: inc/theme-options/home-options.php:732
+msgid "This section contains options related to news on homepage."
+msgstr ""
+
+#: inc/theme-options/home-options.php:738
+msgid "Number of posts to display"
+msgstr ""
+
+#: inc/theme-options/home-options.php:756
+msgid "News Title"
+msgstr ""
+
+#: inc/theme-options/home-options.php:757
+msgid "Latest News"
+msgstr ""
+
+#: inc/theme-options/home-options.php:762
+msgid "Type of News Posts"
+msgstr ""
+
+#: inc/theme-options/home-options.php:763
+msgid "Choose the type of news posts to display on homepage."
+msgstr ""
+
+#: inc/theme-options/home-options.php:765
+msgid "Recent"
+msgstr ""
+
+#: inc/theme-options/home-options.php:766
+msgid "Based on Categories"
+msgstr ""
+
+#: inc/theme-options/home-options.php:767
+msgid "Based on Tags"
+msgstr ""
+
+#: inc/theme-options/home-options.php:776
+msgid "Select Categories"
+msgstr ""
+
+#: inc/theme-options/home-options.php:784
+msgid "Select Tags"
+msgstr ""
+
+#: inc/theme-options/home-options.php:790
+msgid "More Link Text"
+msgstr ""
+
+#: inc/theme-options/home-options.php:791
+msgid "More"
+msgstr ""
+
+#: inc/theme-options/members-options.php:7
+msgid "Members"
+msgstr ""
+
+#: inc/theme-options/members-options.php:9
+msgid "This section contains options related to registered users."
+msgstr ""
+
+#: inc/theme-options/members-options.php:15
+msgid "User Navigation in Header"
+msgstr ""
+
+#: inc/theme-options/members-options.php:24
+msgid "Restrict Admin Access"
+msgstr ""
+
+#: inc/theme-options/members-options.php:25
+msgid ""
+"Restrict admin access to any user level equal to or below the selected user "
+"level."
+msgstr ""
+
+#: inc/theme-options/members-options.php:27
+msgid "Subscriber ( Level 0 )"
+msgstr ""
+
+#: inc/theme-options/members-options.php:28
+msgid "Contributor ( Level 1 )"
+msgstr ""
+
+#: inc/theme-options/members-options.php:29
+msgid "Author ( Level 2 )"
+msgstr ""
+
+#: inc/theme-options/members-options.php:54
+msgid "Edit Profile Page"
+msgstr ""
+
+#: inc/theme-options/members-options.php:55
+msgid "Make sure the selected page is using Edit Profile template."
+msgstr ""
+
+#: inc/theme-options/members-options.php:66
+msgid "Favorites Page"
+msgstr ""
+
+#: inc/theme-options/members-options.php:67
+msgid "Select a page to display favorite properties."
+msgstr ""
+
+#: inc/theme-options/members-options.php:68
+msgid "Make sure the selected page is using Favorites template."
+msgstr ""
+
+#: inc/theme-options/members-options.php:73
+msgid "Number of Properties on Favorites Page"
+msgstr ""
+
+#: inc/theme-options/members-options.php:94
+msgid "My Properties Page"
+msgstr ""
+
+#: inc/theme-options/members-options.php:95
+msgid "Make sure the selected page is using My Properties template."
+msgstr ""
+
+#: inc/theme-options/members-options.php:100
+msgid "Number of Properties on My Properties Page"
+msgstr ""
+
+#: inc/theme-options/members-options.php:126
+msgid "Submit Property Page"
+msgstr ""
+
+#: inc/theme-options/members-options.php:127
+msgid "Make sure the selected page is using Submit Property template."
+msgstr ""
+
+#: inc/theme-options/members-options.php:132
+msgid "Default Status of Submitted Property"
+msgstr ""
+
+#: inc/theme-options/members-options.php:134
+msgid "Pending for Review"
+msgstr ""
+
+#: inc/theme-options/members-options.php:135
+msgid "Publish"
+msgstr ""
+
+#: inc/theme-options/members-options.php:143
+msgid "Default Address for Property Submit Form"
+msgstr ""
+
+#: inc/theme-options/members-options.php:150
+msgid "Default Location Coordinates for Property Submit Map"
+msgstr ""
+
+#: inc/theme-options/members-options.php:158
+msgid "Email for Property Submit Notice"
+msgstr ""
+
+#: inc/theme-options/members-options.php:159
+msgid ""
+"This email address will receive a notice whenever a user submits a property."
+msgstr ""
+
+#: inc/theme-options/members-options.php:166
+msgid "Message for Reviewer on Property Submit Form"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:7
+msgid "Misc"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:9
+msgid ""
+"This section contains options related to various features across the theme."
+msgstr ""
+
+#: inc/theme-options/misc-options.php:15
+msgid "Google reCAPTCHA"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:23
+msgid "reCAPTCHA Site Key"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:29
+msgid "reCAPTCHA Secret Key"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:35
+msgid "reCAPTCHA Language"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:101
+msgid "CC Email Address for Messages to Agents"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:102
+msgid ""
+"Given email address will receive a carbon copy of every message sent to any "
+"agent."
+msgstr ""
+
+#: inc/theme-options/misc-options.php:103
+#: inc/theme-options/misc-options.php:110
+msgid "You can provide multiple email addresses separated with comma."
+msgstr ""
+
+#: inc/theme-options/misc-options.php:108
+msgid "BCC Email Address for Messages to Agents"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:109
+msgid ""
+"Given email address will receive a blind carbon copy of every message sent "
+"to any agent."
+msgstr ""
+
+#: inc/theme-options/misc-options.php:115
+msgid "Google Maps Api Key"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:120
+msgid "Automatically Switch Google Map Language"
+msgstr ""
+
+#: inc/theme-options/misc-options.php:121
+msgid ""
+"Based on site language from general settings OR current language if you are "
+"using WPML."
+msgstr ""
+
+#: inc/theme-options/options-config.php:36
+#: inc/theme-options/options-config.php:37
+msgid "Theme Options"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:7
+msgid "Payments"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:9
+msgid ""
+"This section contains options related to payments for submitted properties."
+msgstr ""
+
+#: inc/theme-options/payments-options.php:15
+msgid "PayPal Payments"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:16
+msgid "Enable payment via PayPal ?"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:24
+msgid "PayPal IPN URL"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:25
+msgid "It is a must"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:26
+msgid ""
+"Install \"PayPal IPN for WordPress\" plugin and get IPN URL from Settings > "
+"PayPal IPN."
+msgstr ""
+
+#: inc/theme-options/payments-options.php:33
+msgid "PayPal Merchant Account ID or Email"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:39
+msgid "PayPal Sandbox"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:40
+msgid "Enable PayPal sandbox for testing"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:49
+msgid "Payment Amount for a Property"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:50
+msgid ""
+"Provide the amount that you want to charge for a property. Example: 20.00"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:57
+msgid "Currency Code"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:58
+msgid "Provide the currency code that you want to use. Example: USD"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:65
+msgid "Auto Action on Successful Payment"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:67
+msgid "Publish the Property"
+msgstr ""
+
+#: inc/theme-options/payments-options.php:68
+msgid "Do Nothing"
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:7
+msgid "Property Card"
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:9
+msgid ""
+"This section contains options for property card displayed in various pages "
+"across the theme."
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:15
+msgid "Display images gallery for property card in list and grid layout"
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:16
+msgid "This option has performance implications."
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:24
+msgid "Maximum number of images allowed in property card gallery."
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:39
+msgid "Description title for property card in list layout"
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:45
+msgid "Price title for property card in list layout"
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:46
+#: partials/property/templates/property-for-list.php:19
+msgid "Price"
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:51
+msgid "Button text for property card in list layout"
+msgstr ""
+
+#: inc/theme-options/property-card-options.php:52
+#: partials/property/templates/property-for-list.php:35
+msgid "Show Details"
+msgstr ""
+
+#: inc/theme-options/property-options.php:7
+msgid "Property Detail"
+msgstr ""
+
+#: inc/theme-options/property-options.php:9
+msgid "This section contains options for property detail page."
+msgstr ""
+
+#: inc/theme-options/property-options.php:15
+msgid "Property Header Design Variation"
+msgstr ""
+
+#: inc/theme-options/property-options.php:17
+msgid ""
+"Variation One - Simple slider with basic information on right side of slider."
+msgstr ""
+
+#: inc/theme-options/property-options.php:18
+msgid "Variation Two - Thumbnail slider with basic information below slider."
+msgstr ""
+
+#: inc/theme-options/property-options.php:19
+msgid ""
+"Variation Three - Horizontally scrollable slider with basic information "
+"below slider."
+msgstr ""
+
+#: inc/theme-options/property-options.php:30
+msgid "Property Breadcrumbs"
+msgstr ""
+
+#: inc/theme-options/property-options.php:42
+#: partials/property/templates/edit-form.php:34
+#: partials/property/templates/submit-form.php:17
+msgid "Property Description"
+msgstr ""
+
+#: inc/theme-options/property-options.php:50
+msgid "Description Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:62
+msgid "Property Additional Details"
+msgstr ""
+
+#: inc/theme-options/property-options.php:70
+msgid "Additional Details Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:71
+#: partials/property/templates/edit-form.php:373
+#: partials/property/templates/submit-form.php:325
+msgid "Additional Details"
+msgstr ""
+
+#: inc/theme-options/property-options.php:82
+msgid "Property Features"
+msgstr ""
+
+#: inc/theme-options/property-options.php:90
+msgid "Features Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:101
+msgid "Property Floor Plans"
+msgstr ""
+
+#: inc/theme-options/property-options.php:109
+msgid "Floor Plans Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:110
+msgid "Floor Plans"
+msgstr ""
+
+#: inc/theme-options/property-options.php:120
+msgid "Property Video"
+msgstr ""
+
+#: inc/theme-options/property-options.php:128
+msgid "Video Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:129
+msgid "Virtual Tour"
+msgstr ""
+
+#: inc/theme-options/property-options.php:140
+msgid "Property Map"
+msgstr ""
+
+#: inc/theme-options/property-options.php:148
+msgid "Map Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:149
+#: inc/theme-options/search-options.php:26
+#: inc/util/real-estate-functions.php:151
+#: partials/property/templates/edit-form.php:113
+#: partials/property/templates/submit-form.php:90
+msgid "Location"
+msgstr ""
+
+#: inc/theme-options/property-options.php:160
+msgid "Property Attachments"
+msgstr ""
+
+#: inc/theme-options/property-options.php:168
+msgid "Attachments Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:169
+msgid "Attachments"
+msgstr ""
+
+#: inc/theme-options/property-options.php:180
+#: inc/theme-options/property-options.php:189
+msgid "Share This Property"
+msgstr ""
+
+#: inc/theme-options/property-options.php:188
+msgid "Share This Property Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:200
+msgid "Children Properties"
+msgstr ""
+
+#: inc/theme-options/property-options.php:208
+msgid "Children Properties Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:209
+msgid "Sub Properties"
+msgstr ""
+
+#: inc/theme-options/property-options.php:220
+msgid "Property Comments"
+msgstr ""
+
+#: inc/theme-options/property-options.php:233
+msgid "Agent Information"
+msgstr ""
+
+#: inc/theme-options/property-options.php:241
+msgid "Agent Contact Form"
+msgstr ""
+
+#: inc/theme-options/property-options.php:250
+msgid "Agent Contact Form Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:251
+#: partials/agent/single/contact-form.php:17
+msgid "Contact Agent"
+msgstr ""
+
+#: inc/theme-options/property-options.php:262
+#: inc/theme-options/property-options.php:271
+msgid "Similar Properties"
+msgstr ""
+
+#: inc/theme-options/property-options.php:270
+msgid "Similar Properties Title"
+msgstr ""
+
+#: inc/theme-options/property-options.php:277
+msgid "Maximum number of similar properties"
+msgstr ""
+
+#: inc/theme-options/search-options.php:7 inc/widgets/fields/submit-btn.php:2
+#: partials/search/fields/submit-btn.php:2
+#: partials/search/hidden-fields-separator.php:9
+msgid "Search"
+msgstr ""
+
+#: inc/theme-options/search-options.php:9
+msgid "This section contains options related to property search."
+msgstr ""
+
+#: inc/theme-options/search-options.php:16
+msgid "Search Form Title"
+msgstr ""
+
+#: inc/theme-options/search-options.php:17
+msgid "Quick Search"
+msgstr ""
+
+#: inc/theme-options/search-options.php:22
+msgid "Search Form Fields Manager"
+msgstr ""
+
+#: inc/theme-options/search-options.php:25 inc/widgets/fields/keyword.php:2
+#: partials/search/fields/keyword.php:2
+msgid "Keyword"
+msgstr ""
+
+#: inc/theme-options/search-options.php:27
+#: inc/util/real-estate-functions.php:135
+#: partials/property/templates/edit-form.php:122
+#: partials/property/templates/submit-form.php:111
+msgid "Status"
+msgstr ""
+
+#: inc/theme-options/search-options.php:30
+#: inc/util/real-estate-functions.php:120
+#: partials/property/templates/edit-form.php:104
+#: partials/property/templates/submit-form.php:69
+msgid "Type"
+msgstr ""
+
+#: inc/theme-options/search-options.php:31
+msgid "Min Beds"
+msgstr ""
+
+#: inc/theme-options/search-options.php:32
+msgid "Min Baths"
+msgstr ""
+
+#: inc/theme-options/search-options.php:33
+msgid "Min Max Price"
+msgstr ""
+
+#: inc/theme-options/search-options.php:34
+msgid "Min Max Area"
+msgstr ""
+
+#: inc/theme-options/search-options.php:35
+#: inc/util/real-estate-functions.php:36 inc/widgets/fields/property-id.php:2
+#: partials/property/templates/edit-form.php:195
+#: partials/property/templates/edit-form.php:196
+#: partials/property/templates/submit-form.php:196
+#: partials/property/templates/submit-form.php:197
+#: partials/search/fields/property-id.php:2
+msgid "Property ID"
+msgstr ""
+
+#: inc/theme-options/search-options.php:42
+msgid "Property Features in Search Form"
+msgstr ""
+
+#: inc/theme-options/search-options.php:43
+msgid "Property features will be displayed below other search form fields."
+msgstr ""
+
+#: inc/theme-options/search-options.php:51
+msgid "Number of Location Select Boxes"
+msgstr ""
+
+#: inc/theme-options/search-options.php:64
+msgid "Title for 1st Location Select Box"
+msgstr ""
+
+#: inc/theme-options/search-options.php:65
+#: inc/util/real-estate-functions.php:380
+msgid "Country"
+msgstr ""
+
+#: inc/theme-options/search-options.php:71
+msgid "Title for 2nd Location Select Box"
+msgstr ""
+
+#: inc/theme-options/search-options.php:72
+#: inc/util/real-estate-functions.php:374
+#: inc/util/real-estate-functions.php:381
+msgid "State"
+msgstr ""
+
+#: inc/theme-options/search-options.php:78
+msgid "Title for 3rd Location Select Box"
+msgstr ""
+
+#: inc/theme-options/search-options.php:79
+#: inc/util/real-estate-functions.php:359
+#: inc/util/real-estate-functions.php:365
+#: inc/util/real-estate-functions.php:369
+#: inc/util/real-estate-functions.php:375
+#: inc/util/real-estate-functions.php:382
+msgid "City"
+msgstr ""
+
+#: inc/theme-options/search-options.php:85
+msgid "Title for 4th Location Select Box"
+msgstr ""
+
+#: inc/theme-options/search-options.php:86
+#: inc/util/real-estate-functions.php:51 inc/util/real-estate-functions.php:360
+#: inc/util/real-estate-functions.php:370
+#: inc/util/real-estate-functions.php:376
+#: inc/util/real-estate-functions.php:383
+#: partials/property/templates/edit-form.php:176
+#: partials/property/templates/submit-form.php:177
+msgid "Area"
+msgstr ""
+
+#: inc/theme-options/search-options.php:92
+msgid "Values for Minimum Prices Field"
+msgstr ""
+
+#: inc/theme-options/search-options.php:93
+#: inc/theme-options/search-options.php:101
+#: inc/theme-options/search-options.php:119
+#: inc/theme-options/search-options.php:127
+msgid ""
+"Only provide comma separated numbers. Do not add decimal points, dashes, "
+"spaces or currency signs."
+msgstr ""
+
+#: inc/theme-options/search-options.php:100
+msgid "Values for Maximum Prices Field"
+msgstr ""
+
+#: inc/theme-options/search-options.php:108
+msgid "Status That Represents Rent"
+msgstr ""
+
+#: inc/theme-options/search-options.php:109
+msgid ""
+"Visitor expects smaller values for rent prices. So provide the list of "
+"minimum and maximum rent prices below. The rent prices will be displayed "
+"based on rent status selected above."
+msgstr ""
+
+#: inc/theme-options/search-options.php:118
+msgid "Values for Minimum Rent Prices Field"
+msgstr ""
+
+#: inc/theme-options/search-options.php:126
+msgid "Values for Maximum Rent Prices Field"
+msgstr ""
+
+#: inc/theme-options/search-options.php:135
+msgid "Properties Search Page"
+msgstr ""
+
+#: inc/theme-options/search-options.php:136
+msgid "Select a page for properties search results."
+msgstr ""
+
+#: inc/theme-options/search-options.php:137
+msgid "Make sure the selected page is using Property Search template."
+msgstr ""
+
+#: inc/theme-options/search-options.php:142
+msgid "What to Display Below Header on Property Search Page"
+msgstr ""
+
+#: inc/theme-options/search-options.php:152
+msgid "Number of Properties on Search Page"
+msgstr ""
+
+#: inc/theme-options/search-options.php:171
+msgid "Search Page Layout"
+msgstr ""
+
+#: inc/theme-options/search-options.php:173
+msgid "List Layout - Sidebar"
+msgstr ""
+
+#: inc/theme-options/search-options.php:174
+msgid "Grid Layout - Sidebar"
+msgstr ""
+
+#: inc/theme-options/search-options.php:184
+msgid "Default Order of Search Results"
+msgstr ""
+
+#: inc/theme-options/styles-options.php:8
+msgid "Styles"
+msgstr ""
+
+#: inc/theme-options/styles-options.php:10
+msgid "This section contains styles related options."
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:8
+msgid "Basic"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:10
+msgid "This sub section contains basic styles options."
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:18
+msgid "Main Background"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:19
+msgid "Configure body background of your choice. ( default:#eff1f5 )"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:25
+msgid "Do you want to change fonts?"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:27
+msgid "Yes"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:28
+msgid "No"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:33
+msgid "Headings Font"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:34
+msgid "Select the font for headings."
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:35
+#: inc/theme-options/styles-options/basic-styles-options.php:55
+msgid "Varela Round is default font."
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:53
+msgid "Text Font"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:54
+msgid "Select the font for body text."
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:74
+msgid "Headings Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:85
+msgid "Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:94
+msgid "Quote Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:103
+msgid "Link Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:115
+msgid "Link Color in Page and Post Contents"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:127
+msgid "Animation"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:128
+msgid "You can enable or disable CSS3 animation on various components."
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:136
+msgid "Background Color of Scroll to Top"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:146
+msgid "Icon Color of Scroll to Top"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:156
+msgid "Quick CSS"
+msgstr ""
+
+#: inc/theme-options/styles-options/basic-styles-options.php:157
+msgid ""
+"You can use this box for some quick css changes. For big changes, Use the "
+"custom.css file in css folder. In case of child theme please use style.css "
+"file in child theme."
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:10
+msgid "This section contains featured properties styles options."
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:24
+msgid "Background Color for Odd Properties"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:37
+msgid "Background Color for Even Properties"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:52
+#: inc/theme-options/styles-options/properties-styles-options.php:347
+msgid "Background Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:67
+msgid "Overall Text Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:79
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:200
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:352
+#: inc/theme-options/styles-options/properties-styles-options.php:59
+#: inc/theme-options/styles-options/properties-styles-options.php:205
+#: inc/theme-options/styles-options/properties-styles-options.php:359
+#: inc/theme-options/styles-options/properties-styles-options.php:539
+msgid "Title Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:93
+msgid "Title Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:105
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:227
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:366
+#: inc/theme-options/styles-options/properties-styles-options.php:75
+#: inc/theme-options/styles-options/properties-styles-options.php:221
+#: inc/theme-options/styles-options/properties-styles-options.php:372
+#: inc/theme-options/styles-options/properties-styles-options.php:552
+msgid "Price Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:116
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:239
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:378
+#: inc/theme-options/styles-options/properties-styles-options.php:88
+#: inc/theme-options/styles-options/properties-styles-options.php:235
+#: inc/theme-options/styles-options/properties-styles-options.php:383
+#: inc/theme-options/styles-options/properties-styles-options.php:478
+msgid "Status Tag Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:131
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:254
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:393
+#: inc/theme-options/styles-options/properties-styles-options.php:105
+#: inc/theme-options/styles-options/properties-styles-options.php:252
+#: inc/theme-options/styles-options/properties-styles-options.php:397
+#: inc/theme-options/styles-options/properties-styles-options.php:492
+msgid "Status Tag Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:144
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:267
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:406
+#: inc/theme-options/styles-options/properties-styles-options.php:120
+#: inc/theme-options/styles-options/properties-styles-options.php:267
+#: inc/theme-options/styles-options/properties-styles-options.php:409
+#: inc/theme-options/styles-options/properties-styles-options.php:504
+msgid "Status Tag Background Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:162
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:310
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:45
+msgid "Section Title Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:175
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:323
+#: inc/theme-options/styles-options/properties-styles-options.php:516
+msgid "Description Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:188
+msgid "Description Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:215
+msgid "Title Bottom Border Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:279
+#: inc/theme-options/styles-options/properties-styles-options.php:162
+#: inc/theme-options/styles-options/properties-styles-options.php:308
+#: inc/theme-options/styles-options/properties-styles-options.php:431
+msgid "Meta Icons Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:298
+msgid "Section Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:340
+#: inc/theme-options/styles-options/properties-styles-options.php:568
+msgid "Description and Meta Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:419
+#: inc/theme-options/styles-options/properties-styles-options.php:580
+msgid "Meta Wrapper Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/featured-properties-styles-options.php:431
+#: inc/theme-options/styles-options/properties-styles-options.php:603
+msgid "Meta value Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:10
+msgid "This sub section contains footer styles options."
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:17
+msgid "Overall Footer Style"
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:19
+msgid "Light"
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:20
+msgid "Dark"
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:38
+#: inc/theme-options/styles-options/footer-styles-options.php:100
+msgid "Footer Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:61
+#: inc/theme-options/styles-options/footer-styles-options.php:123
+msgid "Footer Headings Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:71
+#: inc/theme-options/styles-options/footer-styles-options.php:133
+msgid "Footer Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/footer-styles-options.php:80
+#: inc/theme-options/styles-options/footer-styles-options.php:142
+msgid "Footer Link Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:10
+msgid "This sub section contains header styles options."
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:25
+msgid "Menu Button Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:37
+msgid "Menu Button Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:60
+msgid "Main Menu Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:70
+#: inc/theme-options/styles-options/header-styles-options.php:522
+#: inc/theme-options/styles-options/header-styles-options.php:696
+msgid "Main Menu Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:81
+#: inc/theme-options/styles-options/header-styles-options.php:533
+#: inc/theme-options/styles-options/header-styles-options.php:707
+msgid "Main Menu Text Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:97
+#: inc/theme-options/styles-options/header-styles-options.php:548
+#: inc/theme-options/styles-options/header-styles-options.php:723
+msgid "Main Menu Hover and Dropdown Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:107
+#: inc/theme-options/styles-options/header-styles-options.php:558
+#: inc/theme-options/styles-options/header-styles-options.php:733
+msgid "Main Menu Dropdown Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:118
+#: inc/theme-options/styles-options/header-styles-options.php:569
+#: inc/theme-options/styles-options/header-styles-options.php:744
+msgid "Main Menu Dropdown Text Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:130
+#: inc/theme-options/styles-options/header-styles-options.php:581
+#: inc/theme-options/styles-options/header-styles-options.php:756
+msgid "Main Menu Dropdown Separator Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:141
+msgid "Main Menu Close Button Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:153
+msgid "Main Menu Close Button Icon Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:177
+msgid "Logo Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:186
+msgid "Logo Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:200
+msgid "Header Tagline Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:221
+msgid "Header Top Bar Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:230
+msgid "User Navigation Link Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:254
+msgid "Phone Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:264
+#: inc/theme-options/styles-options/header-styles-options.php:494
+#: inc/theme-options/styles-options/header-styles-options.php:668
+msgid "Phone Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:274
+#: inc/theme-options/styles-options/header-styles-options.php:504
+#: inc/theme-options/styles-options/header-styles-options.php:678
+msgid "Phone Icon Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:298
+msgid "Search Fields Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:319
+msgid "Search Fields Background Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:333
+msgid "Search Fields Dropdown Background Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:344
+msgid "Search Fields Expand & Collapse Toggle Button Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:356
+msgid "Search Fields Expand & Collapse Toggle Button Icon Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:368
+msgid "Search Button Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:392
+#: inc/theme-options/styles-options/header-styles-options.php:599
+msgid "Header Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:401
+#: inc/theme-options/styles-options/header-styles-options.php:608
+msgid "Text Logo Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:415
+#: inc/theme-options/styles-options/header-styles-options.php:622
+msgid "Tagline Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:434
+#: inc/theme-options/styles-options/header-styles-options.php:640
+msgid "Border Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:444
+msgid "Social Icons Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:455
+msgid "Submit Button Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:467
+msgid "Submit Button Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:478
+#: inc/theme-options/styles-options/header-styles-options.php:649
+msgid "User Navigation Colors"
+msgstr ""
+
+#: inc/theme-options/styles-options/header-styles-options.php:641
+msgid "This border appears on smaller screen sizes."
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:10
+msgid "This section contains how it works section styles options."
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:17
+#: inc/theme-options/styles-options/properties-styles-options.php:45
+#: inc/theme-options/styles-options/properties-styles-options.php:191
+#: inc/theme-options/styles-options/properties-styles-options.php:334
+msgid "Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:29
+#: inc/theme-options/styles-options/slider-styles-options.php:23
+#: inc/theme-options/styles-options/slider-styles-options.php:214
+msgid "Overlay Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:56
+msgid "Overall Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:67
+msgid "Title Color in Columns"
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:78
+msgid "Button Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:92
+#: inc/theme-options/styles-options/slider-styles-options.php:185
+#: inc/theme-options/styles-options/slider-styles-options.php:320
+msgid "Button Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/how-it-works-styles-options.php:107
+#: inc/theme-options/styles-options/slider-styles-options.php:197
+msgid "Button Background Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:8
+msgid "Home Properties"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:10
+msgid "This section contains home properties styles options."
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:18
+msgid "Home Properties Variation One"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:19
+msgid "This variation consists of two different designs."
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:32
+msgid "Property Design One"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:136
+#: inc/theme-options/styles-options/properties-styles-options.php:283
+msgid "Meta Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:151
+#: inc/theme-options/styles-options/properties-styles-options.php:297
+msgid "Meta Value Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:178
+msgid "Property Design Two"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:324
+msgid "Home Properties Variation Two"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:420
+msgid "Meta and Price Text Color on hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:447
+msgid "Home Properties Variation Three"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:456
+msgid "Welcome Board Title Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:467
+msgid "Welcome Board Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:528
+msgid "Description Border Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/properties-styles-options.php:592
+msgid "Meta Wrpper Top Border Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:10
+msgid "This section contains properties slider styles options."
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:36
+#: inc/theme-options/styles-options/slider-styles-options.php:227
+msgid "Property Title Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:50
+#: inc/theme-options/styles-options/slider-styles-options.php:241
+msgid "Property Price Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:62
+#: inc/theme-options/styles-options/slider-styles-options.php:253
+msgid "Property Status Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:77
+#: inc/theme-options/styles-options/slider-styles-options.php:268
+msgid "Property Status Background Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:90
+#: inc/theme-options/styles-options/slider-styles-options.php:281
+msgid "Property Status Background Color on Hover"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:102
+msgid "Property Meta Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:117
+msgid "Property Meta Value and Unit Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:129
+msgid "Property Meta Icons Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:147
+msgid "Overlay Top Border Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:159
+msgid "Overlay Middle Border Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:170
+#: inc/theme-options/styles-options/slider-styles-options.php:305
+msgid "Button Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:293
+msgid "Property Description Text Color"
+msgstr ""
+
+#: inc/theme-options/styles-options/slider-styles-options.php:332
+msgid "Button Hover Background Color"
+msgstr ""
+
+#: inc/util/basic-functions.php:280
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/util/basic-functions.php:281
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: inc/util/basic-functions.php:307
+msgid "<i class=\"fa fa-angle-left\"></i>"
+msgstr ""
+
+#: inc/util/basic-functions.php:308
+msgid "<i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#: inc/util/basic-functions.php:592
+msgid "Pingback:"
+msgstr ""
+
+#: inc/util/basic-functions.php:592
+msgid "(Edit)"
+msgstr ""
+
+#: inc/util/basic-functions.php:615
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: inc/util/basic-functions.php:648
+msgid ""
+"Images should have minimum size of 850px by 600px. Bigger size images will "
+"be cropped automatically."
+msgstr ""
+
+#: inc/util/basic-functions.php:662
+msgid ""
+"The recommended image size is 2000px by 1000px. You can use a bigger or "
+"smaller size but keep the same height to width ratio and use exactly same "
+"size images for all slider entries."
+msgstr ""
+
+#: inc/util/basic-functions.php:676
+msgid ""
+"Provided image will be used as a video place holder and when user will click "
+"on it the video will be opened in a lightbox. Minimum required image size is "
+"850px by 600px."
+msgstr ""
+
+#: inc/util/contact-functions.php:32 inc/util/contact-functions.php:169
+msgid "Unverified Nonce!"
+msgstr ""
+
+#: inc/util/contact-functions.php:72 inc/util/contact-functions.php:205
+#: inc/util/member-functions.php:605
+msgid "reCAPTCHA Failed:"
+msgstr ""
+
+#: inc/util/contact-functions.php:85 inc/util/contact-functions.php:218
+msgid "Target Email address is not properly configured!"
+msgstr ""
+
+#: inc/util/contact-functions.php:101 inc/util/contact-functions.php:244
+msgid "Provided Email address is invalid!"
+msgstr ""
+
+#: inc/util/contact-functions.php:106
+msgid "New message sent by"
+msgstr ""
+
+#: inc/util/contact-functions.php:106
+msgid "using contact form at"
+msgstr ""
+
+#: inc/util/contact-functions.php:107
+msgid "You have received a message from: "
+msgstr ""
+
+#: inc/util/contact-functions.php:110
+msgid "Phone Number : "
+msgstr ""
+
+#: inc/util/contact-functions.php:113 inc/util/contact-functions.php:261
+msgid "Their additional message is as follows."
+msgstr ""
+
+#: inc/util/contact-functions.php:115 inc/util/contact-functions.php:263
+#, php-format
+msgid "You can contact %1$s via email %2$s"
+msgstr ""
+
+#: inc/util/contact-functions.php:128 inc/util/contact-functions.php:325
+msgid "Message Sent Successfully!"
+msgstr ""
+
+#: inc/util/contact-functions.php:133 inc/util/contact-functions.php:330
+msgid "Server Error: WordPress mail function failed!"
+msgstr ""
+
+#: inc/util/contact-functions.php:141 inc/util/contact-functions.php:338
+msgid "Invalid Request !"
+msgstr ""
+
+#: inc/util/contact-functions.php:249
+#, php-format
+msgid "New message sent by %1$s using agent contact form at %2$s"
+msgstr ""
+
+#: inc/util/contact-functions.php:251
+msgid "You have received a message from:"
+msgstr ""
+
+#: inc/util/contact-functions.php:254
+msgid "Property Title :"
+msgstr ""
+
+#: inc/util/contact-functions.php:258
+msgid "Property URL :"
+msgstr ""
+
+#: inc/util/contact-functions.php:266
+#, php-format
+msgid "You can also contact %1$s via contact number %2$s"
+msgstr ""
+
+#: inc/util/favorites-functions.php:18 inc/util/favorites-functions.php:40
+#: partials/property/single/favorite-and-print.php:10
+msgid "Added to Favorites"
+msgstr ""
+
+#: inc/util/favorites-functions.php:24 inc/util/favorites-functions.php:45
+msgid "Failed!"
+msgstr ""
+
+#: inc/util/favorites-functions.php:52
+msgid "Invalid parameters"
+msgstr ""
+
+#: inc/util/favorites-functions.php:124 inc/util/favorites-functions.php:145
+msgid "Failed to remove!"
+msgstr ""
+
+#: inc/util/favorites-functions.php:138
+msgid "Removed Successfully!"
+msgstr ""
+
+#: inc/util/favorites-functions.php:157
+msgid "Invalid parameters!"
+msgstr ""
+
+#: inc/util/member-functions.php:86 partials/members/login.php:4
+#: partials/members/login.php:27 partials/members/register.php:50
+#: partials/members/reset-password.php:45
+msgid "Login"
+msgstr ""
+
+#: inc/util/member-functions.php:117
+msgid "* Wrong username or password."
+msgstr ""
+
+#: inc/util/member-functions.php:123
+msgid "successful. Redirecting..."
+msgstr ""
+
+#: inc/util/member-functions.php:167
+msgid "This username already exists."
+msgstr ""
+
+#: inc/util/member-functions.php:172
+msgid "This email is already registered."
+msgstr ""
+
+#: inc/util/member-functions.php:183
+msgid "Registration is complete. Check your email for details!"
+msgstr ""
+
+#: inc/util/member-functions.php:210
+msgid "Provide a valid username or email address!"
+msgstr ""
+
+#: inc/util/member-functions.php:216
+msgid "No user found for given email!"
+msgstr ""
+
+#: inc/util/member-functions.php:222
+msgid "No user found for given username!"
+msgstr ""
+
+#: inc/util/member-functions.php:225
+msgid "Invalid username or email!"
+msgstr ""
+
+#: inc/util/member-functions.php:257
+#, php-format
+msgid "Your New Password For %s"
+msgstr ""
+
+#: inc/util/member-functions.php:258
+#, php-format
+msgid "Your new password is: %s"
+msgstr ""
+
+#: inc/util/member-functions.php:271
+msgid "Check your email for new password"
+msgstr ""
+
+#: inc/util/member-functions.php:273
+msgid "Failed to send you new password email!"
+msgstr ""
+
+#: inc/util/member-functions.php:277
+msgid "Oops! Something went wrong while resetting your password!"
+msgstr ""
+
+#: inc/util/member-functions.php:323
+#, php-format
+msgid "New user registration on your site %s:"
+msgstr ""
+
+#: inc/util/member-functions.php:324
+#, php-format
+msgid "Username: %s"
+msgstr ""
+
+#: inc/util/member-functions.php:325
+#, php-format
+msgid "Email: %s"
+msgstr ""
+
+#: inc/util/member-functions.php:327
+#, php-format
+msgid "[%s] New User Registration"
+msgstr ""
+
+#: inc/util/member-functions.php:332 inc/util/member-functions.php:338
+#, php-format
+msgid "Welcome to %s"
+msgstr ""
+
+#: inc/util/member-functions.php:333
+#, php-format
+msgid "Your username is: %s"
+msgstr ""
+
+#: inc/util/member-functions.php:334
+#, php-format
+msgid "You can login using following password: %s"
+msgstr ""
+
+#: inc/util/member-functions.php:335
+msgid "It is highly recommended to change your password after login."
+msgstr ""
+
+#: inc/util/member-functions.php:336
+msgid "For more details visit:"
+msgstr ""
+
+#: inc/util/member-functions.php:354 inc/util/member-functions.php:438
+#: inc/util/profile-functions.php:13 inc/util/profile-functions.php:254
+#: page-templates/submit-property.php:326
+msgid "Security check failed!"
+msgstr ""
+
+#: inc/util/member-functions.php:394 inc/util/profile-functions.php:52
+msgid "Image upload failed!"
+msgstr ""
+
+#: inc/util/member-functions.php:497
+#, php-format
+msgid "A new property is submitted by %s at %s"
+msgstr ""
+
+#: inc/util/member-functions.php:506
+msgid "You can preview it here :"
+msgstr ""
+
+#: inc/util/member-functions.php:513
+#, php-format
+msgid "Message to the Reviewer : %s"
+msgstr ""
+
+#: inc/util/member-functions.php:518
+#, php-format
+msgid "You can contact the submitter %1$s via email %2$s"
+msgstr ""
+
+#: inc/util/profile-functions.php:140
+msgid "Provided email address is invalid."
+msgstr ""
+
+#: inc/util/profile-functions.php:145
+msgid "Provided email is already in use by another user. Try a different one."
+msgstr ""
+
+#: inc/util/profile-functions.php:235
+msgid "The passwords you entered do not match.  Your password is not updated."
+msgstr ""
+
+#: inc/util/profile-functions.php:247
+msgid "Profile information is updated successfully!"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:75
+#: partials/property/single/floor-plans.php:53
+#: partials/property/templates/edit-form.php:136
+#: partials/property/templates/submit-form.php:137
+msgid "Bedrooms"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:90
+#: partials/property/single/floor-plans.php:64
+#: partials/property/templates/edit-form.php:143
+#: partials/property/templates/submit-form.php:144
+msgid "Bathrooms"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:105
+#: partials/property/templates/edit-form.php:150
+#: partials/property/templates/submit-form.php:151
+msgid "Garages"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:275
+msgid "Job Title"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:276 page-templates/edit-profile.php:156
+msgid "Mobile Number"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:277 page-templates/edit-profile.php:165
+msgid "Office Number"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:278 page-templates/edit-profile.php:180
+msgid "Fax Number"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:453
+#: inc/util/real-estate-functions.php:506
+#: inc/util/real-estate-functions.php:508 inc/widgets/fields/locations.php:21
+#: partials/search/fields/locations.php:21
+msgid "(Any)"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:727
+#: inc/util/real-estate-functions.php:729
+msgid "Min Price (Any)"
+msgstr ""
+
+#: inc/util/real-estate-functions.php:787
+#: inc/util/real-estate-functions.php:789
+msgid "Max Price (Any)"
+msgstr ""
+
+#: inc/widgets/advance-search-widget.php:10
+msgid "This widget displays properties search form."
+msgstr ""
+
+#: inc/widgets/advance-search-widget.php:11
+msgid "Inspiry Property Search"
+msgstr ""
+
+#: inc/widgets/advance-search-widget.php:120
+msgid "Find Your Home"
+msgstr ""
+
+#: inc/widgets/advance-search-widget.php:124
+#: inc/widgets/featured-properties-widget.php:112
+msgid "Widget Title"
+msgstr ""
+
+#: inc/widgets/featured-properties-widget.php:8
+msgid "Displays random or recent featured properties."
+msgstr ""
+
+#: inc/widgets/featured-properties-widget.php:10
+msgid "Inspiry Featured Properties"
+msgstr ""
+
+#: inc/widgets/featured-properties-widget.php:77
+msgid "Know More"
+msgstr ""
+
+#: inc/widgets/featured-properties-widget.php:89
+msgid "No featured property found!"
+msgstr ""
+
+#: inc/widgets/featured-properties-widget.php:116
+msgid "Number of Properties"
+msgstr ""
+
+#: inc/widgets/featured-properties-widget.php:120
+msgid "Sort By:"
+msgstr ""
+
+#: inc/widgets/featured-properties-widget.php:122
+msgid "Most Recent"
+msgstr ""
+
+#: inc/widgets/fields/baths.php:3 partials/search/fields/baths.php:3
+msgid "Min Baths (Any)"
+msgstr ""
+
+#: inc/widgets/fields/beds.php:3 partials/search/fields/beds.php:3
+msgid "Min Beds (Any)"
+msgstr ""
+
+#: inc/widgets/fields/features.php:16 partials/search/fields/features.php:16
+msgid "Looking for certain features"
+msgstr ""
+
+#: inc/widgets/fields/max-area.php:3 partials/search/fields/max-area.php:3
+msgid "Max Area (sq ft)"
+msgstr ""
+
+#: inc/widgets/fields/max-area.php:3 inc/widgets/fields/min-area.php:3
+#: partials/search/fields/max-area.php:3 partials/search/fields/min-area.php:3
+msgid "Please only provide digits!"
+msgstr ""
+
+#: inc/widgets/fields/min-area.php:3 partials/search/fields/min-area.php:3
+msgid "Min Area (sq ft)"
+msgstr ""
+
+#: inc/widgets/fields/property-status.php:3
+#: partials/search/fields/property-status.php:3
+msgid "Property Status"
+msgstr ""
+
+#: inc/widgets/fields/property-type.php:3
+#: partials/search/fields/property-type.php:3
+msgid "Property Type"
+msgstr ""
+
+#: inc/widgets/social-icons-widget.php:25
+msgid "RSS URL"
+msgstr ""
+
+#: inc/widgets/social-icons-widget.php:32
+msgid "Display social media icons."
+msgstr ""
+
+#: index.php:68 loop.php:69
+msgid "Read More"
+msgstr ""
+
+#: page-templates/agents-list-2-columns.php:63
+#: page-templates/agents-list-3-columns.php:63
+#: page-templates/agents-list-4-columns.php:63
+msgid "No agent found!"
+msgstr ""
+
+#: page-templates/contact.php:211 partials/property/templates/edit-form.php:86
+#: partials/property/templates/submit-form.php:51
+msgid "Address"
+msgstr ""
+
+#: page-templates/contact.php:272
+msgid "Make a Call"
+msgstr ""
+
+#: page-templates/contact.php:367
+msgid "Name*"
+msgstr ""
+
+#: page-templates/contact.php:367 partials/agent/single/contact-form.php:24
+#: partials/property/single/contact-form.php:23
+msgid "* Please provide your name"
+msgstr ""
+
+#: page-templates/contact.php:369
+msgid "Email*"
+msgstr ""
+
+#: page-templates/contact.php:369
+msgid "* Please provide a valid email address"
+msgstr ""
+
+#: page-templates/contact.php:371
+msgid "Number"
+msgstr ""
+
+#: page-templates/contact.php:373
+msgid "Message*"
+msgstr ""
+
+#: page-templates/contact.php:373 partials/agent/single/contact-form.php:41
+#: partials/property/single/contact-form.php:40
+msgid "* Please provide your message"
+msgstr ""
+
+#: page-templates/contact.php:378 partials/agent/single/contact-form.php:51
+#: partials/property/single/contact-form.php:54
+msgid "Send Message"
+msgstr ""
+
+#: page-templates/edit-profile.php:76
+msgid "Profile image should have minimum width and height of 220px."
+msgstr ""
+
+#: page-templates/edit-profile.php:77
+msgid "Make sure to save changes after uploading the new image."
+msgstr ""
+
+#: page-templates/edit-profile.php:81
+msgid "Change"
+msgstr ""
+
+#: page-templates/edit-profile.php:85
+msgid "Remove"
+msgstr ""
+
+#: page-templates/edit-profile.php:100
+msgid "Biographical Information"
+msgstr ""
+
+#: page-templates/edit-profile.php:112
+msgid "First Name"
+msgstr ""
+
+#: page-templates/edit-profile.php:115
+msgid "* Provide First Name!"
+msgstr ""
+
+#: page-templates/edit-profile.php:122
+msgid "Last Name"
+msgstr ""
+
+#: page-templates/edit-profile.php:125
+msgid "* Provide Last Name!"
+msgstr ""
+
+#: page-templates/edit-profile.php:131
+msgid "Display Name"
+msgstr ""
+
+#: page-templates/edit-profile.php:134
+msgid "* Provide Display Name!"
+msgstr ""
+
+#: page-templates/edit-profile.php:146
+#: partials/agent/single/contact-form.php:28 partials/members/register.php:18
+#: partials/members/register.php:21
+#: partials/property/single/contact-form.php:27
+msgid "Email"
+msgstr ""
+
+#: page-templates/edit-profile.php:149
+msgid "* Provide Valid Email Address!"
+msgstr ""
+
+#: page-templates/edit-profile.php:159 page-templates/edit-profile.php:168
+#: page-templates/edit-profile.php:183
+msgid "* Only Digits are allowed!"
+msgstr ""
+
+#: page-templates/edit-profile.php:192 page-templates/edit-profile.php:201
+#: page-templates/edit-profile.php:216 page-templates/edit-profile.php:225
+msgid "* Provide Valid URL!"
+msgstr ""
+
+#: page-templates/edit-profile.php:239 partials/members/login.php:18
+#: partials/members/login.php:21
+msgid "Password"
+msgstr ""
+
+#: page-templates/edit-profile.php:240
+msgid "( Fill it only when you want to change )"
+msgstr ""
+
+#: page-templates/edit-profile.php:248
+msgid "Confirm Password"
+msgstr ""
+
+#: page-templates/edit-profile.php:270
+msgid "Save Changes"
+msgstr ""
+
+#: page-templates/edit-profile.php:282 page-templates/my-properties.php:213
+#: page-templates/submit-property.php:341
+msgid "Login Required"
+msgstr ""
+
+#: page-templates/edit-profile.php:282
+msgid "You need to login to edit your profile!"
+msgstr ""
+
+#: page-templates/favorites.php:97 page-templates/my-properties.php:209
+#: page-templates/submit-property.php:326
+#: partials/property/templates/edit-form.php:469
+#: partials/property/templates/edit-form.php:473
+msgid "Oops"
+msgstr ""
+
+#: page-templates/favorites.php:97
+msgid "You have not added any property to favorites!"
+msgstr ""
+
+#: page-templates/full-width.php:35 page.php:34 single.php:64
+msgid "Pages:"
+msgstr ""
+
+#: page-templates/full-width.php:42 page.php:41
+msgid "Edit"
+msgstr ""
+
+#: page-templates/my-properties.php:30
+msgid "Property Removed!"
+msgstr ""
+
+#: page-templates/my-properties.php:34
+msgid "Property Added Successfully!"
+msgstr ""
+
+#: page-templates/my-properties.php:38
+msgid "Property Updated Successfully!"
+msgstr ""
+
+#: page-templates/my-properties.php:101
+msgid "Posted on:"
+msgstr ""
+
+#: page-templates/my-properties.php:106
+msgid "Last Modified:"
+msgstr ""
+
+#: page-templates/my-properties.php:111
+msgid "Status:"
+msgstr ""
+
+#: page-templates/my-properties.php:130
+msgid "Payment Completed"
+msgstr ""
+
+#: page-templates/my-properties.php:209
+msgid "It appears that you have not submitted any property yet!"
+msgstr ""
+
+#: page-templates/my-properties.php:213
+msgid "You need to login to view your properties!"
+msgstr ""
+
+#: page-templates/submit-property.php:329
+msgid "Submitted"
+msgstr ""
+
+#: page-templates/submit-property.php:329
+msgid "Property successfully submitted."
+msgstr ""
+
+#: page-templates/submit-property.php:331
+msgid "Updated"
+msgstr ""
+
+#: page-templates/submit-property.php:331
+msgid "Property updated successfully."
+msgstr ""
+
+#: page-templates/submit-property.php:341
+msgid "You need to login to submit a property!"
+msgstr ""
+
+#: partials/agent/single/agent-info.php:91 partials/common/author-info.php:89
+#: partials/property/single/agent-information.php:106
+#: partials/property/single/author-information.php:107
+msgid "Mobile:"
+msgstr ""
+
+#: partials/agent/single/agent-info.php:99 partials/common/author-info.php:96
+#: partials/property/single/agent-information.php:114
+#: partials/property/single/author-information.php:115
+msgid "Office:"
+msgstr ""
+
+#: partials/agent/single/agent-info.php:107 partials/common/author-info.php:103
+#: partials/property/single/agent-information.php:122
+#: partials/property/single/author-information.php:123
+msgid "Fax:"
+msgstr ""
+
+#: partials/agent/single/agent-info.php:127
+#: partials/property/single/agent-information.php:143
+#: partials/property/single/author-information.php:145
+msgid "View Profile"
+msgstr ""
+
+#: partials/agent/single/contact-form.php:24
+#: partials/property/single/contact-form.php:23
+msgid "Name"
+msgstr ""
+
+#: partials/agent/single/contact-form.php:28
+#: partials/property/single/contact-form.php:27
+msgid "* Please provide valid email address"
+msgstr ""
+
+#: partials/agent/single/contact-form.php:36
+#: partials/property/single/contact-form.php:35
+msgid "Contact Number"
+msgstr ""
+
+#: partials/agent/single/contact-form.php:36
+#: partials/property/single/contact-form.php:35
+msgid "* Please provide your contact number"
+msgstr ""
+
+#: partials/agent/single/contact-form.php:41
+#: partials/property/single/contact-form.php:40
+msgid "Message"
+msgstr ""
+
+#: partials/header/banner.php:79
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: partials/header/user-nav.php:44
+msgid "Favorites"
+msgstr ""
+
+#: partials/header/user-nav.php:66
+msgid "Logout"
+msgstr ""
+
+#: partials/header/user-nav.php:72
+msgid "Profile"
+msgstr ""
+
+#: partials/header/user-nav.php:79
+msgid "My Properties"
+msgstr ""
+
+#: partials/header/user-nav.php:86
+msgid "Submit"
+msgstr ""
+
+#: partials/header/user-nav.php:100
+msgid "Login / Sign up"
+msgstr ""
+
+#: partials/header/user-nav.php:106
+#: partials/property/templates/submit-form.php:388
+msgid "Submit Property"
+msgstr ""
+
+#: partials/home/featured-three.php:106 partials/home/properties-three.php:120
+msgid "Bed"
+msgid_plural "Beds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: partials/home/featured-three.php:119 partials/home/properties-three.php:133
+msgid "Bath"
+msgid_plural "Baths"
+msgstr[0] ""
+msgstr[1] ""
+
+#: partials/home/featured-three.php:132 partials/home/properties-four.php:127
+#: partials/home/properties-three.php:146
+msgid "Garage"
+msgid_plural "Garages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: partials/home/news.php:160 partials/post/entry-meta.php:4
+#, php-format
+msgctxt "author byline"
+msgid "By %s"
+msgstr ""
+
+#: partials/home/properties-four.php:99
+#: partials/property/single/floor-plans.php:53
+msgid "Bedroom"
+msgid_plural "Bedrooms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: partials/home/properties-four.php:113
+#: partials/property/single/floor-plans.php:64
+msgid "Bathroom"
+msgid_plural "Bathrooms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: partials/members/login.php:11 partials/members/login.php:14
+#: partials/members/register.php:11 partials/members/register.php:14
+msgid "Username"
+msgstr ""
+
+#: partials/members/login.php:13
+msgid "* Provide your username"
+msgstr ""
+
+#: partials/members/login.php:20
+msgid "* Provide your password"
+msgstr ""
+
+#: partials/members/login.php:65 partials/members/reset-password.php:37
+msgid "Not a Member?"
+msgstr ""
+
+#: partials/members/login.php:66 partials/members/reset-password.php:38
+msgid "Sign up now"
+msgstr ""
+
+#: partials/members/login.php:72 partials/members/register.php:53
+msgid "Forgot Password?"
+msgstr ""
+
+#: partials/members/register.php:13
+msgid "* Please enter a valid username."
+msgstr ""
+
+#: partials/members/register.php:20
+msgid "* Please provide valid email address!"
+msgstr ""
+
+#: partials/members/reset-password.php:4
+msgid "Forgot Password"
+msgstr ""
+
+#: partials/members/reset-password.php:11
+#: partials/members/reset-password.php:14
+msgid "Username or Email"
+msgstr ""
+
+#: partials/members/reset-password.php:13
+msgid "* Provide a valid username or email!"
+msgstr ""
+
+#: partials/members/reset-password.php:18
+msgid "Reset Password"
+msgstr ""
+
+#: partials/post/entry-meta.php:12
+msgid "Posted in"
+msgstr ""
+
+#: partials/post/entry-meta.php:13
+msgid "On "
+msgstr ""
+
+#: partials/property/single/favorite-and-print.php:14
+msgid "Add to Favorites"
+msgstr ""
+
+#: partials/property/single/favorite-and-print.php:27
+msgid "Print"
+msgstr ""
+
+#: partials/property/single/share.php:10
+msgid "Share"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:29
+#: partials/property/templates/submit-form.php:12
+msgid "Property Title"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:30
+#: partials/property/templates/submit-form.php:13
+msgid "* Please provide property title!"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:59
+#: partials/property/templates/submit-form.php:39
+msgid "Parent Property"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:87
+#: partials/property/templates/submit-form.php:52
+msgid "* Please provide a property address!"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:89
+#: partials/property/templates/submit-form.php:54
+msgid "Find Address"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:137
+#: partials/property/templates/edit-form.php:144
+#: partials/property/templates/edit-form.php:151
+#: partials/property/templates/edit-form.php:163
+#: partials/property/templates/edit-form.php:177
+#: partials/property/templates/submit-form.php:138
+#: partials/property/templates/submit-form.php:145
+#: partials/property/templates/submit-form.php:152
+#: partials/property/templates/submit-form.php:164
+#: partials/property/templates/submit-form.php:178
+msgid "* Only numbers allowed!"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:162
+#: partials/property/templates/submit-form.php:163
+msgid "Sale OR Rent Price"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:169
+#: partials/property/templates/submit-form.php:170
+msgid "Price Postfix Text"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:188
+#: partials/property/templates/submit-form.php:189
+msgid "Area Postfix Text"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:202
+#: partials/property/templates/submit-form.php:203
+msgid "Virtual Tour Video URL"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:240
+#: partials/property/templates/submit-form.php:219
+msgid "Drag and drop images here"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:242
+#: partials/property/templates/submit-form.php:221
+msgid "OR"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:244
+#: partials/property/templates/submit-form.php:223
+msgid "Select Images"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:249
+#: partials/property/templates/submit-form.php:228
+msgid ""
+"An image should have minimum width of 850px and minimum height of 600px."
+msgstr ""
+
+#: partials/property/templates/edit-form.php:250
+#: partials/property/templates/submit-form.php:229
+msgid ""
+"You can mark an image as featured by clicking the star icon, Otherwise first "
+"image will be considered featured image."
+msgstr ""
+
+#: partials/property/templates/edit-form.php:260
+#: partials/property/templates/submit-form.php:238
+msgid "What to display in agent information box ?"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:268
+msgid "( Agent information box will not be displayed )"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:274
+#: partials/property/templates/submit-form.php:252
+msgid "My Profile Information"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:282
+#: partials/property/templates/submit-form.php:260
+msgid "( Edit Profile Information )"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:293
+#: partials/property/templates/submit-form.php:271
+msgid "Display Agent Information"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:315
+#: partials/property/templates/submit-form.php:283
+msgid "Mark this property as featured property"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:378
+#: partials/property/templates/submit-form.php:330
+msgid "Value"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:456
+msgid "Update Property"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:469
+msgid "It appears that, Provided property does not belong to you!"
+msgstr ""
+
+#: partials/property/templates/edit-form.php:473
+msgid "It appears that, Provided property id is invalid!"
+msgstr ""
+
+#: partials/property/templates/gallery.php:9
+msgid "All"
+msgstr ""
+
+#: partials/property/templates/listing-control.php:10
+msgid "No Property Found"
+msgstr ""
+
+#: partials/property/templates/listing-control.php:12
+#, php-format
+msgid "%d Property Found"
+msgid_plural "%d Properties Found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: partials/property/templates/listing-control.php:33
+msgid "Default Order"
+msgstr ""
+
+#: partials/property/templates/property-for-grid.php:34
+msgid "Remove from favorites"
+msgstr ""
+
+#: partials/property/templates/property-for-grid.php:84
+#, php-format
+msgid "%d Beds"
+msgstr ""
+
+#: partials/property/templates/property-for-grid.php:97
+#, php-format
+msgid "%d Baths"
+msgstr ""
+
+#: partials/property/templates/submit-form.php:190
+msgid "SqFt"
+msgstr ""
+
+#: partials/property/templates/submit-form.php:246
+msgid "( No information will be displayed )"
+msgstr ""
+
+#: partials/property/templates/submit-form.php:378
+msgid "Message to the Reviewer"
+msgstr ""

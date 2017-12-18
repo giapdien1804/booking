@@ -1,0 +1,16 @@
+{
+    "name": "Domain",
+    "alias": "domain",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Domain\\Providers\\DomainServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}
