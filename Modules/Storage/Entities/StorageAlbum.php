@@ -6,7 +6,7 @@
  * Time: 2:30 PM
  */
 
-namespace Modules\StorageManager\Entities;
+namespace Modules\Storage\Entities;
 
 
 use App\Helpers\ModelTrait\TitleToNameTrait;
@@ -20,7 +20,7 @@ class StorageAlbum extends \Eloquent
     protected $table = 'storage_albums';
     public $incrementing = false;
     protected $primaryKey = 'uuid';
-    protected $fillable = ['title', 'name', 'description', 'domain_uuid'];
+    protected $fillable = ['title', 'name', 'desc', 'domain_uuid'];
 
     function domain()
     {

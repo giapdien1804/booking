@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\StorageManager\Database\Seeders;
+namespace Modules\Storage\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class StorageManagerDatabaseSeeder extends Seeder
+class StorageDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.

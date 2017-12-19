@@ -6,7 +6,7 @@
  * Time: 2:03 PM
  */
 
-namespace Modules\StorageManager\Helpers;
+namespace Modules\Storage\Helpers;
 
 use Illuminate\Database\Schema\Blueprint;
 

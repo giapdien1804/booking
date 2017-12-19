@@ -6,7 +6,7 @@
  * Time: 2:30 PM
  */
 
-namespace Modules\StorageManager\Entities;
+namespace Modules\Storage\Entities;
 
 
 use App\Helpers\ModelTrait\UuIdTrait;

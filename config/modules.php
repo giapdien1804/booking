@@ -143,7 +143,7 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'diengiap',
         'author' => [
             'name' => 'Diengiap',
             'email' => 'giapdien1804@gmail.com',

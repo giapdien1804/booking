@@ -1,12 +1,12 @@
 {
-    "name": "StorageManager",
-    "alias": "storagemanager",
+    "name": "storage",
+    "alias": "storage",
     "description": "",
     "keywords": [],
     "active": 1,
     "order": 0,
     "providers": [
-        "Modules\\StorageManager\\Providers\\StorageManagerServiceProvider"
+        "Modules\\Storage\\Providers\\StorageServiceProvider"
     ],
     "aliases": {},
     "files": [

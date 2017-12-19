@@ -81,9 +81,9 @@ window.app = new Vue({
     el: '#app',
     performance: true,
     mounted() {
-       /* this.$nextTick(() => {
-            new Sticky('#global-top-action');
-        })*/
+        /* this.$nextTick(() => {
+             new Sticky('#global-top-action');
+         })*/
     }
 })
 
@@ -222,10 +222,36 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 window.axios.interceptors.response.use((response) => {
-    console.log(response.data)
+    window.preloader.active(false);
+    if (response.data) {
+        if (response.data.hasOwnProperty('notification'))
+            window.Notification({
+                type: response.data.hasOwnProperty('type') ? response.data.type : 'info',
+                message: response.data.notification
+            })
+
+        if (response.data.hasOwnProperty('message'))
+            window.Message({
+                type: response.data.hasOwnProperty('type') ? response.data.type : 'info',
+                message: response.data.message
+            })
+    }
     return response
 }, function (error) {
-    console.log(error.response.data)
+    window.preloader.active(false);
+    if (error.response) {
+        if (error.response.data.hasOwnProperty('notification'))
+            window.Notification({
+                type: error.response.data.hasOwnProperty('type') ? error.response.data.type : 'info',
+                message: error.response.data.notification
+            })
+
+        if (error.response.data.hasOwnProperty('message'))
+            window.Message({
+                type: error.response.data.hasOwnProperty('type') ? error.response.data.type : 'info',
+                message: error.response.data.message
+            })
+    }
     // Do something with response error
     return Promise.reject(error)
 })

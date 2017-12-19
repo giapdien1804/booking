@@ -6,9 +6,9 @@ webpackJsonp([4],{
 var disposed = false
 var normalizeComponent = __webpack_require__(27)
 /* script */
-var __vue_script__ = __webpack_require__(293)
+var __vue_script__ = __webpack_require__(297)
 /* template */
-var __vue_template__ = __webpack_require__(294)
+var __vue_template__ = __webpack_require__(298)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1405,8 +1405,8 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(176) });
 var getKeys = __webpack_require__(31);
 var gOPS = __webpack_require__(171);
 var pIE = __webpack_require__(55);
-var toObject = __webpack_require__(58);
-var IObject = __webpack_require__(57);
+var toObject = __webpack_require__(56);
+var IObject = __webpack_require__(58);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -15112,7 +15112,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 293:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15121,7 +15121,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_quill_editor_vue__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_quill_editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__plugins_quill_editor_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_gds_gds__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_gds_gds__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_perfect_scrollbar__ = __webpack_require__(172);
 
 //
@@ -15466,7 +15466,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 294:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

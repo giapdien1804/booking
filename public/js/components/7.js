@@ -97,8 +97,8 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(176) });
 var getKeys = __webpack_require__(31);
 var gOPS = __webpack_require__(171);
 var pIE = __webpack_require__(55);
-var toObject = __webpack_require__(58);
-var IObject = __webpack_require__(57);
+var toObject = __webpack_require__(56);
+var IObject = __webpack_require__(58);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)

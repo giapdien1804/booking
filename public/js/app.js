@@ -647,7 +647,7 @@ module.exports = function (it, key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(57);
+var IObject = __webpack_require__(58);
 var defined = __webpack_require__(21);
 module.exports = function (it) {
   return IObject(defined(it));
@@ -10208,6 +10208,17 @@ exports.f = {}.propertyIsEnumerable;
 
 /***/ }),
 /* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__(21);
+module.exports = function (it) {
+  return Object(defined(it));
+};
+
+
+/***/ }),
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10404,7 +10415,7 @@ var GDS = function () {
 /* harmony default export */ __webpack_exports__["a"] = (GDS);
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -10412,17 +10423,6 @@ var cof = __webpack_require__(14);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
-};
-
-
-/***/ }),
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.13 ToObject(argument)
-var defined = __webpack_require__(21);
-module.exports = function (it) {
-  return Object(defined(it));
 };
 
 
@@ -10678,7 +10678,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_promise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_slicedToArray__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_slicedToArray___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_slicedToArray__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plugins_gds_gds__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plugins_gds_gds__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_tiny_cookie__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_tiny_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_tiny_cookie__);
 
@@ -10936,10 +10936,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.axios.interceptors.response.use(function (response) {
-    console.log(response.data);
+    window.preloader.active(false);
+    if (response.data) {
+        if (response.data.hasOwnProperty('notification')) window.Notification({
+            type: response.data.hasOwnProperty('type') ? response.data.type : 'info',
+            message: response.data.notification
+        });
+
+        if (response.data.hasOwnProperty('message')) window.Message({
+            type: response.data.hasOwnProperty('type') ? response.data.type : 'info',
+            message: response.data.message
+        });
+    }
     return response;
 }, function (error) {
-    console.log(error.response.data);
+    window.preloader.active(false);
+    if (error.response) {
+        if (error.response.data.hasOwnProperty('notification')) window.Notification({
+            type: error.response.data.hasOwnProperty('type') ? error.response.data.type : 'info',
+            message: error.response.data.notification
+        });
+
+        if (error.response.data.hasOwnProperty('message')) window.Message({
+            type: error.response.data.hasOwnProperty('type') ? error.response.data.type : 'info',
+            message: error.response.data.message
+        });
+    }
     // Do something with response error
     return __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_promise___default.a.reject(error);
 });
@@ -11158,7 +11180,7 @@ module.exports = __webpack_require__(6) ? Object.defineProperties : function def
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = __webpack_require__(11);
-var toObject = __webpack_require__(58);
+var toObject = __webpack_require__(56);
 var IE_PROTO = __webpack_require__(23)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
@@ -41046,7 +41068,7 @@ window.Vue.component('slider', function () {
     return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 148));
 });
 window.Vue.component('carousel', function () {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 149));
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 149));
 });
 window.Vue.component('datepicker', function () {
     return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 150));
@@ -41705,7 +41727,7 @@ var map = {
 	],
 	"./modules/storage-manager/FilePicker.vue": [
 		161,
-		1
+		0
 	],
 	"./modules/storage-manager/include/Item.vue": [
 		162,

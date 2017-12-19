@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\StorageManager\Providers;
+namespace Modules\Storage\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
-class StorageManagerServiceProvider extends ServiceProvider
+class StorageServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -46,10 +46,10 @@ class StorageManagerServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('storagemanager.php'),
+            __DIR__.'/../Config/config.php' => config_path('storage.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'storagemanager'
+            __DIR__.'/../Config/config.php', 'storage'
         );
     }
 
@@ -60,7 +60,7 @@ class StorageManagerServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/modules/storagemanager');
+        $viewPath = resource_path('views/modules/storage');
 
         $sourcePath = __DIR__.'/../Resources/views';
 
@@ -69,8 +69,8 @@ class StorageManagerServiceProvider extends ServiceProvider
         ],'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/storagemanager';
-        }, \Config::get('view.paths')), [$sourcePath]), 'storagemanager');
+            return $path . '/modules/storage';
+        }, \Config::get('view.paths')), [$sourcePath]), 'storage');
     }
 
     /**
@@ -80,12 +80,12 @@ class StorageManagerServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
-        $langPath = resource_path('lang/modules/storagemanager');
+        $langPath = resource_path('lang/modules/storage');
 
         if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'storagemanager');
+            $this->loadTranslationsFrom($langPath, 'storage');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'storagemanager');
+            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'storage');
         }
     }
 

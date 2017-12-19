@@ -1,5 +1,5 @@
 {
-    "name": "nwidart/storagemanager",
+    "name": "diengiap/storage",
     "description": "",
     "authors": [
         {
@@ -10,7 +10,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\StorageManager\\Providers\\StorageManagerServiceProvider"
+                "Modules\\Storage\\Providers\\StorageServiceProvider"
             ],
             "aliases": {
                 
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\StorageManager\\": ""
+            "Modules\\Storage\\": ""
         }
     }
 }

@@ -127,7 +127,7 @@
                     <div class="columns mt-0">
                         <div class="column is-narrow p-0">
                             <div id="fmg-left-col" class="has-relative" style="width: 230px;margin-left: -230px">
-                                <div class="left-col-toggle">
+                                <div class="left-col-toggle z-index-1">
                                     <button type="button" class="button is-info" @click="panelAlbumToggle">
                                         <span class="icon">
                                             <i class="fa fa-angle-double-right"></i> </span>
@@ -140,21 +140,24 @@
                                         </p>
                                         <div class="panel-album-show has-relative"
                                              style="border-bottom: 1px solid #dbdbdb;">
-                                            <a @click.prevent="panelAlbumSelect({})"
-                                               class="panel-block"
-                                            >Default</a>
+                                            <a v-for="album in panelAlbum.list"
+                                               @click.prevent="panelAlbumSelect(album)"
+                                               :class="{'panel-block':true, 'tooltip':album.desc !== null, 'is-active':album.uuid === panelAlbum.current.uuid}"
+                                               :data-tooltip="album.desc"
+                                            >{{album.title}}</a>
                                         </div>
 
-                                        <div class="panel-block">
+                                        <div class="panel-block" v-if="panelAlbum.create || panelAlbum.edit">
                                             <input class="input" placeholder="Title"
                                                    v-model="panelAlbum.field.title">
                                         </div>
-                                        <div class="panel-block">
+                                        <div class="panel-block" v-if="panelAlbum.create || panelAlbum.edit">
                                             <input class="input" placeholder="Description"
                                                    v-model="panelAlbum.field.desc">
                                         </div>
                                         <div class="panel-block justify-content-around">
-                                            <button @click="panelAlbumCreate" v-if="!panelAlbum.create"
+                                            <button @click="panelAlbumCreate"
+                                                    v-if="!panelAlbum.create && !panelAlbum.edit"
                                                     class="button is-outlined">
                                                 <span class="icon"><i class="fa fa-plus"></i> </span>
                                             </button>
@@ -170,6 +173,11 @@
                                                     class="button is-danger is-outlined">
                                                 <span class="icon"><i class="fa fa-trash"></i> </span>
                                             </button>
+                                            <button @click="panelAlbumCancel"
+                                                    v-if="panelAlbum.create || panelAlbum.edit"
+                                                    class="button is-outlined">
+                                                <span class="icon"><i class="fa fa-remove"></i> </span>
+                                            </button>
                                         </div>
 
                                     </nav>
@@ -177,11 +185,11 @@
                             </div>
                         </div>
                         <div class="column">
-                            <div class="`columns is-variable is-1 is-multiline has-width-${perRow}`">
+                            <div :class="`columns is-variable is-1 is-multiline has-width-${perRow}`">
                                 <div class="column pb-1 pt-1 item-column"
                                      @click="clickItem(item,$event)"
                                      v-for="item in expData.data">
-                                    <lazy-img :imageSource="`/storage/180x150/fit/${item.path}`"></lazy-img>
+                                    <lazy-img :imageSource="`/storage/180x150/fit/${item.storage_path}`"></lazy-img>
                                 </div>
                             </div>
                         </div>
@@ -235,8 +243,8 @@
                                 <carousel ref="flickity_pick">
                                     <div v-for="(item,index) in detailData"
                                          class="carousel-cell">
-                                        <figure class="image is-256x256"
-                                                v-html="getThum(item,[256,256])">
+                                        <figure class="image is-256x256">
+                                            <img :src="`/storage/action/view/${item.uuid}`"/>
                                         </figure>
                                         <a class="is-block has-text-small" href=""
                                            @click.prevent="panelDetail.showMoreEdit = !panelDetail.showMoreEdit; $refs.flickity_pick.resize()">
@@ -245,14 +253,14 @@
                                             <div class="field">
                                                 <label class="label is-small">Title</label>
                                                 <div class="control">
-                                                    <input class="input is-small" v-model="item.item_title"
+                                                    <input class="input is-small" v-model="item.storage_title"
                                                            placeholder="Enter file title">
                                                 </div>
                                             </div>
                                             <div class="field">
                                                 <label class="label is-small">Description</label>
                                                 <div class="control">
-                                                    <input class="input is-small" v-model="item.description"
+                                                    <input class="input is-small" v-model="item.storage_desc"
                                                            placeholder="Enter file description">
                                                 </div>
                                             </div>
@@ -381,17 +389,12 @@
                         title: '',
                         desc: ''
                     },
-                    current: {
-                        uuid: '',
-                        title: '',
-                        name: '',
-                        desc: ''
-                    }
+                    current: [],
+                    list: []
                 },
                 fullImage: {
                     show: false
                 },
-                getDataUrl: ''
             }
         },
         created() {
@@ -422,7 +425,6 @@
             }
         },
         mounted() {
-            this.getDataUrl = '/storagemanager/load/d/' + this.domain
             window.addEventListener('keyup', (event) => {
                 if (event.key === 'Insert') {
                     this.formUpload.show = true;
@@ -442,12 +444,12 @@
                 }
             }
             let globalFmg = this.$el.querySelector('.global-fmg-content');
-            let panel_ablum_show = this.$el.querySelector('.panel-album-show')
+            let panel_album_show = this.$el.querySelector('.panel-album-show')
             let height = isNaN(window.innerHeight) ? window.clientHeight : window.innerHeight
             window.TweenMax.to(globalFmg, 0.5, {height: height - 160})
-            panel_ablum_show.style.maxHeight = height - 400 + 'px'
-            panel_ablum_show.scrollTop = 0
-            new PerfectScrollbar(panel_ablum_show, {
+            panel_album_show.style.maxHeight = height - 400 + 'px'
+            panel_album_show.scrollTop = 0
+            new PerfectScrollbar(panel_album_show, {
                 minScrollbarLength: 50,
                 suppressScrollX: true
             });
@@ -476,7 +478,7 @@
                 this.$el.querySelector('#fmg-left-col').style.paddingTop = globalFmg.scrollTop + 'px'
             });
 
-            this.getData({})
+            this.panelAlbumList()
         },
         destroyed() {
             if (this.pickFile) {
@@ -527,8 +529,8 @@
                     this.formUpload.isFile = false
                 }
             },
-            'panelAlbum.current': function ($val) {
-                this.panelAlbum.edit = $val.current.name !== 'default' && $val.current.name !== ''
+            'panelAlbum.current': function (value) {
+                this.getData({})
             }
         },
         methods: {
@@ -550,15 +552,9 @@
                 if (options.hasOwnProperty('next') && this.expData.hasOwnProperty('next_page_url'))
                     page = new URL(this.expData.next_page_url).searchParams.get('page')
 
-                let data = []
                 this.current = []
-                if (options.hasOwnProperty('next')) {
-                    data = {page: page, image: 'active'}
-                } else {
-                    data = {image: 'active'}
-                }
 
-                axios.post(this.getDataUrl, data)
+                window.axios.get('/storage/file/a/' + this.panelAlbum.current.uuid, {page: page})
                     .then((res) => {
                         let new_data = []
                         if (options.hasOwnProperty('next')) {
@@ -568,27 +564,15 @@
                             new_data = res.data
 
                         this.expData = new_data
-                        window.preloader.active(false);
-                    })
-                    .catch((err) => {
-                        window.preloader.active(false);
-                        window.Notification({
-                            type: 'warning',
-                            title: 'Có lỗi',
-                            message: 'Đã xảy ra sự cố, nhần F5 để thử lại.\n' + err.message
-                        })
                     })
             },
             rightNavTrash() {
                 this.inTrash = true;
                 window.preloader.active(true);
-                axios.post(this.getDataUrl, {trash: true})
+                window.axios.get('/storage/file/a', {params: {trash: true}})
                     .then((res) => {
                         this.expData = res.data
-                        window.preloader.active(false);
-                    }).catch((err) => {
-                    window.preloader.active(false);
-                })
+                    })
             },
             rightNavUpload() {
                 let el_upload = this.$el.querySelector('.fmg-upload')
@@ -617,31 +601,35 @@
                 } else {
                     this.panelAlbumList()
                     this.panelAlbum.show = true;
-                    window.TweenMax.to(el, 0.3, {'margin-left': 0})
+                    window.TweenMax.to(el, 0.3, {'margin-left': 5})
                     window.TweenMax.to(el_btn, 0.3, {left: 200, rotation: 180})
                 }
             },
-            panelAlbumCreate() {
-                this.panelAlbum.create = true;
+            panelAlbumResetField() {
                 this.panelAlbum.field = {
                     title: '',
                     desc: ''
                 }
             },
             panelAlbumList() {
-                window.axios.get('/storagemanager/album/d/' + this.domain)
+                window.axios.get('/storage/album/d/' + this.domain)
                     .then(res => {
-
+                        this.panelAlbum.list = res.data
+                        if (Object.keys(this.panelAlbum.current).length <= 0)
+                            this.panelAlbum.current = _.nth(this.panelAlbum.list, 0)
                     })
+            },
+            panelAlbumCreate() {
+                this.panelAlbum.create = true;
+                this.panelAlbumResetField()
             },
             panelAlbumStore() {
                 if (this.panelAlbum.field.title !== '') {
-                    window.axios.post('/storagemanager/album/d/' + this.domain, this.panelAlbum.field)
-                        .then(res => {
-
-                        })
-                        .catch(err => {
-
+                    window.axios.post('/storage/album/d/' + this.domain, this.panelAlbum.field)
+                        .then(() => {
+                            this.panelAlbumList()
+                            this.panelAlbumResetField()
+                            this.panelAlbum.create = false;
                         })
                 } else
                     window.Notification({
@@ -649,15 +637,50 @@
                     })
             },
             panelAlbumUpdate() {
-
+                if (this.panelAlbum.field.title !== '') {
+                    window.axios.put('/storage/album/' + this.panelAlbum.current.uuid, this.panelAlbum.field)
+                        .then(() => {
+                            this.panelAlbumList()
+                            this.panelAlbumResetField()
+                            this.panelAlbum.create = false;
+                            this.panelAlbum.edit = false;
+                        })
+                } else
+                    window.Notification({
+                        message: 'Bạn cần nhập tiêu đề'
+                    })
             },
             panelAlbumDestroy() {
-                this.panelAlbum.create = true;
-                //@todo: gan bang default
-                this.panelAlbum.current = []
+                window.Message({
+                    type: 'warning',
+                    message: 'Nếu xóa album thì toàn bộ các file trong album cũng bị xóa.',
+                    showConfirm: true,
+                    onConfirm: (msg) => {
+                        window.axios.delete('/storage/album/' + this.panelAlbum.current.uuid)
+                            .then(() => {
+                                this.panelAlbumList()
+                                this.panelAlbumResetField()
+                                this.panelAlbum.create = false;
+                                this.panelAlbum.edit = false;
+                                this.panelAlbum.current = _.nth(this.panelAlbum.list, 0)
+                                msg.close()
+                            })
+                    }
+                })
             },
             panelAlbumSelect(item) {
                 this.panelAlbum.current = item
+
+                this.panelAlbum.field.title = item.title
+                this.panelAlbum.field.desc = item.desc
+
+                this.panelAlbum.edit = true
+                this.panelAlbum.create = false
+            },
+            panelAlbumCancel() {
+                this.panelAlbumResetField()
+                this.panelAlbum.create = false
+                this.panelAlbum.edit = false
             },
 
             panelDetailRemoveSelect() {
@@ -683,7 +706,7 @@
                     message: `Những mục sau sẽ được xóa: <br/>${msg}<br/>Bạn vẫn có thể vào thùng rác để lấy lại những mục đã xóa, nó sẽ lưu lại 90 ngày kể từ khi được xóa.`,
                     showConfirm: true,
                     onConfirm: (msg) => {
-                        window.axios.delete('/storagemanager/delete', {data: this.selectItem})
+                        window.axios.delete('/storage/file/trash', {data: this.selectItem})
                             .then(() => {
                                 //update expl data
                                 this.expData.data = _.filter(this.expData.data, (o) => {
@@ -706,37 +729,21 @@
                 let data = _.filter(this.expData.data, (o) => {
                     return this.selectItem.indexOf(o.hash) > -1
                 })
-
-                axios.post('/storagemanager/detail', {data: data})
-                    .then(res => {
-                        window.Notification({
-                            message: 'Đã lưu thay đổi'
-                        })
-                    })
-                    .catch(err => {
-                        window.Notification({
-                            type: 'warning',
-                            message: 'Có lỗi, không lưu được. Nhấn F5 để thử lại.'
-                        })
-                    })
+                window.axios.put('/storage/file', {data: data})
             },
             panelDetailDeleteTrash() {
-                axios.post('/storagemanager/destroy', this.selectItem)
-                    .then(res => {
+                window.axios.delete('/storage/file/destroy', this.selectItem)
+                    .then(() => {
                         //update expl data
                         this.expData.data = _.filter(this.expData.data, (o) => {
-                            return this.selectItem.indexOf(o.hash) === -1
+                            return this.selectItem.indexOf(o.uuid) === -1
                         })
                         //remove select item
                         this.selectItem = []
-
-                        window.Notification({
-                            message: 'Các mục sau đã được xóa vĩnh viễn: ' + res.data
-                        })
                     })
             },
             panelDetailRestoreTrash() {
-                axios.post('/storagemanager/restore', this.selectItem)
+                window.axios.post('/storage/file/restore', this.selectItem)
                     .then(res => {
                         //update expl data
                         this.expData.data = _.filter(this.expData.data, (o) => {
@@ -757,17 +764,17 @@
                 let target = event.target.closest('.item-column')
                 if (event.ctrlKey) {
                     target.classList.toggle('has-item-select')
-                    if (this.selectItem.indexOf(item.hash) > -1)
-                        _.pull(this.selectItem, item.hash)
+                    if (this.selectItem.indexOf(item.uuid) > -1)
+                        _.pull(this.selectItem, item.uuid)
                     else
-                        this.selectItem.push(item.hash)
+                        this.selectItem.push(item.uuid)
                 } else {
                     _.forEach(this.$el.querySelectorAll('.item-column'), (el) => {
                         el.classList.remove('has-item-select')
                     })
-                    if (this.selectItem.indexOf(item.hash) === -1) {
+                    if (this.selectItem.indexOf(item.uuid) === -1) {
                         target.classList.add('has-item-select')
-                        this.selectItem = [item.hash]
+                        this.selectItem = [item.uuid]
                     } else {
                         target.classList.remove('has-item-select')
                         window.TweenMax.to(rightCol, 0.3, {
@@ -820,7 +827,7 @@
                     //start upload
                     this.formUpload.begin_upload = true
 
-                    let CancelToken = axios.CancelToken
+                    let CancelToken = window.axios.CancelToken
                     this.formUpload.cancelToken = CancelToken.source()
 
                     let config = {
@@ -836,28 +843,18 @@
                         data.append('uploads[]', value)
                     })
 
-                    axios.post('/storagemanager/upload', data, config)
-                        .then((res) => {
-                            if (typeof res.data.message !== 'undefined') {
-                                this.formUpload.info = res.data.message
-                            } else {
-                                this.formUpload.info = '<span class="has-text-success">Success</span>'
-                            }
+                    axios.post('/storage/file/a/' + this.panelAlbum.current.uuid, data, config)
+                        .then(() => {
                             //reset form upload
                             this.resetUpload()
 
                             //update list
-                            this.getData()
+                            this.getData({})
                         })
-                        .catch((err) => {
+                        .catch(() => {
                             //stop upload
                             this.formUpload.begin_upload = false
                             this.showBtn.del_upload = true
-                            if (typeof err.response.data.message !== 'undefined') {
-                                this.formUpload.info = `<span class="has-text-danger">${err.response.data.message}</span>`
-                            } else {
-                                this.formUpload.info = '<span class="has-text-danger">Error</span>'
-                            }
                         })
                 }
             },
@@ -868,9 +865,6 @@
             },
             delUpload() {
                 this.resetUpload()
-            },
-            hasImage(ext) {
-                return ['png', 'jpg', 'jpeg', 'gif'].indexOf(ext) > -1;
             },
             clickPickFile() {
                 let data = _.filter(this.expData.data, (o) => {

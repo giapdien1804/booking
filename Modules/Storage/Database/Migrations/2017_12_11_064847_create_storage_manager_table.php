@@ -18,6 +18,8 @@ class CreateStorageManagerTable extends Migration
             $table->string('title');
             $table->string('name');
             $table->text('desc')->nullable();
+            $table->timestamps();
+
             //domain_uuid
             Modules\Domain\Helpers\Migration::columns($table);
         });
@@ -25,7 +27,7 @@ class CreateStorageManagerTable extends Migration
         Schema::create('storage_files', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
             //album_uuid
-            Modules\StorageManager\Helpers\Migration::albumColumns($table);
+            Modules\Storage\Helpers\Migration::albumColumns($table);
             //user_uuid
             Modules\User\Helpers\Migration::columns($table);
             $table->text('storage_path')->nullable();
