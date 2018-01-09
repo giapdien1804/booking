@@ -15,13 +15,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['web', 'auth']], function () {
 
-    Route::get('/get/info/ip/{domain}', 'System\GetInfoController@getIP')->name('get.info.ip');
+    Route::get('/get/info/ip/{web}', 'System\GetInfoController@getIP')->name('get.info.ip');
 
     Route::get('/', function () {
         return view('welcome');
     });
+
+    Route::get('/help', 'HelpController@index')->name('help.index');
 
     Route::group(['prefix' => 'system', 'namespace' => 'System', 'as' => 'system-'], function () {
         Route::get('logs', 'LogViewerController@index')->name('log.view');

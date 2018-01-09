@@ -4,7 +4,7 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'storage', 'as' => 's
     'namespace' => 'Modules\Storage\Http\Controllers'], function () {
     Route::get('/action/view/{uuid}', 'StorageController@actionView')
         ->name('action.view');
-    Route::get('/d/{domain}', 'StorageController@index')
+    Route::get('/d/{domain?}', 'StorageController@index')
         ->name('index');
     Route::get('/file/a/{album?}', 'StorageController@fileList')
         ->name('file.list');
@@ -19,8 +19,11 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'storage', 'as' => 's
     Route::post('/file/restore', 'StorageController@fileRestore')
         ->name('file.restore');
 
-    Route::get('/album/d/{domain}', 'StorageController@albumList')->name('album.list');
-    Route::post('/album/d/{domain}', 'StorageController@albumStore')->name('album.store');
+    Route::post('/file/make_thum', 'StorageController@makeThum')
+        ->name('file.make_thum');
+
+    Route::get('/album/d/{domain?}', 'StorageController@albumList')->name('album.list');
+    Route::post('/album/d/{domain?}', 'StorageController@albumStore')->name('album.store');
     Route::put('/album/{uuid}', 'StorageController@albumUpdate')->name('album.update');
     Route::delete('/album/{uuid}', 'StorageController@albumDestroy')->name('album.destroy');
 });

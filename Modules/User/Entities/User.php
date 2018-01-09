@@ -11,7 +11,7 @@ namespace Modules\User\Entities;
 
 use App\Helpers\ModelTrait\UuIdTrait;
 use Modules\Domain\Entities\Domain;
-use Modules\StorageManager\Entities\StorageFile;
+use Modules\Storage\Entities\StorageFile;
 
 class User extends \Eloquent
 {
@@ -19,7 +19,10 @@ class User extends \Eloquent
     protected $table = 'users';
     protected $primaryKey = 'uuid';
     public $incrementing = false;
-    protected $fillable = ['name', 'email', 'password', 'access', 'status'];
+    protected $fillable = ['name', 'email', 'password', 'access', 'status','extra'];
+    protected $casts =[
+        'extra'=>'array'
+    ];
 
     public function setPasswordAttribute($value)
     {

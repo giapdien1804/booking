@@ -1,14 +1,14 @@
 webpackJsonp([23],{
 
-/***/ 151:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(27)
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(250)
+var __vue_script__ = __webpack_require__(196)
 /* template */
-var __vue_template__ = __webpack_require__(251)
+var __vue_template__ = __webpack_require__(197)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Card.vue"
+Component.options.__file = "resources\\assets\\js\\components\\ImageSizeInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -35,9 +35,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4cf53df2", Component.options)
+    hotAPI.createRecord("data-v-aa6d2d36", Component.options)
   } else {
-    hotAPI.reload("data-v-4cf53df2", Component.options)
+    hotAPI.reload("data-v-aa6d2d36", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49,12 +49,11 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 250:
+/***/ 196:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_gds_gds__ = __webpack_require__(57);
 //
 //
 //
@@ -74,167 +73,170 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'bulmaCard',
+    name: 'imageSizeInput',
     props: {
-        idName: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
+        inputName: String,
+        dataSize: {
+            type: [Array, Object, String],
+            default: ''
         },
-        color: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
-        },
-        headerColor: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
-        },
-        showFooter: {
-            type: [Boolean, String],
-            default: function _default() {
-                return false;
-            }
-        },
-        showContent: {
-            type: [Boolean, String],
-            default: function _default() {
-                return true;
-            }
-        },
-        showHeader: {
-            type: [Boolean, String],
-            default: function _default() {
-                return true;
-            }
-        },
-        cardTitle: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
-        },
-        showIcon: {
-            type: [Boolean, String],
-            default: function _default() {
-                return true;
-            }
+        columnSize: {
+            type: Number,
+            default: 6
         }
     },
     data: function data() {
         return {
-            isOpen: true
+            itemData: []
         };
     },
-    computed: {
-        geIdName: function geIdName() {
-            if (this.idName === '') return __WEBPACK_IMPORTED_MODULE_0__plugins_gds_gds__["a" /* default */].uuidv4();
+    mounted: function mounted() {
+        var tmp = [{
+            width: 180,
+            height: 150
+        }];
+        if (_.isObject(this.dataSize) || _.isArray(this.dataSize)) tmp = this.dataSize;else if (this.dataSize.length > 0) tmp = JSON.parse(this.dataSize);
 
-            return this.idName;
-        }
+        this.itemData = tmp;
     },
+
     methods: {
-        clickIcon: function clickIcon() {
-            this.isOpen = !this.isOpen;
-            var elem_icon = this.$el.querySelector('.card-header-icon');
-            var elem_content = this.$el.querySelector('.show-content');
-            if (this.isOpen) {
-                TweenMax.to(elem_icon, 0.3, { rotation: 0 });
-                TweenMax.set(elem_content, { height: 'auto', padding: '1.5rem' });
-                TweenMax.from(elem_content, 0.3, { height: 0, padding: 0 });
-            } else {
-                TweenMax.to(elem_icon, 0.3, { rotation: 90 });
-                TweenMax.to(elem_content, 0.3, { height: 0, padding: 0 });
-            }
+        clickPlus: function clickPlus() {
+            var tmp = _.last(this.itemData);
+            this.itemData.push({ width: Math.round(tmp.width * 1.777), height: Math.round(tmp.height * 1.777) });
+        },
+        clickMinus: function clickMinus(index) {
+            if (this.itemData.length > 1) this.itemData.splice(index, 1);
         }
     }
 });
 
 /***/ }),
 
-/***/ 251:
+/***/ 197:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      class: "card " + (_vm.color !== "" ? " is-" + _vm.color : ""),
-      attrs: { id: _vm.geIdName }
-    },
-    [
-      _vm.showHeader
-        ? _c(
-            "header",
-            {
-              class:
-                "card-header " +
-                (_vm.headerColor !== "" ? " is-" + _vm.headerColor : "")
-            },
-            [
-              _c("p", {
-                staticClass: "card-header-title",
-                domProps: { textContent: _vm._s(_vm.cardTitle) }
-              }),
-              _vm._v(" "),
-              _vm.showIcon
-                ? _c(
-                    "a",
+  return _c("div", { staticClass: "field" }, [
+    _c("label", { staticClass: "label is-inline-block" }, [
+      _vm._v("Kích thước hình ảnh sử dụng")
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "button is-info is-small",
+        attrs: { type: "button" },
+        on: { click: _vm.clickPlus }
+      },
+      [_vm._m(0)]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "columns is-multiline" },
+      _vm._l(_vm.itemData, function(item, index) {
+        return _c("div", { class: "column is-" + _vm.columnSize }, [
+          _c("div", { staticClass: "field has-addons" }, [
+            _c("p", { staticClass: "control" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: item.width,
+                    expression: "item.width"
+                  }
+                ],
+                staticClass: "input",
+                attrs: {
+                  type: "text",
+                  placeholder: "width",
+                  name: _vm.inputName + "[" + index + "][width]"
+                },
+                domProps: { value: item.width },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(item, "width", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(1, true),
+            _vm._v(" "),
+            _c("p", { staticClass: "control" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: item.height,
+                    expression: "item.height"
+                  }
+                ],
+                staticClass: "input",
+                attrs: {
+                  type: "text",
+                  placeholder: "height",
+                  name: _vm.inputName + "[" + index + "][height]"
+                },
+                domProps: { value: item.height },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(item, "height", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            index > 0
+              ? _c("p", { staticClass: "control" }, [
+                  _c(
+                    "button",
                     {
-                      staticClass: "card-header-icon",
-                      attrs: { href: "#", "aria-label": "more options" },
+                      staticClass: "button is-primary",
+                      attrs: { type: "button" },
                       on: {
                         click: function($event) {
-                          $event.preventDefault()
-                          _vm.clickIcon($event)
+                          _vm.clickMinus(index)
                         }
                       }
                     },
-                    [_vm._m(0)]
+                    [_vm._m(2, true)]
                   )
-                : _vm._e()
-            ]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          class: {
-            "card-content": _vm.showContent,
-            "show-content": true,
-            "hide-content": !_vm.isOpen
-          }
-        },
-        [
-          !_vm.showHeader && _vm.cardTitle !== ""
-            ? _c("p", {
-                staticClass: "card-header-title",
-                domProps: { textContent: _vm._s(_vm.cardTitle) }
-              })
-            : _vm._e(),
-          _vm._v(" "),
-          _vm._t("default")
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _vm.showFooter
-        ? _c("footer", { staticClass: "card-footer" }, [_vm._t("footer")], 2)
-        : _vm._e()
-    ]
-  )
+                ])
+              : _vm._e()
+          ])
+        ])
+      })
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -242,10 +244,23 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "icon" }, [
-      _c("i", {
-        staticClass: "fa fa-angle-down",
-        attrs: { "aria-hidden": "true" }
-      })
+      _c("i", { staticClass: "fa fa-plus" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "control" }, [
+      _c("span", { staticClass: "button is-static" }, [_vm._v("x")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "fa fa-minus" })
     ])
   }
 ]
@@ -254,7 +269,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4cf53df2", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-aa6d2d36", module.exports)
   }
 }
 

@@ -15,7 +15,7 @@ namespace Modules\User\Entities;
 
 trait UserUuidTrait
 {
-    public static function bootUserIdTrait()
+    public static function bootUserUuidTrait()
     {
         self::creating(function ($model) {
             $model->user_uuid = \Auth::id();

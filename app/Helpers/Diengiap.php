@@ -181,4 +181,15 @@ class Diengiap
         $tmp = collect($extras)->where('key', '=', $key)->first()->value;
         return $tmp;
     }
+
+    public static function strFirst($str)
+    {
+        $map = explode(' ', $str);
+        $tmp = '';
+        foreach ($map as $item) {
+            $tmp .= mb_strtoupper(mb_substr($item, 0, 1));
+        }
+
+        return $tmp;
+    }
 }

@@ -10,10 +10,9 @@ use Modules\Storage\Entities\StorageFile;
 
 class StorageController extends Controller
 {
-    function index($domain)
+    function index($domain = null)
     {
-        $current_domain = Domain::find($domain);
-        return view('storage::index', compact('current_domain'));
+        return view('storage::index');
     }
 
     private function setImageSize($d, $p, $w, $h)
@@ -54,7 +53,7 @@ class StorageController extends Controller
 
     function fileList(Request $request, $album = null)
     {
-        $files = StorageFile::with('user');
+        $files = StorageFile::with('user:uuid,email,name');
         if ($request->has('trash')) {
             $files->onlyTrashed();
         }
@@ -77,7 +76,7 @@ class StorageController extends Controller
             $time = Carbon::now();
             $_album = StorageAlbum::with('domain')->find($album);
             if ($_album) {
-                $domain = $_album->domain->name;
+                $domain = !is_null($_album->domain) ? $_album->domain->name : 'default';
                 $local_path = "{$domain}/{$time->year}/{$time->month}/$time->day/";
                 foreach ($files as $file) {
                     /** @var \Illuminate\Http\UploadedFile $file */
@@ -114,13 +113,19 @@ class StorageController extends Controller
 
     function fileUpdate(Request $request)
     {
+        $success = false;
         foreach ($request->get('data') as $value) {
             $data_update = [
                 'storage_title' => $value['storage_title'],
                 'storage_desc' => $value['storage_desc'],
             ];
-            StorageFile::find($value['uuid'])->update($data_update);
+            $success = StorageFile::find($value['uuid'])->update($data_update);
         }
+
+        if ($success)
+            return response()->json(['notification' => 'Đã lưu thay đổi']);
+
+        return response()->json(['notification' => 'Không lưu được, nhấn F5 để thử lại'], 403);
     }
 
     function fileDelete(Request $request)
@@ -160,30 +165,27 @@ class StorageController extends Controller
         return response()->json(['notification' => 'Không khôi phục được, nhấn F5 để thử lại'], 403);
     }
 
-    function albumList($domain)
+    function albumList($domain = null)
     {
         //create new default if not isset
         StorageAlbum::firstOrCreate(['title' => config('storage.default_album_title'), 'domain_uuid' => $domain]);
 
-        $albums = StorageAlbum::whereDomainUuid($domain)
-            ->orderBy('created_at', 'ASC')
-            ->get();
+        $albums = StorageAlbum::whereDomainUuid($domain);
+
+        $albums = $albums->orderBy('created_at', 'ASC')->get();
 
         return response()->json($albums);
     }
 
-    function albumStore(Request $request, $domain)
+    function albumStore(Request $request, $domain = null)
     {
         $this->validate($request, [
             'title' => 'required'
         ]);
 
-        if ($request->get('title') == config('storage.default_album_title'))
-            return response()->json(['notification' => 'Album này đã có rồi']);
+        $request->merge(['domain_uuid' => $domain]);
 
-        $request->merge(['domain' => $domain]);
-
-        if (StorageAlbum::updateOrCreate(['title' => $request->get('title')], $request->all()))
+        if (StorageAlbum::firstOrCreate($request->all()))
             return response()->json(['notification' => 'Đã tạo album mới']);
 
         return response()->json(['notification' => 'Lỗi, không tạo được'], 403);
@@ -216,5 +218,24 @@ class StorageController extends Controller
                 return response()->json(['notification' => 'Đã xóa album']);
 
         return response()->json(['notification' => 'Lỗi, không xóa được'], 403);
+    }
+
+    function makeThum(Request $request)
+    {
+        $domain = $request->get('domain');
+        $next_file = $request->get('next_file');
+        $data = [];
+        if ($next_file == 0) {
+            $data['total_file'] = StorageFile::whereHas('storageAlbum', function ($q) use ($domain) {
+                $q->whereDomainUuid($domain);
+            })->count();
+        }
+
+        $files = StorageFile::whereHas('storageAlbum', function ($q) use ($domain) {
+            $q->whereDomainUuid($domain);
+        })->orderBy('created_at')->offset($next_file)->first();
+
+
+        return response()->json($data);
     }
 }

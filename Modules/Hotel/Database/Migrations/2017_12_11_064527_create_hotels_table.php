@@ -35,7 +35,7 @@ class CreateHotelsTable extends Migration
             $table->text('desc')->nullable();
             $table->longText('content')->nullable();
             //file_uuid
-            Modules\StorageManager\Helpers\Migration::columns($table);
+            Modules\Storage\Helpers\Migration::columns($table);
             $table->timestamps();
         });
 
@@ -56,7 +56,7 @@ class CreateHotelsTable extends Migration
             $table->text('cancellation')->nullable(); //chính sách hủy
             $table->longText('content')->nullable();
             //file_uuid
-            Modules\StorageManager\Helpers\Migration::columns($table);
+            Modules\Storage\Helpers\Migration::columns($table);
             $table->timestamps();
         });
     }

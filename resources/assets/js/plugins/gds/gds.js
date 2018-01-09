@@ -4,12 +4,12 @@
 
 export default class GDS {
     static findDataToggleEvent(toggle_name, event, call_back) {
-        let $dataToggle = Array.prototype.slice.call(document.querySelectorAll(`[data-toggle="${toggle_name}"]`), 0)
+        let $dataToggle = Array.prototype.slice.call(document.querySelectorAll(`[data-toggle="${toggle_name}"]`), 0);
         if ($dataToggle.length > 0) {
             $dataToggle.forEach(function ($el) {
                 $el.addEventListener(event, function () {
-                    let target = $el.dataset.target
-                    let $target = document.querySelector(target)
+                    let target = $el.dataset.target;
+                    let $target = document.querySelector(target);
                     call_back($el, $target)
                 })
             })
@@ -17,7 +17,7 @@ export default class GDS {
     }
 
     static toSlug(str) {
-        if (str.length <= 0) return ''
+        if (str.length <= 0) return '';
         // Chuyển hết sang chữ thường
         str = str.toLowerCase();
 
@@ -48,31 +48,31 @@ export default class GDS {
 
     static strpos(haystack, needle, offset) {
         let i = (haystack + '')
-            .indexOf(needle, (offset || 0))
+            .indexOf(needle, (offset || 0));
         return i === -1 ? false : i
     }
 
     static subText(text, length) {
-        text = GDS.strip_tags(text)
+        text = GDS.strip_tags(text);
         if (text.length <= length)
             return text;
         return text.substring(0, GDS.strpos(text, ' '))
     }
 
     static strip_tags(input, allowed) {
-        if (input === null) return ''
+        if (input === null) return '';
 
-        allowed = (((allowed || '') + '').toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('')
-        let tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi
-        let commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi
-        let before = input
-        let after = input
+        allowed = (((allowed || '') + '').toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('');
+        let tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi;
+        let commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+        let before = input;
+        let after = input;
         // recursively remove tags to ensure that the returned string doesn't contain forbidden tags after previous passes (e.g. '<<bait/>switch/>')
         while (true) {
-            before = after
+            before = after;
             after = before.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {
                 return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : ''
-            })
+            });
             // return once no more tags are removed
             if (before === after) {
                 return after
@@ -82,61 +82,52 @@ export default class GDS {
 
     static uuidv4() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            let r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8)
+            let r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16)
         })
     }
 
     static randomPassword(length) {
-        let chars = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890'
-        let pass = ''
+        let chars = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890';
+        let pass = '';
         for (let x = 0; x < length; x++) {
-            let i = Math.floor(Math.random() * chars.length)
+            let i = Math.floor(Math.random() * chars.length);
             pass += chars.charAt(i)
         }
         return pass
     }
 
-    static checkAjax(data) {
-        if (typeof data.notifi !== 'undefined') {
-            window.Notifi(data.notifi)
-        }
-        if (typeof data.location !== 'undefined') {
-            window.location.href = data.location
-        }
-    }
-
     static humanFileSize(size) {
         let i = Math.floor(Math.log(size) / Math.log(1024));
-        return ( size / Math.pow(1024, i) ).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+        return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
     }
 
     static unitCalculator(bytes, options) {
-        var units = 'BKMGTPEZY'.split('')
+        var units = 'BKMGTPEZY'.split('');
 
         function equals(a, b) {
             return a && a.toLowerCase() === b.toLowerCase()
         }
 
-        bytes = typeof bytes == 'number' ? bytes : 0
-        options = options || {}
-        options.fixed = typeof options.fixed == 'number' ? options.fixed : 2
-        options.spacer = typeof options.spacer == 'string' ? options.spacer : ' '
+        bytes = typeof bytes == 'number' ? bytes : 0;
+        options = options || {};
+        options.fixed = typeof options.fixed == 'number' ? options.fixed : 2;
+        options.spacer = typeof options.spacer == 'string' ? options.spacer : ' ';
 
         options.calculate = function (spec) {
-            var type = equals(spec, 'si') ? ['k', 'B'] : ['K', 'iB']
-            var algorithm = equals(spec, 'si') ? 1e3 : 1024
-            var magnitude = Math.log(bytes) / Math.log(algorithm) | 0
-            var result = (bytes / Math.pow(algorithm, magnitude))
-            var fixed = result.toFixed(options.fixed)
-            var suffix
+            var type = equals(spec, 'si') ? ['k', 'B'] : ['K', 'iB'];
+            var algorithm = equals(spec, 'si') ? 1e3 : 1024;
+            var magnitude = Math.log(bytes) / Math.log(algorithm) | 0;
+            var result = (bytes / Math.pow(algorithm, magnitude));
+            var fixed = result.toFixed(options.fixed);
+            var suffix;
 
             if (magnitude - 1 < 3 && !equals(spec, 'si') && equals(spec, 'jedec'))
-                type[1] = 'B'
+                type[1] = 'B';
 
             suffix = magnitude
                 ? (type[0] + 'MGTPEZY')[magnitude - 1] + type[1]
-                : ((fixed | 0) === 1 ? 'Byte' : 'Bytes')
+                : ((fixed | 0) === 1 ? 'Byte' : 'Bytes');
 
             return {
                 suffix: suffix,
@@ -145,24 +136,33 @@ export default class GDS {
                 fixed: fixed,
                 bits: {result: result / 8, fixed: (result / 8).toFixed(options.fixed)}
             }
-        }
+        };
 
         options.to = function (unit, spec) {
-            var algorithm = equals(spec, 'si') ? 1e3 : 1024
-            var position = units.indexOf(typeof unit == 'string' ? unit[0].toUpperCase() : 'B')
-            var result = bytes
+            var algorithm = equals(spec, 'si') ? 1e3 : 1024;
+            var position = units.indexOf(typeof unit == 'string' ? unit[0].toUpperCase() : 'B');
+            var result = bytes;
 
-            if (position === -1 || position === 0) return result.toFixed(2)
+            if (position === -1 || position === 0) return result.toFixed(2);
             for (; position > 0; position--) result /= algorithm
             return result.toFixed(2)
-        }
+        };
 
         options.human = function (spec) {
-            var output = options.calculate(spec)
+            var output = options.calculate(spec);
             return output.fixed + options.spacer + output.suffix
-        }
+        };
 
         return options;
 
+    }
+
+    static makeUrl(url = '', params) {
+        if (Object.keys(params).length > 0)
+            for (let [name, value] of Object.entries(params)) {
+                url = url.replace(`{${name}}`, value)
+            }
+
+        return url.replace(/\/+$/g, "");
     }
 }

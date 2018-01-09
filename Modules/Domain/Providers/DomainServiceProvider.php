@@ -4,6 +4,7 @@ namespace Modules\Domain\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\Domain\Entities\Domain;
 
 class DomainServiceProvider extends ServiceProvider
 {
@@ -35,7 +36,14 @@ class DomainServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        view()->composer('*', function ($view) {
+            if (!request()->ajax() && ($view->getName() != 'layouts.app' || $view->getName() != 'layouts.help'))
+                if (\Route::getCurrentRoute()->hasParameter('domain')) {
+                    $domain_uuid = \Route::getCurrentRoute()->parameter('domain');
+                    $current = Domain::find($domain_uuid);
+                    $view->with('current_domain', $current);
+                }
+        });
     }
 
     /**
@@ -46,10 +54,10 @@ class DomainServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('domain.php'),
+            __DIR__ . '/../Config/config.php' => config_path('domain.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'domain'
+            __DIR__ . '/../Config/config.php', 'domain'
         );
     }
 
@@ -62,11 +70,11 @@ class DomainServiceProvider extends ServiceProvider
     {
         $viewPath = resource_path('views/modules/domain');
 
-        $sourcePath = __DIR__.'/../Resources/views';
+        $sourcePath = __DIR__ . '/../Resources/views';
 
         $this->publishes([
             $sourcePath => $viewPath
-        ],'views');
+        ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/domain';
@@ -85,7 +93,7 @@ class DomainServiceProvider extends ServiceProvider
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'domain');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'domain');
+            $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'domain');
         }
     }
 
@@ -95,7 +103,7 @@ class DomainServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production')) {
+        if (!app()->environment('production')) {
             app(Factory::class)->load(__DIR__ . '/../Database/factories');
         }
     }

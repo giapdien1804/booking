@@ -1,20 +1,24 @@
 webpackJsonp([28],{
 
-/***/ 135:
+/***/ 366:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(18)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(367)
+}
+var normalizeComponent = __webpack_require__(27)
 /* script */
-var __vue_script__ = __webpack_require__(247)
+var __vue_script__ = __webpack_require__(369)
 /* template */
-var __vue_template__ = __webpack_require__(248)
+var __vue_template__ = __webpack_require__(370)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-8e5f208c"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -25,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Card.vue"
+Component.options.__file = "resources\\assets\\js\\components\\modules\\domain\\DomainInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -35,9 +39,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4cf53df2", Component.options)
+    hotAPI.createRecord("data-v-8e5f208c", Component.options)
   } else {
-    hotAPI.reload("data-v-4cf53df2", Component.options)
+    hotAPI.reload("data-v-8e5f208c", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49,192 +53,171 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 247:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 367:
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_gds_gds__ = __webpack_require__(48);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'bulmaCard',
-    props: {
-        idName: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
-        },
-        color: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
-        },
-        headerColor: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
-        },
-        showFooter: {
-            type: [Boolean, String],
-            default: function _default() {
-                return false;
-            }
-        },
-        showContent: {
-            type: [Boolean, String],
-            default: function _default() {
-                return true;
-            }
-        },
-        showHeader: {
-            type: [Boolean, String],
-            default: function _default() {
-                return true;
-            }
-        },
-        cardTitle: {
-            type: String,
-            default: function _default() {
-                return '';
-            }
-        },
-        showIcon: {
-            type: [Boolean, String],
-            default: function _default() {
-                return true;
-            }
-        }
-    },
-    data: function data() {
-        return {
-            isOpen: true
-        };
-    },
-    computed: {
-        geIdName: function geIdName() {
-            if (this.idName === '') return __WEBPACK_IMPORTED_MODULE_0__plugins_gds_gds__["a" /* default */].uuidv4();
-
-            return this.idName;
-        }
-    },
-    methods: {
-        clickIcon: function clickIcon() {
-            this.isOpen = !this.isOpen;
-            var elem_icon = this.$el.querySelector('.card-header-icon');
-            var elem_content = this.$el.querySelector('.show-content');
-            if (this.isOpen) {
-                TweenMax.to(elem_icon, 0.3, { rotation: 0 });
-                TweenMax.set(elem_content, { height: 'auto', padding: '1.5rem' });
-                TweenMax.from(elem_content, 0.3, { height: 0, padding: 0 });
-            } else {
-                TweenMax.to(elem_icon, 0.3, { rotation: 90 });
-                TweenMax.to(elem_content, 0.3, { height: 0, padding: 0 });
-            }
-        }
-    }
-});
+// load the styles
+var content = __webpack_require__(368);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(29)("37f96abe", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8e5f208c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./DomainInput.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8e5f208c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./DomainInput.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
-/***/ 248:
+/***/ 368:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(28)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 369:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: "domainInput",
+    props: {
+        domainName: '',
+        domainIp: ''
+    },
+    mounted: function mounted() {
+        this.domain = this.domainName;
+        this.ip = this.domainIp;
+    },
+
+    data: function data() {
+        return {
+            domain: '',
+            ip: ''
+        };
+    },
+    methods: {
+        searchIP: function searchIP() {
+            var _this = this;
+
+            window.axios.get('/get/info/ip/' + this.domain).then(function (res) {
+                _this.ip = res.data;
+            }).catch(function (err) {
+                window.Notification({
+                    message: err.response.data.message
+                });
+            });
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      class: "card " + (_vm.color !== "" ? " is-" + _vm.color : ""),
-      attrs: { id: _vm.geIdName }
-    },
-    [
-      _vm.showHeader
-        ? _c(
-            "header",
-            {
-              class:
-                "card-header " +
-                (_vm.headerColor !== "" ? " is-" + _vm.headerColor : "")
-            },
-            [
-              _c("p", {
-                staticClass: "card-header-title",
-                domProps: { textContent: _vm._s(_vm.cardTitle) }
-              }),
-              _vm._v(" "),
-              _vm.showIcon
-                ? _c(
-                    "a",
-                    {
-                      staticClass: "card-header-icon",
-                      attrs: { href: "#", "aria-label": "more options" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.clickIcon($event)
-                        }
-                      }
-                    },
-                    [_vm._m(0, false, false)]
-                  )
-                : _vm._e()
-            ]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          class: {
-            "card-content": _vm.showContent,
-            "show-content": true,
-            "hide-content": !_vm.isOpen
+  return _c("div", { staticClass: "field has-addons search-domain-ip" }, [
+    _c("div", { staticClass: "control" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.domain,
+            expression: "domain"
           }
-        },
-        [
-          !_vm.showHeader && _vm.cardTitle !== ""
-            ? _c("p", {
-                staticClass: "card-header-title",
-                domProps: { textContent: _vm._s(_vm.cardTitle) }
-              })
-            : _vm._e(),
-          _vm._v(" "),
-          _vm._t("default")
         ],
-        2
-      ),
-      _vm._v(" "),
-      _vm.showFooter
-        ? _c("footer", { staticClass: "card-footer" }, [_vm._t("footer")], 2)
-        : _vm._e()
-    ]
-  )
+        staticClass: "input",
+        attrs: { name: "name", type: "text", placeholder: "Domain" },
+        domProps: { value: _vm.domain },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.domain = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "control" }, [
+      _c("input", {
+        directives: [
+          { name: "model", rawName: "v-model", value: _vm.ip, expression: "ip" }
+        ],
+        staticClass: "input",
+        attrs: { name: "ip", type: "text", placeholder: "Ip address" },
+        domProps: { value: _vm.ip },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.ip = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "control" }, [
+      _c(
+        "button",
+        {
+          staticClass: "button is-info",
+          attrs: { type: "button" },
+          on: { click: _vm.searchIP }
+        },
+        [_vm._m(0)]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -242,10 +225,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "icon" }, [
-      _c("i", {
-        staticClass: "fa fa-angle-down",
-        attrs: { "aria-hidden": "true" }
-      })
+      _c("i", { staticClass: "fa fa-search" })
     ])
   }
 ]
@@ -254,7 +234,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4cf53df2", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-8e5f208c", module.exports)
   }
 }
 

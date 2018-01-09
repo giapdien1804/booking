@@ -21,9 +21,15 @@ class StorageAlbum extends \Eloquent
     public $incrementing = false;
     protected $primaryKey = 'uuid';
     protected $fillable = ['title', 'name', 'desc', 'domain_uuid'];
+    protected $hidden = ['domain_uuid'];
 
     function domain()
     {
         return $this->belongsTo(Domain::class);
+    }
+
+    function storageFiles()
+    {
+        return $this->hasMany(StorageFile::class);
     }
 }

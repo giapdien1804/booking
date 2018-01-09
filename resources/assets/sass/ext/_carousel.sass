@@ -1,0 +1,52 @@
+.carousel
+  position: relative
+  margin: auto
+  display: flex
+
+  .carousel-navigation
+    //flex-shrink: 0
+    //display: flex
+    //align-items: center
+    //justify-content: center
+    position: absolute
+    left: 0
+    right: 0
+    top: 50%
+
+    .carousel-navigation-left
+      cursor: pointer
+      float: left
+
+    .carousel-navigation-right
+      cursor: pointer
+      float: right
+
+  .carousel-container
+    flex: 1
+    height: 100%
+    display: flex
+    overflow: hidden
+
+    .carousel-content
+      display: flex
+      flex: 1
+      align-items: stretch
+      //left: -100%
+      //transform: translate3d(100%, 0, 0)
+      position: relative
+
+      &.carousel-reverse
+        transform: translate3d(-100%, 0, 0)
+
+      &.carousel-animate
+        transform: none
+        transition: all 250ms ease-in-out
+
+      .carousel-item
+        align-self: stretch
+        flex-shrink: 0
+        flex-grow: 1
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column

@@ -37,11 +37,6 @@
                     .then(res => {
                         this.ip = res.data
                     })
-                    .catch(err => {
-                        window.Notification({
-                            message: err.response.data.message
-                        })
-                    })
             }
         }
     }

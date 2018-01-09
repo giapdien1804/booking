@@ -3,43 +3,21 @@
     {{Bulma::breadcrumb([route('domain.index')=>'Trang web'])}}
 @endsection
 @section('top-tow')
-    <ul class="top-link">
-        <li>
-            <a class="bg-primary has-hover-primary" href="{{route('domain.create')}}">Tạo mới</a>
-        </li>
-        <li>
-            <a class="bg-light has-hover-light" href="{{route('domain.index')}}">Làm mới</a>
-        </li>
-        <li>
-            <div class="dropdown">
-                <div class="dropdown-trigger">
-                    <button class="button is-small" type="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Hiển thị {{request('per_page',50)}} dòng 1 trang</span>
-                        <span class="icon is-small">
-                        <i class="fa fa-angle-down" aria-hidden="true"></i>
-                          </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-per-row" role="menu">
-                    <div class="dropdown-content">
-                        <a href="{{route('domain.index',array_merge(request()->all(),['per_page'=>50]))}}"
-                           class="dropdown-item">50</a>
-                        <a href="{{route('domain.index',array_merge(request()->all(),['per_page'=>100]))}}"
-                           class="dropdown-item">100</a>
-                        <a href="{{route('domain.index',array_merge(request()->all(),['per_page'=>150]))}}"
-                           class="dropdown-item">150</a>
-                        <a href="{{route('domain.index',array_merge(request()->all(),['per_page'=>200]))}}"
-                           class="dropdown-item">200</a>
-                        <hr class="dropdown-divider">
-                        <a href="{{route('domain.index',array_merge(['per_page'=>$domains->total()],request()->all()))}}"
-                           class="dropdown-item">
-                            Hiển thị tất cả ({{$domains->total()}})
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
+    <div class="field is-grouped">
+        <div class="control is-expanded">
+            <a class="button is-dark border-radius-0 is-fullwidth" href="{{route('domain.create')}}">
+                <span class="icon"><i class="fa fa-plus"></i> </span>
+            </a>
+        </div>
+        <div class="control">
+            <a class="button border-radius-0" href="{{route('domain.index')}}">
+                <span class="icon"><i class="fa fa-refresh"></i> </span>
+            </a>
+        </div>
+        <div class="control">
+            {{Bulma::dropdownPerRow($domains)}}
+        </div>
+    </div>
 @endsection
 @section('content')
     {!! Form::open(['method'=>'get','route'=>['domain.index','page'=>request('page')]]) !!}
@@ -104,12 +82,17 @@
                     <a href="{{route('domain.show',['uuid'=>$domain->uuid])}}">
                         <span class="icon"><i class="fa fa-eye"></i> </span>
                     </a>
+                    <span class="tags">
+                        @foreach($domain->lang['list'] as $lang)
+                            <span class="tag @if($lang == $domain->lang['default']) is-primary @endif">{{$lang}}</span>
+                        @endforeach
+                    </span>
                 </td>
                 <td>
                     <div class="tags">
                         @foreach($domain->module as $name)
                             <a href="{{route(strtolower($name).'.index',['domain'=>$domain->uuid])}}"
-                               class="tag">{{$name}}</a>
+                               class="tag is-link">{{$name}}</a>
                         @endforeach
                     </div>
                 </td>
@@ -120,7 +103,8 @@
                 <td>
                     <div class="tags">
                         @foreach($domain->users as $user)
-                            <span class="tag tooltip" data-tooltip="{{$user->name}}">{{$user->email}}</span>
+                            <span class="tag tooltip"
+                                  data-tooltip="{{$user->name}}({{$user->email}})">{{DG::strFirst($user->name)}}</span>
                         @endforeach
                     </div>
                 </td>
@@ -137,5 +121,6 @@
         @endforeach
         </tbody>
     </table>
+    {!! $domains->appends(request()->all())->links() !!}
     {!! Form::close() !!}
 @endsection

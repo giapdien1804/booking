@@ -1,0 +1,1 @@
+<hotel-amenity></hotel-amenity>

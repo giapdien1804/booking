@@ -23,6 +23,17 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        if ($request->ajax()) {
+            if ($request->has('access_domain')) {
+                $search = $request->get('s');
+                $user = User::where('email', 'like', "%{$search}%")
+                    ->orWhere('name', 'like', "%$search%")
+                    ->select('uuid', 'email', 'name')->limit(50)->get();
+
+                return response()->json($user);
+            }
+        }
+
         return view('user::index');
     }
 

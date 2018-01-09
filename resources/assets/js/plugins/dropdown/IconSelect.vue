@@ -1,32 +1,50 @@
 <template>
     <div :class="{dropdown:true ,'is-active':isActive}" v-click-outside="outClickDropdown">
-        <input type="hidden" :name="dataName" v-model="itemSelected.value">
+        <input type="hidden" :name="dataName" v-model="selectValue">
         <div class="dropdown-trigger">
-            <button type="button" class="button" aria-haspopup="true"
-                    aria-controls="dropdown-menu"
-                    @click="toggleDropdown">
-                <span v-if="itemSelected.value !==''">
-                    <span class="icon"><i :class="`fa ${itemSelected.value}`"></i> </span>
-                    &nbsp;{{itemSelected.title}}
-                </span>
-                <span v-else>Select icon</span>
-                <span class="icon is-small">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </span>
-            </button>
+            <div :class="{'field has-addons':showRemove}">
+                <div :class="{control:showRemove}">
+                    <button type="button" class="button" :disabled="disable"
+                            aria-haspopup="true"
+                            aria-controls="dropdown-menu"
+                            @click="toggleDropdown">
+                        <span v-if="selectValue !==''">
+                            <span class="icon"><i :class="`fa ${selectValue}`"></i> </span>
+                            <span v-text="getSelectTitle" v-if="showTitle"></span>
+                        </span>
+                        <span v-else>Select icon</span>
+                        <span class="icon is-small" v-if="showDrop">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="control" v-if="showRemove">
+                    <button class="button" type="button" @click="removeSelect">
+                        <span class="icon"><i class="fa fa-remove"></i> </span>
+                    </button>
+                </div>
+            </div>
+
         </div>
         <div class="dropdown-menu select-icon" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <input v-model="searchValue" type="text" class="input is-small" placeholder="Search...">
+                    <input id="txt-search" v-model="searchValue" type="text" class="input is-small"
+                           placeholder="Search...">
                 </div>
                 <hr class="dropdown-divider">
-                <div class="dropdown-content-main" style="max-height: 300px; position: relative">
-                    <a v-for="(title,value) in getItemData"
-                       @click.prevent="selectItem({'value':value,'title':title})"
-                       :class="{'dropdown-item':true,'is-active':itemSelected.value === value}">
-                        <span class="icon"><i :class="`fa ${value}`"></i> </span> {{title}}
-                    </a>
+                <div class="dropdown-content-main dropdown-item"
+                     style="max-height: 300px; width: 600px; position: relative">
+                    <div class="columns is-multiline">
+                        <div class="column" v-for="item in getIconData">
+                            <a @click.prevent="selectItem(item.value)"
+                               :class="{'has-text-info':selectValue === item.value,'has-text-black':true}">
+                                <span class="icon is-medium"><i :class="`fa ${item.value} fa-2x`"></i> </span>
+                                <span v-if="showTitle" v-text="item.title"></span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -37,81 +55,122 @@
 
     export default {
         name: 'iconSelect',
+        model: {
+            prop: 'iconSelect',
+            event: 'select-value',
+        },
         props: {
-            dataList: {
-                type: [Array, Object, String],
-                default: ''
+            showTitle: {
+                type: [Boolean, String],
+                default: false
+            },
+            showDrop: {
+                type: [Boolean, String],
+                default: false
+            },
+            showRemove: {
+                type: [Boolean, String],
+                default: false
             },
             dataName: {
                 type: String,
                 default: 'icon'
             },
-            dataSelected: {
+            iconSelect: {
                 type: String,
-                default: ''
-            }
-        },
-        mounted() {
-            let tmp = [];
-            if (_.isObject(this.dataList) || _.isArray(this.dataList))
-                tmp = this.dataList;
-            else if (this.dataList.length > 0)
-                tmp = JSON.parse(this.dataList)
-
-            this.itemData = tmp
-
-            if (this.dataSelected !== '') {
-                let selected = _.pickBy(this.itemData, (a, o) => {
-                    return o === this.dataSelected
-                })
-
-                this.itemSelected.value = Object.keys(selected)
-                this.itemSelected.title = selected[Object.keys(selected)]
+                default: 'fa-star'
+            },
+            disable: {
+                type: [String, Boolean],
+                default: false
             }
         },
         data: () => ({
             isActive: false,
-            itemData: [],
+            iconData: [],
             ps: null,
             searchValue: '',
-            itemSelected: {
-                value: '',
-                title: ''
-            }
+            selectValue: ''
         }),
-        computed: {
-            getItemData() {
-                let data = _.pickBy(this.itemData, (a, o) => {
-                    return a.toLowerCase().match(this.searchValue.toLowerCase())
+        mounted() {
+            fetch('https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css', {mode: 'cors'})
+                .then(res => {
+                    return res.text();
                 })
+                .then(css => {
+                    this.parseCSS(css);
+                });
+
+            this.$nextTick(() => {
+                this.selectValue = this.iconSelect;
+            })
+        },
+        watch: {
+            'iconSelect': function (val) {
+                this.selectValue = val
+            }
+        },
+        computed: {
+            getIconData() {
+                let data = _.pickBy(this.iconData, (a) => {
+                    return a.title.toLowerCase().match(this.searchValue.toLowerCase().trim())
+                });
+
                 if (this.isActive)
                     this.$nextTick(() => {
                         this.ps.update();
-                    })
+                    });
 
                 return data;
+            },
+            getSelectTitle() {
+                let select = this.iconData[_.findIndex(this.iconData, {value: this.selectValue})];
+
+                return typeof select !== 'undefined' ? select.title : '';
             }
         },
         methods: {
             toggleDropdown() {
-                this.isActive = !this.isActive;
-                if (this.isActive) {
-                    let el = this.$el.querySelector('.dropdown-content-main');
-                    el.scrollTop = 0;
-                    this.ps = new PerfectScrollbar(el, {
-                        minScrollbarLength: 50
-                    });
+                if (!this.disable) {
+                    this.isActive = !this.isActive;
+                    this.$nextTick(() => {
+                        if (this.isActive) {
+                            let el = this.$el.querySelector('.dropdown-content-main');
+                            el.scrollTop = 0;
+                            this.ps = new PerfectScrollbar(el, {
+                                minScrollbarLength: 50
+                            });
+                            this.$el.querySelector('#txt-search').focus();
+                        }
+                        else
+                            this.ps.destroy();
+                    })
                 }
-                else
-                    this.ps.destroy();
             },
             selectItem(value) {
-                this.itemSelected = value
-                this.isActive = false
+                this.selectValue = value;
+                this.isActive = false;
+                this.$emit('select-value', value);
+            },
+            removeSelect() {
+                this.selectValue = '';
+                this.$emit('select-value', '')
             },
             outClickDropdown() {
                 if (this.isActive)
                     this.isActive = false;
+            },
+            parseCSS(css, prefix = 'fa-') {
+                const iconPattern = new RegExp('\\.' + prefix + '([^\\.!:]*)::?before\\s*{\\s*content:\\s*["|\']\\\\[^\'|"]*["|\'];?\\s*}', 'g');
+                const index = 1;
+                let icon, match;
+                while (match = iconPattern.exec(css)) {
+                    icon = {
+                        value: prefix + match[index].trim(':'),
+                        title: match[index].trim(':').replace('-', ' '),
+                    };
+                    this.iconData.push(icon)
+                }
             }
         }
     }

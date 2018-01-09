@@ -1,14 +1,14 @@
 webpackJsonp([25],{
 
-/***/ 135:
+/***/ 110:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(18)
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(246)
+var __vue_script__ = __webpack_require__(188)
 /* template */
-var __vue_template__ = __webpack_require__(247)
+var __vue_template__ = __webpack_require__(189)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ImageSizeInput.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Card.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -35,9 +35,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-aa6d2d36", Component.options)
+    hotAPI.createRecord("data-v-4cf53df2", Component.options)
   } else {
-    hotAPI.reload("data-v-aa6d2d36", Component.options)
+    hotAPI.reload("data-v-4cf53df2", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49,26 +49,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 246:
+/***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_gds_gds__ = __webpack_require__(7);
 //
 //
 //
@@ -89,154 +75,166 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'imageSizeInput',
+    name: 'bulmaCard',
     props: {
-        inputName: String,
-        dataSize: {
-            type: [Array, Object, String],
-            default: ''
+        idName: {
+            type: String,
+            default: function _default() {
+                return '';
+            }
+        },
+        color: {
+            type: String,
+            default: function _default() {
+                return '';
+            }
+        },
+        headerColor: {
+            type: String,
+            default: function _default() {
+                return '';
+            }
+        },
+        showFooter: {
+            type: [Boolean, String],
+            default: function _default() {
+                return false;
+            }
+        },
+        showContent: {
+            type: [Boolean, String],
+            default: function _default() {
+                return true;
+            }
+        },
+        showHeader: {
+            type: [Boolean, String],
+            default: function _default() {
+                return true;
+            }
+        },
+        cardTitle: {
+            type: String,
+            default: function _default() {
+                return '';
+            }
+        },
+        showIcon: {
+            type: [Boolean, String],
+            default: function _default() {
+                return true;
+            }
         }
     },
     data: function data() {
         return {
-            itemData: []
+            isOpen: true
         };
     },
-    mounted: function mounted() {
-        var tmp = [{
-            width: 180,
-            height: 150
-        }];
-        if (_.isObject(this.dataSize) || _.isArray(this.dataSize)) tmp = this.dataSize;else if (this.dataSize.length > 0) tmp = JSON.parse(this.dataSize);
+    computed: {
+        geIdName: function geIdName() {
+            if (this.idName === '') return __WEBPACK_IMPORTED_MODULE_0__plugins_gds_gds__["a" /* default */].uuidv4();
 
-        this.itemData = tmp;
+            return this.idName;
+        }
     },
-
     methods: {
-        clickPlus: function clickPlus() {
-            var tmp = _.last(this.itemData);
-            this.itemData.push({ width: Math.round(tmp.width * 1.777), height: Math.round(tmp.height * 1.777) });
-        },
-        clickMinus: function clickMinus(index) {
-            if (this.itemData.length > 1) this.itemData.splice(index, 1);
+        clickIcon: function clickIcon() {
+            this.isOpen = !this.isOpen;
+            var elem_icon = this.$el.querySelector('.card-header-icon');
+            var elem_content = this.$el.querySelector('.show-content');
+            if (this.isOpen) {
+                TweenMax.to(elem_icon, 0.3, { rotation: 0 });
+                TweenMax.set(elem_content, { height: 'auto', padding: '1.5rem' });
+                TweenMax.from(elem_content, 0.3, { height: 0, padding: 0 });
+            } else {
+                TweenMax.to(elem_icon, 0.3, { rotation: 90 });
+                TweenMax.to(elem_content, 0.3, { height: 0, padding: 0 });
+            }
         }
     }
 });
 
 /***/ }),
 
-/***/ 247:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "field" }, [
-    _c("label", { staticClass: "label" }, [
-      _vm._v("Image size\n        "),
-      _c(
-        "button",
-        {
-          staticClass: "button is-info is-small",
-          attrs: { type: "button" },
-          on: { click: _vm.clickPlus }
-        },
-        [_vm._m(0)]
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "columns is-multiline" },
-      _vm._l(_vm.itemData, function(item, index) {
-        return _c(
-          "div",
-          { staticClass: "column is-3-desktop is-4-tablet is-2-mobile" },
-          [
-            _c("div", { staticClass: "field has-addons" }, [
-              _c("p", { staticClass: "control" }, [
-                _c("input", {
-                  directives: [
+  return _c(
+    "div",
+    {
+      class: "card " + (_vm.color !== "" ? " is-" + _vm.color : ""),
+      attrs: { id: _vm.geIdName }
+    },
+    [
+      _vm.showHeader
+        ? _c(
+            "header",
+            {
+              class:
+                "card-header " +
+                (_vm.headerColor !== "" ? " is-" + _vm.headerColor : "")
+            },
+            [
+              _c("p", {
+                staticClass: "card-header-title has-text-success",
+                domProps: { textContent: _vm._s(_vm.cardTitle) }
+              }),
+              _vm._v(" "),
+              _vm.showIcon
+                ? _c(
+                    "a",
                     {
-                      name: "model",
-                      rawName: "v-model",
-                      value: item.width,
-                      expression: "item.width"
-                    }
-                  ],
-                  staticClass: "input",
-                  attrs: {
-                    type: "text",
-                    placeholder: "width",
-                    name: _vm.inputName + "[" + index + "][width]"
-                  },
-                  domProps: { value: item.width },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(item, "width", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _vm._m(1, true),
-              _vm._v(" "),
-              _c("p", { staticClass: "control" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: item.height,
-                      expression: "item.height"
-                    }
-                  ],
-                  staticClass: "input",
-                  attrs: {
-                    type: "text",
-                    placeholder: "height",
-                    name: _vm.inputName + "[" + index + "][height]"
-                  },
-                  domProps: { value: item.height },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(item, "height", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              index > 0
-                ? _c("p", { staticClass: "control" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "button is-primary",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.clickMinus(index)
-                          }
+                      staticClass: "card-header-icon",
+                      attrs: { href: "#", "aria-label": "more options" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.clickIcon($event)
                         }
-                      },
-                      [_vm._m(2, true)]
-                    )
-                  ])
+                      }
+                    },
+                    [_vm._m(0)]
+                  )
                 : _vm._e()
-            ])
-          ]
-        )
-      })
-    )
-  ])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          class: {
+            "card-content": _vm.showContent,
+            "show-content": true,
+            "hide-content": !_vm.isOpen
+          }
+        },
+        [
+          !_vm.showHeader && _vm.cardTitle !== ""
+            ? _c("p", {
+                staticClass: "card-header-title",
+                domProps: { textContent: _vm._s(_vm.cardTitle) }
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._t("default")
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _vm.showFooter
+        ? _c("footer", { staticClass: "card-footer" }, [_vm._t("footer")], 2)
+        : _vm._e()
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -244,23 +242,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "icon" }, [
-      _c("i", { staticClass: "fa fa-plus" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "control" }, [
-      _c("span", { staticClass: "button is-static" }, [_vm._v("x")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", { staticClass: "fa fa-minus" })
+      _c("i", {
+        staticClass: "fa fa-angle-down",
+        attrs: { "aria-hidden": "true" }
+      })
     ])
   }
 ]
@@ -269,7 +254,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-aa6d2d36", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-4cf53df2", module.exports)
   }
 }
 

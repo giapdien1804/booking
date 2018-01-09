@@ -1,12 +1,11 @@
 <template>
     <div class="field">
-        <label class="label">Image size
-            <button class="button is-info is-small" type="button" @click="clickPlus">
-                <span class="icon"><i class="fa fa-plus"></i> </span>
-            </button>
-        </label>
+        <label class="label is-inline-block">Kích thước hình ảnh sử dụng</label>
+        <button class="button is-info is-small" type="button" @click="clickPlus">
+            <span class="icon"><i class="fa fa-plus"></i> </span>
+        </button>
         <div class="columns is-multiline">
-            <div class="column is-3-desktop is-4-tablet is-2-mobile" v-for="(item,index) in itemData">
+            <div :class="`column is-${columnSize}`" v-for="(item,index) in itemData">
                 <div class="field has-addons">
                     <p class="control">
                         <input type="text" class="input" placeholder="width"
@@ -40,6 +39,10 @@
             dataSize: {
                 type: [Array, Object, String],
                 default: ''
+            },
+            columnSize: {
+                type: Number,
+                default: 6
             }
         },
         data: () => ({

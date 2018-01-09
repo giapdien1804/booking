@@ -281,4 +281,47 @@ class Bulma
 
         return new HtmlString($str);
     }
+
+    /**
+     * @param \Illuminate\Pagination\LengthAwarePaginator $model
+     * @param int $min
+     * @return HtmlString
+     */
+    static function dropdownPerRow($model, $min = 50)
+    {
+        $total = $model->total();
+        if ($total <= $min)
+            $str = '';
+        else {
+            $per_page = request('per_page', $min);
+
+            $str = "<div class=\"dropdown\">
+                <div class=\"dropdown-trigger\" data-toggle=\"dropdown\">
+                    <button class=\"button is-success\" type=\"button\" aria-haspopup=\"true\" aria-controls=\"dropdown-menu\">
+                        <span>{$per_page} dòng</span>
+                        <span class=\"icon\">
+                        <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>
+                          </span>
+                    </button>
+                </div>
+                <div class=\"dropdown-menu\" id=\"dropdown-per-row\" role=\"menu\">
+                    <div class=\"dropdown-content\">";
+
+            $range = round($total / $min);
+
+            for ($i = 1; $i <= $range; $i++) {
+                $in_page = $i * $min;
+                $active = $per_page == $in_page ? 'is-active' : '';
+                $url = request()->fullUrlWithQuery(['per_page' => $in_page]);
+                $str .= "<a href=\"{$url}\"
+                           class=\"dropdown-item {$active}\">{$in_page} dòng</a>";
+            }
+
+            $str .= "</div>
+                </div>
+            </div>";
+        }
+
+        return new HtmlString($str);
+    }
 }

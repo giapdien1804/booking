@@ -6,14 +6,24 @@
     ])}}
 @endsection
 @section('top-tow')
-    <ul class="top-link">
-        <li>
-            <a class="bg-primary has-hover-primary" href="{{route('domain.create')}}">Tạo mới</a>
-        </li>
-        <li>
-            <a class="bg-light has-hover-light" href="{{route('domain.show',['uuid'=>$domain->uuid])}}">Làm mới</a>
-        </li>
-    </ul>
+    <div class="field is-grouped">
+        <div class="control is-expanded">
+            <a class="button is-dark border-radius-0 is-fullwidth" href="{{route('domain.create')}}">
+                <span class="icon"><i class="fa fa-plus"></i> </span>
+            </a>
+        </div>
+        <div class="control">
+            <a class="button border-radius-0" href="{{route('domain.show',['uuid'=>$domain->uuid])}}">
+                <span class="icon"><i class="fa fa-refresh"></i> </span>
+            </a>
+        </div>
+        <div class="control">
+            <domain-dropdown
+                    data-selected="{{json_encode(['uuid'=>$domain->uuid,'name'=>$domain->name])}}"
+                    goto-url="/domain/{id}/show">
+            </domain-dropdown>
+        </div>
+    </div>
 @endsection
 @section('content')
     <div class="columns is-multiline has-width-4">
@@ -25,19 +35,11 @@
                             {{$module}}
                         </p>
                     </header>
-                    <div class="card-content p-1">
-                        <div class="panel list-group">
-                            <a class="panel-block list-group-item is-primary">1. Lorem ipsum dolor sit amet.</a>
-                            <a class="panel-block list-group-item is-info">2. Lorem ipsum dolor sit amet.</a>
-                            <a class="panel-block list-group-item is-success">3. Lorem ipsum dolor sit amet.</a>
-                            <a class="panel-block list-group-item is-warning">4. Lorem ipsum dolor sit amet.</a>
-                            <a class="panel-block list-group-item is-danger">5. Lorem ipsum dolor sit amet.</a>
-                            <a class="panel-block list-group-item">6. Lorem ipsum dolor sit amet.</a>
-                            <a class="panel-block list-group-item">7. Lorem ipsum dolor sit amet.</a>
-                        </div>
+                    <div class="card-content">
+                        @include(lcfirst($module).'::show-module')
                     </div>
                     <footer class="card-footer">
-                        <a href="{{route(strtolower($module).'.index',['domain'=>$domain->uuid])}}"
+                        <a href="{{route(lcfirst($module).'.index',['domain'=>$domain->uuid])}}"
                            class="card-footer-item">Quản lý</a>
                     </footer>
                 </div>

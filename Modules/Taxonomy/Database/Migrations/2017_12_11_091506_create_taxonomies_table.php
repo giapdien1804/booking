@@ -35,7 +35,7 @@ class CreateTaxonomiesTable extends Migration
             $table->integer('post_count')->default(0);
             $table->json('meta')->nullable();
             //file_uuid
-            Modules\StorageManager\Helpers\Migration::columns($table);
+            Modules\Storage\Helpers\Migration::columns($table);
             //node
             App\Helpers\Node\NestedSet::columns($table, true);
 

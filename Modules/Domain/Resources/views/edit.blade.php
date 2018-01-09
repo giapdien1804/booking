@@ -8,17 +8,17 @@
 @section('content')
     {!! Form::open(['method'=>'put','route'=>['domain.update','id'=>$domain->uuid]]) !!}
     <div class="columns is-multiline">
-        <div class="column is-6">
+        <div class="column is-4">
             <domain-input domain-name="{{$domain->name}}" domain-ip="{{$domain->ip}}"></domain-input>
             {{Bulma::text('desc','Description')}}
-            <div class="field is-grouped">
-                <div class="control">
+            <div class="columns">
+                <div class="column is-4">
                     {{Bulma::select('Server','svr',config('domain.svr'),old('svr',$domain->svr),['placeholder'=>'Select...'])}}
                 </div>
-                <div class="control">
+                <div class="column is-4">
                     {{Bulma::select('Types','type',config('domain.type'),old('type',$domain->type),['placeholder'=>'Select...'])}}
                 </div>
-                <div class="control">
+                <div class="column is-4">
                     {{Bulma::select('Status','status',config('domain.status'),old('status',$domain->status),['placeholder'=>'Select...'])}}
                 </div>
             </div>
@@ -36,25 +36,19 @@
                     @endforeach
                 </div>
             </div>
-        </div>
-        <div class="column is-6">
-            <label class="label">Những người dùng sau được phép cập nhật nội dung cho domain này</label>
-            <div class="control">
-                @foreach($users as $user)
-                    <div class="field" style="max-height: 500px; overflow-y: scroll">
-                        <input id="user-id-{{$loop->index}}" type="checkbox" name="user_uuid[]"
-                               value="{{$user->uuid}}" class="switch is-rounded is-success"
-                               @if($domain->users->count() > 0)
-                               @if(in_array($user->uuid,$domain->users->pluck('uuid')->toArray())) checked @endif
-                                @endif
-                        >
-                        <label for="user-id-{{$loop->index}}">{{$user->name}}({{$user->email}})</label>
-                    </div>
-                @endforeach
+            <image-size-input data-size="{{json_encode($domain->image_size)}}"
+                              input-name="image_size"></image-size-input>
+            <p class="help">Chú ý khi thay đổi kích thước ảnh cần thực hiện
+                <a href="{{route('help.index',['h'=>'khoi-tao-anh-thu-nho'])}}">lệnh khởi tạo lại ảnh</a> trong quản lý
+                file.</p>
+            <div class="field">
+                <button type="submit" class="button is-info is-fullwidth">Xác nhận</button>
             </div>
         </div>
-        <div class="column">
-            <button type="submit" class="button is-primary">Xác nhận</button>
+        <div class="column is-8">
+            <user-input data-select="{{json_encode($domain->users->pluck('uuid'))}}"
+                        input-name="user_uuid"></user-input>
+            <lang-input data-select="{{json_encode($domain->lang['list'])}}" input-name="lang"></lang-input>
         </div>
     </div>
     {!! Form::close() !!}

@@ -5,23 +5,41 @@ namespace Modules\Hotel\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Hotel\Entities\Hotel;
 
 class HotelController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @param Request $request
+     * @param $domain
      * @return Response
      */
-    public function index()
+    public function index(Request $request, $domain)
     {
-        return view('hotel::index');
+        $per_page = $request->get('per_page', 50);
+        $hotels = Hotel::with('location')->whereDomainUuid($domain);
+
+        //search
+        if ($request->input('title', null) != null)
+            $hotels->where('title', 'like', "%{$request->input('title')}%");
+        if ($request->input('star', null) != null)
+            $hotels->whereStar($request->get('star'));
+        if ($request->input('location_uuid', null) != null)
+            $hotels->whereLocationUuid($request->get('location_uuid'));
+
+        $hotels = $hotels
+            ->orderBy('name', $request->get('sort_name', 'asc'))
+            ->paginate($per_page);
+
+        return view('hotel::index', compact('hotels'));
     }
 
     /**
      * Show the form for creating a new resource.
      * @return Response
      */
-    public function create()
+    public function create($domain)
     {
         return view('hotel::create');
     }
@@ -31,7 +49,7 @@ class HotelController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $domain)
     {
     }
 
@@ -39,7 +57,7 @@ class HotelController extends Controller
      * Show the specified resource.
      * @return Response
      */
-    public function show()
+    public function show($uuid)
     {
         return view('hotel::show');
     }
@@ -48,7 +66,7 @@ class HotelController extends Controller
      * Show the form for editing the specified resource.
      * @return Response
      */
-    public function edit()
+    public function edit($uuid)
     {
         return view('hotel::edit');
     }
@@ -58,7 +76,7 @@ class HotelController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $uuid)
     {
     }
 
@@ -66,7 +84,7 @@ class HotelController extends Controller
      * Remove the specified resource from storage.
      * @return Response
      */
-    public function destroy()
+    public function destroy($uuid)
     {
     }
 }

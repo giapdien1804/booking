@@ -21,7 +21,7 @@ class CreateLocationsTable extends Migration
             $table->longText('content')->nullable();
             $table->string('map')->nullable();
             //file_id
-            Modules\StorageManager\Helpers\Migration::columns($table);
+            Modules\Storage\Helpers\Migration::columns($table);
             //node
             App\Helpers\Node\NestedSet::columns($table, true);
 

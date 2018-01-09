@@ -2,6 +2,7 @@
 
 Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'domain', 'as' => 'domain.',
     'namespace' => 'Modules\Domain\Http\Controllers'], function () {
+    Route::get('/list', 'DomainController@list')->name('list');
     Route::get('/', 'DomainController@index')->name('index');
     Route::get('/create', 'DomainController@create')->name('create');
     Route::get('/{uuid}', 'DomainController@edit')->name('edit');

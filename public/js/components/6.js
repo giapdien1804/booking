@@ -1,18 +1,22 @@
 webpackJsonp([6],{
 
-/***/ 168:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(27)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(122)
+}
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(309)
+var __vue_script__ = __webpack_require__(124)
 /* template */
-var __vue_template__ = __webpack_require__(310)
+var __vue_template__ = __webpack_require__(125)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -25,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\passport\\Clients.vue"
+Component.options.__file = "resources\\assets\\js\\plugins\\slider\\Slider.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -35,9 +39,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3f99fc75", Component.options)
+    hotAPI.createRecord("data-v-7374ae31", Component.options)
   } else {
-    hotAPI.reload("data-v-3f99fc75", Component.options)
+    hotAPI.reload("data-v-7374ae31", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49,611 +53,53 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 171:
-/***/ (function(module, exports) {
-
-exports.f = Object.getOwnPropertySymbols;
-
-
-/***/ }),
-
-/***/ 179:
+/***/ 122:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.f = __webpack_require__(0);
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-
-/***/ }),
-
-/***/ 180:
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(2);
-var core = __webpack_require__(3);
-var LIBRARY = __webpack_require__(34);
-var wksExt = __webpack_require__(179);
-var defineProperty = __webpack_require__(9).f;
-module.exports = function (name) {
-  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
-  if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
-};
-
-
-/***/ }),
-
-/***/ 194:
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(61);
-var hiddenKeys = __webpack_require__(36).concat('length', 'prototype');
-
-exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
-  return $keys(O, hiddenKeys);
-};
-
-
-/***/ }),
-
-/***/ 201:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _iterator = __webpack_require__(202);
-
-var _iterator2 = _interopRequireDefault(_iterator);
-
-var _symbol = __webpack_require__(204);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
-  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
-} : function (obj) {
-  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
-};
-
-/***/ }),
-
-/***/ 202:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(203), __esModule: true };
-
-/***/ }),
-
-/***/ 203:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(19);
-__webpack_require__(17);
-module.exports = __webpack_require__(179).f('iterator');
-
-
-/***/ }),
-
-/***/ 204:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(205), __esModule: true };
-
-/***/ }),
-
-/***/ 205:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(206);
-__webpack_require__(64);
-__webpack_require__(212);
-__webpack_require__(213);
-module.exports = __webpack_require__(3).Symbol;
-
-
-/***/ }),
-
-/***/ 206:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// ECMAScript 6 symbols shim
-var global = __webpack_require__(2);
-var has = __webpack_require__(11);
-var DESCRIPTORS = __webpack_require__(6);
-var $export = __webpack_require__(5);
-var redefine = __webpack_require__(62);
-var META = __webpack_require__(207).KEY;
-var $fails = __webpack_require__(30);
-var shared = __webpack_require__(35);
-var setToStringTag = __webpack_require__(18);
-var uid = __webpack_require__(33);
-var wks = __webpack_require__(0);
-var wksExt = __webpack_require__(179);
-var wksDefine = __webpack_require__(180);
-var enumKeys = __webpack_require__(208);
-var isArray = __webpack_require__(209);
-var anObject = __webpack_require__(4);
-var isObject = __webpack_require__(10);
-var toIObject = __webpack_require__(12);
-var toPrimitive = __webpack_require__(59);
-var createDesc = __webpack_require__(32);
-var _create = __webpack_require__(63);
-var gOPNExt = __webpack_require__(210);
-var $GOPD = __webpack_require__(211);
-var $DP = __webpack_require__(9);
-var $keys = __webpack_require__(31);
-var gOPD = $GOPD.f;
-var dP = $DP.f;
-var gOPN = gOPNExt.f;
-var $Symbol = global.Symbol;
-var $JSON = global.JSON;
-var _stringify = $JSON && $JSON.stringify;
-var PROTOTYPE = 'prototype';
-var HIDDEN = wks('_hidden');
-var TO_PRIMITIVE = wks('toPrimitive');
-var isEnum = {}.propertyIsEnumerable;
-var SymbolRegistry = shared('symbol-registry');
-var AllSymbols = shared('symbols');
-var OPSymbols = shared('op-symbols');
-var ObjectProto = Object[PROTOTYPE];
-var USE_NATIVE = typeof $Symbol == 'function';
-var QObject = global.QObject;
-// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
-var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
-
-// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-var setSymbolDesc = DESCRIPTORS && $fails(function () {
-  return _create(dP({}, 'a', {
-    get: function () { return dP(this, 'a', { value: 7 }).a; }
-  })).a != 7;
-}) ? function (it, key, D) {
-  var protoDesc = gOPD(ObjectProto, key);
-  if (protoDesc) delete ObjectProto[key];
-  dP(it, key, D);
-  if (protoDesc && it !== ObjectProto) dP(ObjectProto, key, protoDesc);
-} : dP;
-
-var wrap = function (tag) {
-  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
-  sym._k = tag;
-  return sym;
-};
-
-var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function (it) {
-  return typeof it == 'symbol';
-} : function (it) {
-  return it instanceof $Symbol;
-};
-
-var $defineProperty = function defineProperty(it, key, D) {
-  if (it === ObjectProto) $defineProperty(OPSymbols, key, D);
-  anObject(it);
-  key = toPrimitive(key, true);
-  anObject(D);
-  if (has(AllSymbols, key)) {
-    if (!D.enumerable) {
-      if (!has(it, HIDDEN)) dP(it, HIDDEN, createDesc(1, {}));
-      it[HIDDEN][key] = true;
-    } else {
-      if (has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
-      D = _create(D, { enumerable: createDesc(0, false) });
-    } return setSymbolDesc(it, key, D);
-  } return dP(it, key, D);
-};
-var $defineProperties = function defineProperties(it, P) {
-  anObject(it);
-  var keys = enumKeys(P = toIObject(P));
-  var i = 0;
-  var l = keys.length;
-  var key;
-  while (l > i) $defineProperty(it, key = keys[i++], P[key]);
-  return it;
-};
-var $create = function create(it, P) {
-  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
-};
-var $propertyIsEnumerable = function propertyIsEnumerable(key) {
-  var E = isEnum.call(this, key = toPrimitive(key, true));
-  if (this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return false;
-  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
-};
-var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
-  it = toIObject(it);
-  key = toPrimitive(key, true);
-  if (it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return;
-  var D = gOPD(it, key);
-  if (D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
-  return D;
-};
-var $getOwnPropertyNames = function getOwnPropertyNames(it) {
-  var names = gOPN(toIObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META) result.push(key);
-  } return result;
-};
-var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
-  var IS_OP = it === ObjectProto;
-  var names = gOPN(IS_OP ? OPSymbols : toIObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true)) result.push(AllSymbols[key]);
-  } return result;
-};
-
-// 19.4.1.1 Symbol([description])
-if (!USE_NATIVE) {
-  $Symbol = function Symbol() {
-    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor!');
-    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
-    var $set = function (value) {
-      if (this === ObjectProto) $set.call(OPSymbols, value);
-      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
-      setSymbolDesc(this, tag, createDesc(1, value));
-    };
-    if (DESCRIPTORS && setter) setSymbolDesc(ObjectProto, tag, { configurable: true, set: $set });
-    return wrap(tag);
-  };
-  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
-    return this._k;
-  });
-
-  $GOPD.f = $getOwnPropertyDescriptor;
-  $DP.f = $defineProperty;
-  __webpack_require__(194).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(55).f = $propertyIsEnumerable;
-  __webpack_require__(171).f = $getOwnPropertySymbols;
-
-  if (DESCRIPTORS && !__webpack_require__(34)) {
-    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
-  }
-
-  wksExt.f = function (name) {
-    return wrap(wks(name));
-  };
+// load the styles
+var content = __webpack_require__(123);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("5ba8df09", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7374ae31\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Slider.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7374ae31\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Slider.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
 }
 
-$export($export.G + $export.W + $export.F * !USE_NATIVE, { Symbol: $Symbol });
-
-for (var es6Symbols = (
-  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
-  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
-).split(','), j = 0; es6Symbols.length > j;)wks(es6Symbols[j++]);
-
-for (var wellKnownSymbols = $keys(wks.store), k = 0; wellKnownSymbols.length > k;) wksDefine(wellKnownSymbols[k++]);
-
-$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
-  // 19.4.2.1 Symbol.for(key)
-  'for': function (key) {
-    return has(SymbolRegistry, key += '')
-      ? SymbolRegistry[key]
-      : SymbolRegistry[key] = $Symbol(key);
-  },
-  // 19.4.2.5 Symbol.keyFor(sym)
-  keyFor: function keyFor(sym) {
-    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol!');
-    for (var key in SymbolRegistry) if (SymbolRegistry[key] === sym) return key;
-  },
-  useSetter: function () { setter = true; },
-  useSimple: function () { setter = false; }
-});
-
-$export($export.S + $export.F * !USE_NATIVE, 'Object', {
-  // 19.1.2.2 Object.create(O [, Properties])
-  create: $create,
-  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
-  defineProperty: $defineProperty,
-  // 19.1.2.3 Object.defineProperties(O, Properties)
-  defineProperties: $defineProperties,
-  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
-  // 19.1.2.7 Object.getOwnPropertyNames(O)
-  getOwnPropertyNames: $getOwnPropertyNames,
-  // 19.1.2.8 Object.getOwnPropertySymbols(O)
-  getOwnPropertySymbols: $getOwnPropertySymbols
-});
-
-// 24.3.2 JSON.stringify(value [, replacer [, space]])
-$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
-  var S = $Symbol();
-  // MS Edge converts symbol values to JSON as {}
-  // WebKit converts symbol values to JSON as null
-  // V8 throws on boxed symbols
-  return _stringify([S]) != '[null]' || _stringify({ a: S }) != '{}' || _stringify(Object(S)) != '{}';
-})), 'JSON', {
-  stringify: function stringify(it) {
-    var args = [it];
-    var i = 1;
-    var replacer, $replacer;
-    while (arguments.length > i) args.push(arguments[i++]);
-    $replacer = replacer = args[1];
-    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-    if (!isArray(replacer)) replacer = function (key, value) {
-      if ($replacer) value = $replacer.call(this, key, value);
-      if (!isSymbol(value)) return value;
-    };
-    args[1] = replacer;
-    return _stringify.apply($JSON, args);
-  }
-});
-
-// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(7)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
-// 19.4.3.5 Symbol.prototype[@@toStringTag]
-setToStringTag($Symbol, 'Symbol');
-// 20.2.1.9 Math[@@toStringTag]
-setToStringTag(Math, 'Math', true);
-// 24.3.3 JSON[@@toStringTag]
-setToStringTag(global.JSON, 'JSON', true);
-
-
 /***/ }),
 
-/***/ 207:
+/***/ 123:
 /***/ (function(module, exports, __webpack_require__) {
 
-var META = __webpack_require__(33)('meta');
-var isObject = __webpack_require__(10);
-var has = __webpack_require__(11);
-var setDesc = __webpack_require__(9).f;
-var id = 0;
-var isExtensible = Object.isExtensible || function () {
-  return true;
-};
-var FREEZE = !__webpack_require__(30)(function () {
-  return isExtensible(Object.preventExtensions({}));
-});
-var setMeta = function (it) {
-  setDesc(it, META, { value: {
-    i: 'O' + ++id, // object ID
-    w: {}          // weak collections IDs
-  } });
-};
-var fastKey = function (it, create) {
-  // return primitive with prefix
-  if (!isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
-  if (!has(it, META)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return 'F';
-    // not necessary to add metadata
-    if (!create) return 'E';
-    // add missing metadata
-    setMeta(it);
-  // return object ID
-  } return it[META].i;
-};
-var getWeak = function (it, create) {
-  if (!has(it, META)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return true;
-    // not necessary to add metadata
-    if (!create) return false;
-    // add missing metadata
-    setMeta(it);
-  // return hash weak collections IDs
-  } return it[META].w;
-};
-// add metadata on freeze-family methods calling
-var onFreeze = function (it) {
-  if (FREEZE && meta.NEED && isExtensible(it) && !has(it, META)) setMeta(it);
-  return it;
-};
-var meta = module.exports = {
-  KEY: META,
-  NEED: false,
-  fastKey: fastKey,
-  getWeak: getWeak,
-  onFreeze: onFreeze
-};
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.vue-slider-component {\n    position: relative;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n.vue-slider-component.vue-slider-disabled {\n    opacity: .5;\n    cursor: not-allowed;\n}\n.vue-slider-component.vue-slider-has-label {\n    margin-bottom: 15px;\n}\n.vue-slider-component.vue-slider-disabled .vue-slider-dot {\n    cursor: not-allowed;\n}\n.vue-slider-component .vue-slider {\n    position: relative;\n    display: block;\n    border-radius: 15px;\n    background-color: #ccc;\n}\n.vue-slider-component .vue-slider::after {\n    content: '';\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 2;\n}\n.vue-slider-component .vue-slider-process {\n    position: absolute;\n    border-radius: 15px;\n    background-color: #3498db;\n    -webkit-transition: all 0s;\n    transition: all 0s;\n    z-index: 1;\n}\n.vue-slider-component.vue-slider-horizontal .vue-slider-process {\n    width: 0;\n    height: 100%;\n    top: 0;\n    left: 0;\n    will-change: width;\n}\n.vue-slider-component.vue-slider-vertical .vue-slider-process {\n    width: 100%;\n    height: 0;\n    bottom: 0;\n    left: 0;\n    will-change: height;\n}\n.vue-slider-component.vue-slider-horizontal-reverse .vue-slider-process {\n    width: 0;\n    height: 100%;\n    top: 0;\n    right: 0;\n}\n.vue-slider-component.vue-slider-vertical-reverse .vue-slider-process {\n    width: 100%;\n    height: 0;\n    top: 0;\n    left: 0;\n}\n.vue-slider-component .vue-slider-dot {\n    position: absolute;\n    border-radius: 50%;\n    background-color: #fff;\n    -webkit-box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);\n            box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);\n    -webkit-transition: all 0s;\n    transition: all 0s;\n    will-change: transform;\n    cursor: pointer;\n    z-index: 3;\n}\n.vue-slider-component.vue-slider-horizontal .vue-slider-dot {\n    left: 0;\n}\n.vue-slider-component.vue-slider-vertical .vue-slider-dot {\n    bottom: 0;\n}\n.vue-slider-component.vue-slider-horizontal-reverse .vue-slider-dot {\n    right: 0;\n}\n.vue-slider-component.vue-slider-vertical-reverse .vue-slider-dot {\n    top: 0;\n}\n.vue-slider-component .vue-slider-tooltip-wrap {\n    display: none;\n    position: absolute;\n    z-index: 9;\n}\n.vue-slider-component .vue-slider-tooltip {\n    display: block;\n    font-size: 14px;\n    white-space: nowrap;\n    padding: 2px 5px;\n    min-width: 20px;\n    text-align: center;\n    color: #fff;\n    border-radius: 5px;\n    border: 1px solid #3498db;\n    background-color: #3498db;\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top {\n    top: -9px;\n    left: 50%;\n    -webkit-transform: translate(-50%, -100%);\n            transform: translate(-50%, -100%);\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom {\n    bottom: -9px;\n    left: 50%;\n    -webkit-transform: translate(-50%, 100%);\n            transform: translate(-50%, 100%);\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left {\n    top: 50%;\n    left: -9px;\n    -webkit-transform: translate(-100%, -50%);\n            transform: translate(-100%, -50%);\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right {\n    top: 50%;\n    right: -9px;\n    -webkit-transform: translate(100%, -50%);\n            transform: translate(100%, -50%);\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top .vue-slider-tooltip::before {\n    content: '';\n    position: absolute;\n    bottom: -10px;\n    left: 50%;\n    width: 0;\n    height: 0;\n    border: 5px solid transparent;\n    border: 6px solid transparent \\0;\n    border-top-color: inherit;\n    -webkit-transform: translate(-50%, 0);\n            transform: translate(-50%, 0);\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom .vue-slider-tooltip::before {\n    content: '';\n    position: absolute;\n    top: -10px;\n    left: 50%;\n    width: 0;\n    height: 0;\n    border: 5px solid transparent;\n    border: 6px solid transparent \\0;\n    border-bottom-color: inherit;\n    -webkit-transform: translate(-50%, 0);\n            transform: translate(-50%, 0);\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left .vue-slider-tooltip::before {\n    content: '';\n    position: absolute;\n    top: 50%;\n    right: -10px;\n    width: 0;\n    height: 0;\n    border: 5px solid transparent;\n    border: 6px solid transparent \\0;\n    border-left-color: inherit;\n    -webkit-transform: translate(0, -50%);\n            transform: translate(0, -50%);\n}\n.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right .vue-slider-tooltip::before {\n    content: '';\n    position: absolute;\n    top: 50%;\n    left: -10px;\n    width: 0;\n    height: 0;\n    border: 5px solid transparent;\n    border: 6px solid transparent \\0;\n    border-right-color: inherit;\n    -webkit-transform: translate(0, -50%);\n            transform: translate(0, -50%);\n}\n.vue-slider-component .vue-slider-dot.vue-slider-hover:hover .vue-slider-tooltip-wrap {\n    display: block;\n}\n.vue-slider-component .vue-slider-dot.vue-slider-always .vue-slider-tooltip-wrap {\n    display: block !important;\n}\n.vue-slider-component .vue-slider-piecewise {\n    position: absolute;\n    width: 100%;\n    padding: 0;\n    margin: 0;\n    left: 0;\n    top: 0;\n    height: 100%;\n    list-style: none;\n}\n.vue-slider-component .vue-slider-piecewise-item {\n    position: absolute;\n    width: 8px;\n    height: 8px;\n}\n.vue-slider-component .vue-slider-piecewise-dot {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    width: 100%;\n    height: 100%;\n    display: inline-block;\n    background-color: rgba(0, 0, 0, 0.16);\n    border-radius: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    z-index: 2;\n    -webkit-transition: all .3s;\n    transition: all .3s;\n}\n.vue-slider-component .vue-slider-piecewise-item:first-child .vue-slider-piecewise-dot, .vue-slider-component .vue-slider-piecewise-item:last-child .vue-slider-piecewise-dot {\n    visibility: hidden;\n}\n.vue-slider-component.vue-slider-horizontal .vue-slider-piecewise-label, .vue-slider-component.vue-slider-horizontal-reverse .vue-slider-piecewise-label {\n    position: absolute;\n    display: inline-block;\n    top: 100%;\n    left: 50%;\n    white-space: nowrap;\n    font-size: 12px;\n    color: #333;\n    -webkit-transform: translate(-50%, 8px);\n            transform: translate(-50%, 8px);\n    visibility: visible;\n}\n.vue-slider-component.vue-slider-vertical .vue-slider-piecewise-label, .vue-slider-component.vue-slider-vertical-reverse .vue-slider-piecewise-label {\n    position: absolute;\n    display: inline-block;\n    top: 50%;\n    left: 100%;\n    white-space: nowrap;\n    font-size: 12px;\n    color: #333;\n    -webkit-transform: translate(8px, -50%);\n            transform: translate(8px, -50%);\n    visibility: visible;\n}\n.vue-slider-component .vue-slider-sr-only {\n    clip: rect(1px, 1px, 1px, 1px);\n    height: 1px;\n    width: 1px;\n    overflow: hidden;\n    position: absolute !important;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
 
-/***/ 208:
-/***/ (function(module, exports, __webpack_require__) {
-
-// all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(31);
-var gOPS = __webpack_require__(171);
-var pIE = __webpack_require__(55);
-module.exports = function (it) {
-  var result = getKeys(it);
-  var getSymbols = gOPS.f;
-  if (getSymbols) {
-    var symbols = getSymbols(it);
-    var isEnum = pIE.f;
-    var i = 0;
-    var key;
-    while (symbols.length > i) if (isEnum.call(it, key = symbols[i++])) result.push(key);
-  } return result;
-};
-
-
-/***/ }),
-
-/***/ 209:
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.2.2 IsArray(argument)
-var cof = __webpack_require__(14);
-module.exports = Array.isArray || function isArray(arg) {
-  return cof(arg) == 'Array';
-};
-
-
-/***/ }),
-
-/***/ 210:
-/***/ (function(module, exports, __webpack_require__) {
-
-// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(12);
-var gOPN = __webpack_require__(194).f;
-var toString = {}.toString;
-
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
-  ? Object.getOwnPropertyNames(window) : [];
-
-var getWindowNames = function (it) {
-  try {
-    return gOPN(it);
-  } catch (e) {
-    return windowNames.slice();
-  }
-};
-
-module.exports.f = function getOwnPropertyNames(it) {
-  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
-};
-
-
-/***/ }),
-
-/***/ 211:
-/***/ (function(module, exports, __webpack_require__) {
-
-var pIE = __webpack_require__(55);
-var createDesc = __webpack_require__(32);
-var toIObject = __webpack_require__(12);
-var toPrimitive = __webpack_require__(59);
-var has = __webpack_require__(11);
-var IE8_DOM_DEFINE = __webpack_require__(60);
-var gOPD = Object.getOwnPropertyDescriptor;
-
-exports.f = __webpack_require__(6) ? gOPD : function getOwnPropertyDescriptor(O, P) {
-  O = toIObject(O);
-  P = toPrimitive(P, true);
-  if (IE8_DOM_DEFINE) try {
-    return gOPD(O, P);
-  } catch (e) { /* empty */ }
-  if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
-};
-
-
-/***/ }),
-
-/***/ 212:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(180)('asyncIterator');
-
-
-/***/ }),
-
-/***/ 213:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(180)('observable');
-
-
-/***/ }),
-
-/***/ 309:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__);
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -746,708 +192,903 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'passportClients',
-  data: function data() {
-    return {
-      clients: [],
-      showCreate: false,
-      showEdit: false,
-      createForm: {
-        errors: [],
-        name: '',
-        redirect: ''
-      },
-
-      editForm: {
-        errors: [],
-        name: '',
-        redirect: ''
-      }
-    };
-  },
-
-
-  /**
-   * Prepare the component (Vue 1.x).
-   */
-  ready: function ready() {
-    this.prepareComponent();
-  },
-
-
-  /**
-   * Prepare the component (Vue 2.x).
-   */
-  mounted: function mounted() {
-    this.prepareComponent();
-  },
-
-
-  methods: {
-    /**
-     * Prepare the component.
-     */
-    prepareComponent: function prepareComponent() {
-      this.getClients();
-      if (this.showCreate) this.$el.querySelector('#create-client-name').focus();
-
-      if (this.showEdit) this.$el.querySelector('#edit-client-name').focus();
+    data: function data() {
+        return {
+            flag: false,
+            size: 0,
+            currentValue: 0,
+            currentSlider: 0
+        };
     },
 
-
-    /**
-     * Get all of the OAuth clients for the user.
-     */
-    getClients: function getClients() {
-      var _this = this;
-
-      axios.get('/oauth/clients').then(function (response) {
-        _this.clients = response.data;
-      });
+    props: {
+        width: {
+            type: [Number, String],
+            default: 'auto'
+        },
+        height: {
+            type: [Number, String],
+            default: 6
+        },
+        data: {
+            type: Array,
+            default: null
+        },
+        dotSize: {
+            type: Number,
+            default: 16
+        },
+        dotWidth: {
+            type: Number,
+            required: false
+        },
+        dotHeight: {
+            type: Number,
+            required: false
+        },
+        min: {
+            type: Number,
+            default: 0
+        },
+        max: {
+            type: Number,
+            default: 100
+        },
+        interval: {
+            type: Number,
+            default: 1
+        },
+        show: {
+            type: Boolean,
+            default: true
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        piecewise: {
+            type: Boolean,
+            default: false
+        },
+        tooltip: {
+            type: [String, Boolean],
+            default: 'always'
+        },
+        eventType: {
+            type: String,
+            default: 'auto'
+        },
+        direction: {
+            type: String,
+            default: 'horizontal'
+        },
+        reverse: {
+            type: Boolean,
+            default: false
+        },
+        lazy: {
+            type: Boolean,
+            default: true
+        },
+        clickable: {
+            type: Boolean,
+            default: true
+        },
+        speed: {
+            type: Number,
+            default: 0.5
+        },
+        realTime: {
+            type: Boolean,
+            default: true
+        },
+        stopPropagation: {
+            type: Boolean,
+            default: false
+        },
+        value: {
+            type: [String, Number, Array],
+            default: 0
+        },
+        piecewiseLabel: {
+            type: Boolean,
+            default: false
+        },
+        sliderStyle: [Array, Object],
+        tooltipDir: [Array, String],
+        formatter: [String, Function],
+        piecewiseStyle: Object,
+        piecewiseActiveStyle: Object,
+        processStyle: Object,
+        bgStyle: Object,
+        tooltipStyle: [Array, Object],
+        labelStyle: Object,
+        labelActiveStyle: Object
     },
+    computed: {
+        dotWidthVal: function dotWidthVal() {
+            return typeof this.dotWidth === 'number' ? this.dotWidth : this.dotSize;
+        },
+        dotHeightVal: function dotHeightVal() {
+            return typeof this.dotHeight === 'number' ? this.dotHeight : this.dotSize;
+        },
+        flowDirection: function flowDirection() {
+            return 'vue-slider-' + (this.direction + (this.reverse ? '-reverse' : ''));
+        },
+        tooltipDirection: function tooltipDirection() {
+            var dir = this.tooltipDir || (this.direction === 'vertical' ? 'left' : 'top');
+            if (Array.isArray(dir)) {
+                return this.isRange ? dir : dir[1];
+            } else {
+                return this.isRange ? [dir, dir] : dir;
+            }
+        },
+        tooltipStatus: function tooltipStatus() {
+            return this.tooltip === 'hover' && this.flag ? 'vue-slider-always' : this.tooltip ? 'vue-slider-' + this.tooltip : '';
+        },
+        tooltipClass: function tooltipClass() {
+            return ['vue-slider-tooltip-' + this.tooltipDirection, 'vue-slider-tooltip'];
+        },
+        isDisabled: function isDisabled() {
+            return this.eventType === 'none' ? true : this.disabled;
+        },
+        disabledClass: function disabledClass() {
+            return this.disabled ? 'vue-slider-disabled' : '';
+        },
+        isRange: function isRange() {
+            return Array.isArray(this.value);
+        },
+        slider: function slider() {
+            return this.isRange ? [this.$refs.dot0, this.$refs.dot1] : this.$refs.dot;
+        },
+        minimum: function minimum() {
+            return this.data ? 0 : this.min;
+        },
 
+        val: {
+            get: function get() {
+                return this.data ? this.isRange ? [this.data[this.currentValue[0]], this.data[this.currentValue[1]]] : this.data[this.currentValue] : this.currentValue;
+            },
+            set: function set(val) {
+                if (this.data) {
+                    if (this.isRange) {
+                        var index0 = this.data.indexOf(val[0]);
+                        var index1 = this.data.indexOf(val[1]);
+                        if (index0 > -1 && index1 > -1) {
+                            this.currentValue = [index0, index1];
+                        }
+                    } else {
+                        var index = this.data.indexOf(val);
+                        if (index > -1) {
+                            this.currentValue = index;
+                        }
+                    }
+                } else {
+                    this.currentValue = val;
+                }
+            }
+        },
+        currentIndex: function currentIndex() {
+            if (this.isRange) {
+                return this.data ? this.currentValue : [(this.currentValue[0] - this.minimum) / this.spacing, (this.currentValue[1] - this.minimum) / this.spacing];
+            } else {
+                return (this.currentValue - this.minimum) / this.spacing;
+            }
+        },
+        indexRange: function indexRange() {
+            if (this.isRange) {
+                return this.currentIndex;
+            } else {
+                return [0, this.currentIndex];
+            }
+        },
+        maximum: function maximum() {
+            return this.data ? this.data.length - 1 : this.max;
+        },
+        multiple: function multiple() {
+            var decimals = ('' + this.interval).split('.')[1];
+            return decimals ? Math.pow(10, decimals.length) : 1;
+        },
+        spacing: function spacing() {
+            return this.data ? 1 : this.interval;
+        },
+        total: function total() {
+            if (this.data) {
+                return this.data.length - 1;
+            } else if (~~((this.maximum - this.minimum) * this.multiple) % (this.interval * this.multiple) !== 0) {
+                console.error('[Vue-slider warn]: Prop[interval] is illegal, Please make sure that the interval can be divisible');
+            }
+            return (this.maximum - this.minimum) / this.interval;
+        },
+        gap: function gap() {
+            return this.size / this.total;
+        },
+        position: function position() {
+            return this.isRange ? [(this.currentValue[0] - this.minimum) / this.spacing * this.gap, (this.currentValue[1] - this.minimum) / this.spacing * this.gap] : (this.currentValue - this.minimum) / this.spacing * this.gap;
+        },
+        limit: function limit() {
+            return this.isRange ? [[0, this.position[1]], [this.position[0], this.size]] : [0, this.size];
+        },
+        valueLimit: function valueLimit() {
+            return this.isRange ? [[this.minimum, this.currentValue[1]], [this.currentValue[0], this.maximum]] : [this.minimum, this.maximum];
+        },
+        wrapStyles: function wrapStyles() {
+            return this.direction === 'vertical' ? {
+                height: typeof this.height === 'number' ? this.height + 'px' : this.height,
+                padding: this.dotHeightVal / 2 + 'px ' + this.dotWidthVal / 2 + 'px'
+            } : {
+                width: typeof this.width === 'number' ? this.width + 'px' : this.width,
+                padding: this.dotHeightVal / 2 + 'px ' + this.dotWidthVal / 2 + 'px'
+            };
+        },
+        sliderStyles: function sliderStyles() {
+            if (Array.isArray(this.sliderStyle)) {
+                return this.isRange ? this.sliderStyle : this.sliderStyle[1];
+            } else {
+                return this.isRange ? [this.sliderStyle, this.sliderStyle] : this.sliderStyle;
+            }
+        },
+        tooltipStyles: function tooltipStyles() {
+            if (Array.isArray(this.tooltipStyle)) {
+                return this.isRange ? this.tooltipStyle : this.tooltipStyle[1];
+            } else {
+                return this.isRange ? [this.tooltipStyle, this.tooltipStyle] : this.tooltipStyle;
+            }
+        },
+        elemStyles: function elemStyles() {
+            return this.direction === 'vertical' ? {
+                width: this.width + 'px',
+                height: '100%'
+            } : {
+                height: this.height + 'px'
+            };
+        },
+        dotStyles: function dotStyles() {
+            return this.direction === 'vertical' ? {
+                width: this.dotWidthVal + 'px',
+                height: this.dotHeightVal + 'px',
+                left: -(this.dotWidthVal - this.width) / 2 + 'px'
+            } : {
+                width: this.dotWidthVal + 'px',
+                height: this.dotHeightVal + 'px',
+                top: -(this.dotHeightVal - this.height) / 2 + 'px'
+            };
+        },
+        piecewiseDotStyle: function piecewiseDotStyle() {
+            return this.direction === 'vertical' ? {
+                width: this.width + 'px',
+                height: this.width + 'px'
+            } : {
+                width: this.height + 'px',
+                height: this.height + 'px'
+            };
+        },
+        piecewiseDotWrap: function piecewiseDotWrap() {
+            if (!this.piecewise && !this.piecewiseLabel) {
+                return false;
+            }
 
-    /**
-     * Show the form for creating new clients.
-     */
-    showCreateClientForm: function showCreateClientForm() {
-      this.showCreate = true;
-    },
-
-
-    /**
-     * Create a new OAuth client for the user.
-     */
-    store: function store() {
-      this.persistClient('post', '/oauth/clients', this.createForm, '#modal-create-client');
-    },
-
-
-    /**
-     * Edit the given client.
-     */
-    edit: function edit(client) {
-      this.editForm.id = client.id;
-      this.editForm.name = client.name;
-      this.editForm.redirect = client.redirect;
-
-      this.showEdit = true;
-    },
-
-
-    /**
-     * Update the client being edited.
-     */
-    update: function update() {
-      this.persistClient('put', '/oauth/clients/' + this.editForm.id, this.editForm, '#modal-edit-client');
-    },
-
-
-    /**
-     * Persist the client to storage using the given form.
-     */
-    persistClient: function persistClient(method, uri, form, modal) {
-      var _this2 = this;
-
-      form.errors = [];
-
-      axios[method](uri, form).then(function (response) {
-        _this2.getClients();
-
-        form.name = '';
-        form.redirect = '';
-        form.errors = [];
-
-        $(modal).modal('hide');
-      }).catch(function (error) {
-        if (__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof___default()(error.response.data) === 'object') {
-          form.errors = _.flatten(_.toArray(error.response.data));
-        } else {
-          form.errors = ['Something went wrong. Please try again.'];
+            var arr = [];
+            for (var i = 0; i <= this.total; i++) {
+                var style = this.direction === 'vertical' ? {
+                    bottom: this.gap * i - this.width / 2 + 'px',
+                    left: 0
+                } : {
+                    left: this.gap * i - this.height / 2 + 'px',
+                    top: 0
+                };
+                var index = this.reverse ? this.total - i : i;
+                var label = this.data ? this.data[index] : this.spacing * index + this.min;
+                arr.push({
+                    style: style,
+                    label: this.formatter ? this.formatting(label) : label,
+                    inRange: index >= this.indexRange[0] && index <= this.indexRange[1]
+                });
+            }
+            return arr;
         }
-      });
     },
+    watch: {
+        value: function value(val) {
+            this.flag || this.setValue(val, true);
+        },
+        max: function max(val) {
+            var resetVal = this.limitValue(this.val);
+            resetVal !== false && this.setValue(resetVal);
+            this.refresh();
+        },
+        min: function min(val) {
+            var resetVal = this.limitValue(this.val);
+            resetVal !== false && this.setValue(resetVal);
+            this.refresh();
+        },
+        show: function show(bool) {
+            var _this = this;
 
-
-    /**
-     * Destroy the given client.
-     */
-    destroy: function destroy(client) {
-      var _this3 = this;
-
-      window.Message({
-        title: 'Confirm ?',
-        message: 'You want to delete the client ?',
-        type: 'danger',
-        onConfirm: function onConfirm() {
-          axios.delete('/oauth/clients/' + client.id).then(function (response) {
-            _this3.getClients();
-          });
+            if (bool && !this.size) {
+                this.$nextTick(function () {
+                    _this.refresh();
+                });
+            }
         }
-      });
+    },
+    methods: {
+        bindEvents: function bindEvents() {
+            document.addEventListener('touchmove', this.moving, { passive: false });
+            document.addEventListener('touchend', this.moveEnd, { passive: false });
+            document.addEventListener('mousemove', this.moving);
+            document.addEventListener('mouseup', this.moveEnd);
+            document.addEventListener('mouseleave', this.moveEnd);
+
+            window.addEventListener('resize', this.refresh);
+        },
+        unbindEvents: function unbindEvents() {
+            window.removeEventListener('resize', this.refresh);
+
+            document.removeEventListener('touchmove', this.moving);
+            document.removeEventListener('touchend', this.moveEnd);
+            document.removeEventListener('mousemove', this.moving);
+            document.removeEventListener('mouseup', this.moveEnd);
+            document.removeEventListener('mouseleave', this.moveEnd);
+        },
+        formatting: function formatting(value) {
+            return typeof this.formatter === 'string' ? this.formatter.replace(/\{value\}/, value) : this.formatter(value);
+        },
+        getPos: function getPos(e) {
+            this.realTime && this.getStaticData();
+            return this.direction === 'vertical' ? this.reverse ? e.pageY - this.offset : this.size - (e.pageY - this.offset) : this.reverse ? this.size - (e.clientX - this.offset) : e.clientX - this.offset;
+        },
+        wrapClick: function wrapClick(e) {
+            if (this.isDisabled || !this.clickable) return false;
+            var pos = this.getPos(e);
+            if (this.isRange) {
+                this.currentSlider = pos > (this.position[1] - this.position[0]) / 2 + this.position[0] ? 1 : 0;
+            }
+            this.setValueOnPos(pos);
+        },
+        moveStart: function moveStart(e, index) {
+            if (this.stopPropagation) {
+                e.stopPropagation();
+            }
+
+            if (this.isDisabled) return false;else if (this.isRange) {
+                this.currentSlider = index;
+            }
+            this.flag = true;
+            this.$emit('drag-start', this);
+        },
+        moving: function moving(e) {
+            if (this.stopPropagation) {
+                e.stopPropagation();
+            }
+
+            if (!this.flag) return false;
+            e.preventDefault();
+
+            if (e.targetTouches && e.targetTouches[0]) e = e.targetTouches[0];
+            this.setValueOnPos(this.getPos(e), true);
+        },
+        moveEnd: function moveEnd(e) {
+            if (this.stopPropagation) {
+                e.stopPropagation();
+            }
+
+            if (this.flag) {
+                this.$emit('drag-end', this);
+                if (this.lazy && this.isDiff(this.val, this.value)) {
+                    this.syncValue();
+                }
+            } else {
+                return false;
+            }
+            this.flag = false;
+            this.setPosition();
+        },
+        setValueOnPos: function setValueOnPos(pos, isDrag) {
+            var range = this.isRange ? this.limit[this.currentSlider] : this.limit;
+            var valueRange = this.isRange ? this.valueLimit[this.currentSlider] : this.valueLimit;
+            if (pos >= range[0] && pos <= range[1]) {
+                this.setTransform(pos);
+                var v = (Math.round(pos / this.gap) * (this.spacing * this.multiple) + this.minimum * this.multiple) / this.multiple;
+                this.setCurrentValue(v, isDrag);
+            } else if (pos < range[0]) {
+                this.setTransform(range[0]);
+                this.setCurrentValue(valueRange[0]);
+                if (this.currentSlider === 1) this.currentSlider = 0;
+            } else {
+                this.setTransform(range[1]);
+                this.setCurrentValue(valueRange[1]);
+                if (this.currentSlider === 0) this.currentSlider = 1;
+            }
+        },
+        isDiff: function isDiff(a, b) {
+            if (Object.prototype.toString.call(a) !== Object.prototype.toString.call(b)) {
+                return true;
+            } else if (Array.isArray(a) && a.length === b.length) {
+                return a.some(function (v, i) {
+                    return v !== b[i];
+                });
+            }
+            return a !== b;
+        },
+        setCurrentValue: function setCurrentValue(val, bool) {
+            if (val < this.minimum || val > this.maximum) return false;
+            if (this.isRange) {
+                if (this.isDiff(this.currentValue[this.currentSlider], val)) {
+                    this.currentValue.splice(this.currentSlider, 1, val);
+                    if (!this.lazy || !this.flag) {
+                        this.syncValue();
+                    }
+                }
+            } else if (this.isDiff(this.currentValue, val)) {
+                this.currentValue = val;
+                if (!this.lazy || !this.flag) {
+                    this.syncValue();
+                }
+            }
+            bool || this.setPosition();
+        },
+        setIndex: function setIndex(val) {
+            if (Array.isArray(val) && this.isRange) {
+                var value = void 0;
+                if (this.data) {
+                    value = [this.data[val[0]], this.data[val[1]]];
+                } else {
+                    value = [this.spacing * val[0] + this.minimum, this.spacing * val[1] + this.minimum];
+                }
+                this.setValue(value);
+            } else {
+                val = this.spacing * val + this.minimum;
+                if (this.isRange) {
+                    this.currentSlider = val > (this.currentValue[1] - this.currentValue[0]) / 2 + this.currentValue[0] ? 1 : 0;
+                }
+                this.setCurrentValue(val);
+            }
+        },
+        setValue: function setValue(val, noCb, speed) {
+            var _this2 = this;
+
+            if (this.isDiff(this.val, val)) {
+                var resetVal = this.limitValue(val);
+                if (resetVal !== false) {
+                    this.val = this.isRange ? resetVal.concat() : resetVal;
+                } else {
+                    this.val = this.isRange ? val.concat() : val;
+                }
+                this.syncValue(noCb);
+            }
+
+            this.$nextTick(function () {
+                return _this2.setPosition(speed);
+            });
+        },
+        setPosition: function setPosition(speed) {
+            this.flag || this.setTransitionTime(speed === undefined ? this.speed : speed);
+            if (this.isRange) {
+                this.currentSlider = 0;
+                this.setTransform(this.position[this.currentSlider]);
+                this.currentSlider = 1;
+                this.setTransform(this.position[this.currentSlider]);
+            } else {
+                this.setTransform(this.position);
+            }
+            this.flag || this.setTransitionTime(0);
+        },
+        setTransform: function setTransform(val) {
+            var value = (this.direction === 'vertical' ? this.dotHeightVal / 2 - val : val - this.dotWidthVal / 2) * (this.reverse ? -1 : 1);
+            var translateValue = this.direction === 'vertical' ? 'translateY(' + value + 'px)' : 'translateX(' + value + 'px)';
+            var processSize = (this.currentSlider === 0 ? this.position[1] - val : val - this.position[0]) + 'px';
+            var processPos = (this.currentSlider === 0 ? val : this.position[0]) + 'px';
+            if (this.isRange) {
+                this.slider[this.currentSlider].style.transform = translateValue;
+                this.slider[this.currentSlider].style.WebkitTransform = translateValue;
+                this.slider[this.currentSlider].style.msTransform = translateValue;
+                if (this.direction === 'vertical') {
+                    this.$refs.process.style.height = processSize;
+                    this.$refs.process.style[this.reverse ? 'top' : 'bottom'] = processPos;
+                } else {
+                    this.$refs.process.style.width = processSize;
+                    this.$refs.process.style[this.reverse ? 'right' : 'left'] = processPos;
+                }
+            } else {
+                this.slider.style.transform = translateValue;
+                this.slider.style.WebkitTransform = translateValue;
+                this.slider.style.msTransform = translateValue;
+                if (this.direction === 'vertical') {
+                    this.$refs.process.style.height = val + 'px';
+                    this.$refs.process.style[this.reverse ? 'top' : 'bottom'] = 0;
+                } else {
+                    this.$refs.process.style.width = val + 'px';
+                    this.$refs.process.style[this.reverse ? 'right' : 'left'] = 0;
+                }
+            }
+        },
+        setTransitionTime: function setTransitionTime(time) {
+            time || this.$refs.process.offsetWidth;
+            if (this.isRange) {
+                for (var i = 0; i < this.slider.length; i++) {
+                    this.slider[i].style.transitionDuration = time + 's';
+                    this.slider[i].style.WebkitTransitionDuration = time + 's';
+                }
+                this.$refs.process.style.transitionDuration = time + 's';
+                this.$refs.process.style.WebkitTransitionDuration = time + 's';
+            } else {
+                this.slider.style.transitionDuration = time + 's';
+                this.slider.style.WebkitTransitionDuration = time + 's';
+                this.$refs.process.style.transitionDuration = time + 's';
+                this.$refs.process.style.WebkitTransitionDuration = time + 's';
+            }
+        },
+        limitValue: function limitValue(val) {
+            var _this3 = this;
+
+            if (this.data) {
+                return val;
+            }
+
+            var bool = false;
+            if (this.isRange) {
+                val = val.map(function (v) {
+                    if (v < _this3.min) {
+                        bool = true;
+                        return _this3.min;
+                    } else if (v > _this3.max) {
+                        bool = true;
+                        return _this3.max;
+                    }
+                    return v;
+                });
+            } else if (val > this.max) {
+                bool = true;
+                val = this.max;
+            } else if (val < this.min) {
+                bool = true;
+                val = this.min;
+            }
+            return bool && val;
+        },
+        syncValue: function syncValue(noCb) {
+            noCb || this.$emit('callback', this.val);
+            this.$emit('input', this.isRange ? this.val.concat() : this.val);
+        },
+        getValue: function getValue() {
+            return this.val;
+        },
+        getIndex: function getIndex() {
+            return this.currentIndex;
+        },
+        getStaticData: function getStaticData() {
+            if (this.$refs.elem) {
+                this.size = this.direction === 'vertical' ? this.$refs.elem.offsetHeight : this.$refs.elem.offsetWidth;
+                this.offset = this.direction === 'vertical' ? this.$refs.elem.getBoundingClientRect().top + window.pageYOffset || document.documentElement.scrollTop : this.$refs.elem.getBoundingClientRect().left;
+            }
+        },
+        refresh: function refresh() {
+            if (this.$refs.elem) {
+                this.getStaticData();
+                this.setPosition();
+            }
+        }
+    },
+    mounted: function mounted() {
+        var _this4 = this;
+
+        if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+        this.$nextTick(function () {
+            _this4.getStaticData();
+            _this4.setValue(_this4.value, true, 0);
+            _this4.bindEvents();
+        });
+    },
+    beforeDestroy: function beforeDestroy() {
+        this.unbindEvents();
     }
-  }
 });
 
 /***/ }),
 
-/***/ 310:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "hero" }, [
-    _c("div", { staticClass: "hero-body" }, [
-      _c("h1", { staticClass: "title" }, [
-        _vm._v("\n            OAuth Clients\n        ")
-      ]),
-      _vm._v(" "),
-      _c("h2", { staticClass: "subtitle" }, [
-        _c(
-          "a",
-          {
-            staticClass: "button is-small is-primary",
-            on: { click: _vm.showCreateClientForm }
-          },
-          [_vm._v("\n                Create New Client\n            ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "button is-small is-success",
-            attrs: { href: "/security/api/access-token" }
-          },
-          [_vm._v("\n                Personal Access Tokens\n            ")]
-        )
-      ]),
-      _vm._v(" "),
-      _vm.clients.length === 0
-        ? _c("p", { staticClass: "m-b-none" }, [
-            _vm._v(
-              "\n            You have not created any OAuth clients.\n        "
-            )
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.clients.length > 0
-        ? _c("table", { staticClass: "table is-bordered is-fullwidth" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.clients, function(client) {
-                return _c("tr", [
-                  _c("td", { staticStyle: { "vertical-align": "middle" } }, [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(client.id) +
-                        "\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticStyle: { "vertical-align": "middle" } }, [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(client.name) +
-                        "\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticStyle: { "vertical-align": "middle" } }, [
-                    _c("code", [_vm._v(_vm._s(client.secret))])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticStyle: { "vertical-align": "middle" } }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "action-link",
-                        on: {
-                          click: function($event) {
-                            _vm.edit(client)
-                          }
-                        }
-                      },
-                      [_vm._m(1, true)]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticStyle: { "vertical-align": "middle" } }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "action-link text-danger",
-                        on: {
-                          click: function($event) {
-                            _vm.destroy(client)
-                          }
-                        }
-                      },
-                      [_vm._m(2, true)]
-                    )
-                  ])
-                ])
-              })
-            )
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.showCreate
-        ? _c(
-            "div",
-            {
-              staticClass: "modal is-active",
-              attrs: { id: "modal-create-client" }
-            },
-            [
-              _c("div", { staticClass: "modal-background" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "modal-card" }, [
-                _c("header", { staticClass: "modal-card-head" }, [
-                  _c("p", { staticClass: "modal-card-title" }, [
-                    _vm._v("Create client")
-                  ]),
-                  _vm._v(" "),
-                  _c("button", {
-                    staticClass: "delete",
-                    attrs: { "aria-label": "close" },
+  return _c(
+    "div",
+    {
+      directives: [
+        { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
+      ],
+      ref: "wrap",
+      class: [
+        "vue-slider-component",
+        _vm.flowDirection,
+        _vm.disabledClass,
+        { "vue-slider-has-label": _vm.piecewiseLabel }
+      ],
+      style: _vm.wrapStyles,
+      on: { click: _vm.wrapClick }
+    },
+    [
+      _c(
+        "div",
+        {
+          ref: "elem",
+          staticClass: "vue-slider",
+          style: [_vm.elemStyles, _vm.bgStyle],
+          attrs: { "aria-hidden": "true" }
+        },
+        [
+          _vm.isRange
+            ? [
+                _c(
+                  "div",
+                  {
+                    ref: "dot0",
+                    class: [_vm.tooltipStatus, "vue-slider-dot"],
+                    style: [_vm.dotStyles, _vm.sliderStyles[0]],
                     on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.showCreate = false
+                      mousedown: function($event) {
+                        _vm.moveStart($event, 0)
+                      },
+                      touchstart: function($event) {
+                        _vm.moveStart($event, 0)
                       }
                     }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("section", { staticClass: "modal-card-body" }, [
-                  _vm.createForm.errors.length > 0
-                    ? _c("div", { staticClass: "alert alert-danger" }, [
-                        _vm._m(3),
-                        _vm._v(" "),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          _vm._l(_vm.createForm.errors, function(error) {
-                            return _c("li", [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(error) +
-                                  "\n                            "
-                              )
-                            ])
-                          })
+                  },
+                  [
+                    _c(
+                      "span",
+                      {
+                        class: [
+                          "vue-slider-tooltip-" + _vm.tooltipDirection[0],
+                          "vue-slider-tooltip-wrap"
+                        ]
+                      },
+                      [
+                        _vm._t(
+                          "tooltip",
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass: "vue-slider-tooltip",
+                                style: _vm.tooltipStyles[0]
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.formatter
+                                      ? _vm.formatting(_vm.val[0])
+                                      : _vm.val[0]
+                                  )
+                                )
+                              ]
+                            )
+                          ],
+                          { value: _vm.val[0], index: 0 }
                         )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c(
-                    "form",
-                    { staticClass: "form-horizontal", attrs: { role: "form" } },
-                    [
-                      _c("div", { staticClass: "field" }, [
-                        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "control" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.createForm.name,
-                                expression: "createForm.name"
-                              }
-                            ],
-                            staticClass: "input",
-                            attrs: { id: "create-client-name", type: "text" },
-                            domProps: { value: _vm.createForm.name },
-                            on: {
-                              keyup: function($event) {
-                                if (
-                                  !("button" in $event) &&
-                                  _vm._k(
-                                    $event.keyCode,
-                                    "enter",
-                                    13,
-                                    $event.key
-                                  )
-                                ) {
-                                  return null
-                                }
-                                _vm.store($event)
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.createForm,
-                                  "name",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "help is-info" }, [
-                          _vm._v(
-                            "\n                                Something your users will recognize and trust.\n                            "
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "field" }, [
-                        _c("label", { staticClass: "label" }, [
-                          _vm._v("Redirect URL")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "control" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.createForm.redirect,
-                                expression: "createForm.redirect"
-                              }
-                            ],
-                            staticClass: "input",
-                            attrs: { type: "text", name: "redirect" },
-                            domProps: { value: _vm.createForm.redirect },
-                            on: {
-                              keyup: function($event) {
-                                if (
-                                  !("button" in $event) &&
-                                  _vm._k(
-                                    $event.keyCode,
-                                    "enter",
-                                    13,
-                                    $event.key
-                                  )
-                                ) {
-                                  return null
-                                }
-                                _vm.store($event)
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.createForm,
-                                  "redirect",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "help is-info" }, [
-                          _vm._v(
-                            "\n                                Your application's authorization callback URL.\n                            "
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]),
+                      ],
+                      2
+                    )
+                  ]
+                ),
                 _vm._v(" "),
-                _c("footer", { staticClass: "modal-card-foot" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-success",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.store($event)
-                        }
-                      }
-                    },
-                    [_vm._v("Save changes")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.showCreate = false
-                        }
-                      }
-                    },
-                    [_vm._v("Cancel")]
-                  )
-                ])
-              ])
-            ]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.showEdit
-        ? _c(
-            "div",
-            { staticClass: "modal", attrs: { id: "modal-edit-client" } },
-            [
-              _c("div", { staticClass: "modal-background" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "modal-card" }, [
-                _c("header", { staticClass: "modal-card-head" }, [
-                  _c("p", { staticClass: "modal-card-title" }, [
-                    _vm._v("Edit client")
-                  ]),
-                  _vm._v(" "),
-                  _c("button", {
-                    staticClass: "delete",
-                    attrs: { "aria-label": "close" },
+                _c(
+                  "div",
+                  {
+                    ref: "dot1",
+                    class: [_vm.tooltipStatus, "vue-slider-dot"],
+                    style: [_vm.dotStyles, _vm.sliderStyles[1]],
                     on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.showEdit = false
+                      mousedown: function($event) {
+                        _vm.moveStart($event, 1)
+                      },
+                      touchstart: function($event) {
+                        _vm.moveStart($event, 1)
                       }
                     }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("section", { staticClass: "modal-card-body" }, [
-                  _vm.editForm.errors.length > 0
-                    ? _c("div", { staticClass: "alert alert-danger" }, [
-                        _vm._m(4),
-                        _vm._v(" "),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          _vm._l(_vm.editForm.errors, function(error) {
-                            return _c("li", [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(error) +
-                                  "\n                            "
-                              )
-                            ])
-                          })
+                  },
+                  [
+                    _c(
+                      "span",
+                      {
+                        class: [
+                          "vue-slider-tooltip-" + _vm.tooltipDirection[1],
+                          "vue-slider-tooltip-wrap"
+                        ]
+                      },
+                      [
+                        _vm._t(
+                          "tooltip",
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass: "vue-slider-tooltip",
+                                style: _vm.tooltipStyles[1]
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.formatter
+                                      ? _vm.formatting(_vm.val[1])
+                                      : _vm.val[1]
+                                  )
+                                )
+                              ]
+                            )
+                          ],
+                          { value: _vm.val[1], index: 1 }
                         )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c(
-                    "form",
-                    { staticClass: "form-horizontal", attrs: { role: "form" } },
+                      ],
+                      2
+                    )
+                  ]
+                )
+              ]
+            : [
+                _c(
+                  "div",
+                  {
+                    ref: "dot",
+                    class: [_vm.tooltipStatus, "vue-slider-dot"],
+                    style: [_vm.dotStyles, _vm.sliderStyles],
+                    on: { mousedown: _vm.moveStart, touchstart: _vm.moveStart }
+                  },
+                  [
+                    _c(
+                      "span",
+                      {
+                        class: [
+                          "vue-slider-tooltip-" + _vm.tooltipDirection,
+                          "vue-slider-tooltip-wrap"
+                        ]
+                      },
+                      [
+                        _vm._t(
+                          "tooltip",
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass: "vue-slider-tooltip",
+                                style: _vm.tooltipStyles
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.formatter
+                                      ? _vm.formatting(_vm.val)
+                                      : _vm.val
+                                  )
+                                )
+                              ]
+                            )
+                          ],
+                          { value: _vm.val }
+                        )
+                      ],
+                      2
+                    )
+                  ]
+                )
+              ],
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "vue-slider-piecewise" },
+            _vm._l(_vm.piecewiseDotWrap, function(piecewiseObj, index) {
+              return _c(
+                "li",
+                {
+                  key: index,
+                  staticClass: "vue-slider-piecewise-item",
+                  style: [_vm.piecewiseDotStyle, piecewiseObj.style]
+                },
+                [
+                  _vm._t(
+                    "piecewise",
                     [
-                      _c("div", { staticClass: "field" }, [
-                        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "control" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.editForm.name,
-                                expression: "editForm.name"
-                              }
-                            ],
-                            staticClass: "input",
-                            attrs: { id: "edit-client-name", type: "text" },
-                            domProps: { value: _vm.editForm.name },
-                            on: {
-                              keyup: function($event) {
-                                if (
-                                  !("button" in $event) &&
-                                  _vm._k(
-                                    $event.keyCode,
-                                    "enter",
-                                    13,
-                                    $event.key
-                                  )
-                                ) {
-                                  return null
-                                }
-                                _vm.update($event)
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.editForm,
-                                  "name",
-                                  $event.target.value
-                                )
-                              }
-                            }
+                      _vm.piecewise
+                        ? _c("span", {
+                            staticClass: "vue-slider-piecewise-dot",
+                            style: [
+                              _vm.piecewiseStyle,
+                              piecewiseObj.inRange
+                                ? _vm.piecewiseActiveStyle
+                                : null
+                            ]
                           })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "help is-info" }, [
-                          _vm._v(
-                            "\n                                Something your users will recognize and trust.\n                            "
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "field" }, [
-                        _c("label", { staticClass: "label" }, [
-                          _vm._v("Redirect URL")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "control" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.editForm.redirect,
-                                expression: "editForm.redirect"
-                              }
-                            ],
-                            staticClass: "input",
-                            attrs: { type: "text", name: "redirect" },
-                            domProps: { value: _vm.editForm.redirect },
-                            on: {
-                              keyup: function($event) {
-                                if (
-                                  !("button" in $event) &&
-                                  _vm._k(
-                                    $event.keyCode,
-                                    "enter",
-                                    13,
-                                    $event.key
-                                  )
-                                ) {
-                                  return null
-                                }
-                                _vm.update($event)
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.editForm,
-                                  "redirect",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "help is-info" }, [
-                          _vm._v(
-                            "\n                                Your application's authorization callback URL.\n                            "
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("footer", { staticClass: "modal-card-foot" }, [
-                  _c(
-                    "button",
+                        : _vm._e()
+                    ],
                     {
-                      staticClass: "button is-success",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.update($event)
-                        }
-                      }
-                    },
-                    [_vm._v("Save changes")]
+                      label: piecewiseObj.label,
+                      index: index,
+                      first: index === 0,
+                      last: index === _vm.piecewiseDotWrap.length - 1
+                    }
                   ),
                   _vm._v(" "),
-                  _c(
-                    "button",
+                  _vm._t(
+                    "label",
+                    [
+                      _vm.piecewiseLabel
+                        ? _c(
+                            "span",
+                            {
+                              staticClass: "vue-slider-piecewise-label",
+                              style: [
+                                _vm.labelStyle,
+                                piecewiseObj.inRange
+                                  ? _vm.labelActiveStyle
+                                  : null
+                              ]
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t\t\t\t\t\t" +
+                                  _vm._s(piecewiseObj.label) +
+                                  "\n\t\t\t\t\t\t"
+                              )
+                            ]
+                          )
+                        : _vm._e()
+                    ],
                     {
-                      staticClass: "button",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.showEdit = false
-                        }
-                      }
-                    },
-                    [_vm._v("Cancel")]
+                      label: piecewiseObj.label,
+                      index: index,
+                      first: index === 0,
+                      last: index === _vm.piecewiseDotWrap.length - 1
+                    }
                   )
-                ])
-              ])
-            ]
-          )
+                ],
+                2
+              )
+            })
+          ),
+          _vm._v(" "),
+          _c("div", {
+            ref: "process",
+            staticClass: "vue-slider-process",
+            style: _vm.processStyle
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      !_vm.isRange && !_vm.data
+        ? _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.val,
+                expression: "val"
+              }
+            ],
+            staticClass: "vue-slider-sr-only",
+            attrs: { type: "range", min: _vm.min, max: _vm.max },
+            domProps: { value: _vm.val },
+            on: {
+              __r: function($event) {
+                _vm.val = $event.target.value
+              }
+            }
+          })
         : _vm._e()
-    ])
-  ])
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Client ID")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Secret")]),
-        _vm._v(" "),
-        _c("th"),
-        _vm._v(" "),
-        _c("th")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", { staticClass: "fa fa-edit" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", { staticClass: "fa fa-trash" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _c("strong", [_vm._v("Whoops!")]),
-      _vm._v(" Something went wrong!")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _c("strong", [_vm._v("Whoops!")]),
-      _vm._v(" Something went wrong!")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3f99fc75", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7374ae31", module.exports)
   }
 }
 

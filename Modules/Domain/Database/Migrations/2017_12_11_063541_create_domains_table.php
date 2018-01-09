@@ -22,6 +22,8 @@ class CreateDomainsTable extends Migration
             $table->string('type')->nullable();
             $table->string('status')->nullable();
             $table->json('module')->nullable();
+            $table->json('lang');
+            $table->json('image_size');
             $table->timestamps();
         });
 

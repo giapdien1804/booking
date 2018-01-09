@@ -39,6 +39,9 @@
                     <a class="navbar-item" href="{{route('domain.index')}}">
                         Trang web
                     </a>
+                    <a class="navbar-item" href="{{route('storage.index')}}">
+                        Thư viện
+                    </a>
                     <a class="navbar-item">
                         Nội dung
                     </a>
@@ -47,6 +50,9 @@
                     </a>
                     <a class="navbar-item" href="{{route('system-log.view')}}">
                         Lỗi hệ thống
+                    </a>
+                    <a class="navbar-item" href="{{route('help.index')}}">
+                        Trợ giúp
                     </a>
                 </div>
 
@@ -78,7 +84,7 @@
         </nav>
     @endauth
 
-    <div id="global-top-action" style="position: fixed; top: 52px;left: 0;right: 0">
+    <div id="global-top-action" class="z-index-5" style="position: fixed; top: 52px;left: 0;right: 0">
         <div class="columns mt-0 bg-light content-top-action">
             @if(View::hasSection('top-one'))
                 <div class="column pt-0 pb-0">
@@ -115,8 +121,9 @@
         </div>
     @endif
 </div>
-
+@yield('before-script')
 <!-- Scripts -->
 {{Html::script('/js/app.js')}}
+@yield('script')
 </body>
 </html>

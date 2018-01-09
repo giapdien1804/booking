@@ -1,7 +1,7 @@
 <template>
     <div :class="`card ${color!==''?' is-' + color:''}`" :id="geIdName">
         <header :class="`card-header ${headerColor!==''?' is-' + headerColor:''}`" v-if="showHeader">
-            <p class="card-header-title" v-text="cardTitle"></p>
+            <p class="card-header-title has-text-success" v-text="cardTitle"></p>
             <a href="#" class="card-header-icon" aria-label="more options" v-if="showIcon" @click.prevent="clickIcon">
                 <span class="icon">
                     <i class="fa fa-angle-down" aria-hidden="true"></i>

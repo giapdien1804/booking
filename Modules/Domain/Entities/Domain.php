@@ -10,7 +10,7 @@ namespace Modules\Domain\Entities;
 
 
 use App\Helpers\ModelTrait\UuIdTrait;
-use Modules\StorageManager\Entities\StorageAlbum;
+use Modules\Storage\Entities\StorageAlbum;
 use Modules\User\Entities\User;
 
 class Domain extends \Eloquent
@@ -19,9 +19,11 @@ class Domain extends \Eloquent
     protected $table = 'domains';
     protected $primaryKey = 'uuid';
     public $incrementing = false;
-    protected $fillable = ['name', 'desc', 'svr', 'ip', 'type', 'status', 'module'];
+    protected $fillable = ['name', 'desc', 'svr', 'ip', 'type', 'status', 'module', 'lang', 'image_size'];
     protected $casts = [
-        'module' => 'array'
+        'module' => 'array',
+        'lang' => 'array',
+        'image_size' => 'array'
     ];
 
     function users()

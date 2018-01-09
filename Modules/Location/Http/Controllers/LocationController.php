@@ -5,6 +5,7 @@ namespace Modules\Location\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Location\Entities\Location;
 
 class LocationController extends Controller
 {
@@ -12,9 +13,10 @@ class LocationController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('location::index');
+        $locations = Location::paginate(50);
+        return view('location::index', compact('locations'));
     }
 
     /**
@@ -33,6 +35,11 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->ajax()){
+            if($request->has('auto_save')){
+
+            }
+        }
     }
 
     /**

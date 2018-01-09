@@ -1,11 +1,11 @@
 <template>
     <div :class="{dropdown:true ,'is-active':isActive}" v-click-outside="outClickDropdown">
-        <input type="hidden" :name="dataName" v-model="itemSelected.id">
+        <input type="hidden" :name="dataName" v-model="itemSelected.uuid">
         <div class="dropdown-trigger">
-            <button type="button" class="button is-light" aria-haspopup="true"
+            <button type="button" class="button is-info border-radius-0" aria-haspopup="true"
                     aria-controls="dropdown-menu"
                     @click="toggleDropdown">
-                <span v-if="itemSelected.id !==''">
+                <span v-if="itemSelected.uuid !==''">
                     {{itemSelected.name}}
                 </span>
                 <span v-else>Select domain</span>
@@ -23,7 +23,7 @@
                 <div class="dropdown-content-main" style="max-height: 300px;position: relative">
                     <a v-for="item in itemData"
                        @click.prevent="selectItem(item)"
-                       :class="{'dropdown-item':true,'is-active':itemSelected.id === item.id}">
+                       :class="{'dropdown-item':true,'is-active':itemSelected.uuid === item.uuid}">
                         {{item.name}}
                     </a>
                 </div>
@@ -39,11 +39,11 @@
         props: {
             dataName: {
                 type: String,
-                default: 'customer_id'
+                default: 'domain_uuid'
             },
             dataSelected: {
                 type: String,
-                default: ''
+                required: false
             },
             gotoUrl: {
                 type: String,
@@ -51,10 +51,10 @@
             }
         },
         mounted() {
-            this.getDomainList(null, null)
+            this.getDomainList(null, null);
 
-            if (this.dataSelected !== '') {
-                let data = JSON.parse(this.dataSelected)
+            if (this.dataSelected) {
+                let data = JSON.parse(this.dataSelected);
                 this.itemData.push(data);
                 this.itemSelected = data;
             }
@@ -70,15 +70,15 @@
             ps: null,
             searchValue: '',
             itemSelected: {
-                id: '',
+                uuid: '',
                 name: ''
             },
         }),
         methods: {
             getDomainList(name, page) {
-                axios.get('/customer/domain/list', {params: {name: name, page: page}})
+                window.axios.get('/domain/list', {params: {name: name, page: page}})
                     .then(res => {
-                        this.itemData = res.data.data
+                        this.itemData = res.data.data;
                         if (this.isActive)
                             this.$nextTick(() => {
                                 this.ps.update();
@@ -90,7 +90,7 @@
                 if (this.isActive) {
                     let el = this.$el.querySelector('.dropdown-content-main');
                     el.scrollTop = 0;
-                   this.ps = new PerfectScrollbar(el, {
+                    this.ps = new PerfectScrollbar(el, {
                         minScrollbarLength: 50
                     });
                 }
@@ -99,11 +99,11 @@
             },
             selectItem(value) {
                 if (this.gotoUrl !== '') {
-                    let url = this.gotoUrl.replace('{id}', value.id)
+                    let url = this.gotoUrl.replace('{id}', value.uuid);
                     window.location.replace(url)
                 }
                 else {
-                    this.itemSelected = value
+                    this.itemSelected = value;
                     this.isActive = false
                 }
             },

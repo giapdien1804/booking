@@ -8,17 +8,17 @@
 @section('content')
     {!! Form::open(['method'=>'post','route'=>'domain.store']) !!}
     <div class="columns is-multiline">
-        <div class="column is-6">
+        <div class="column is-4">
             <domain-input></domain-input>
-            {{Bulma::text('desc','Description')}}
-            <div class="field is-grouped">
-                <div class="control">
+            {{Bulma::text('Description','desc')}}
+            <div class="columns">
+                <div class="column is-4">
                     {{Bulma::select('Server','svr',config('domain.svr'),old('svr'),true)}}
                 </div>
-                <div class="control">
+                <div class="column is-4">
                     {{Bulma::select('Types','type',config('domain.type'),old('type'),true)}}
                 </div>
-                <div class="control">
+                <div class="column is-4">
                     {{Bulma::select('Status','status',config('domain.status'),old('status'),true)}}
                 </div>
             </div>
@@ -34,21 +34,14 @@
                     @endforeach
                 </div>
             </div>
-        </div>
-        <div class="column is-6">
-            <label class="label">Những người dùng sau được phép cập nhật nội dung cho domain này</label>
-            <div class="control">
-                @foreach($users as $user)
-                    <div class="field" style="max-height: 500px; overflow-y: scroll">
-                        <input id="user-id-{{$loop->index}}" type="checkbox" name="user_uuid[]"
-                               value="{{$user->uuid}}" class="switch is-rounded is-success">
-                        <label for="user-id-{{$loop->index}}">{{$user->name}}({{$user->email}})</label>
-                    </div>
-                @endforeach
+            <image-size-input :column-size="6" input-name="image_size"></image-size-input>
+            <div class="field">
+                <button type="submit" class="button is-info is-fullwidth">Xác nhận</button>
             </div>
         </div>
-        <div class="column">
-            <button type="submit" class="button is-primary">Xác nhận</button>
+        <div class="column is-8">
+            <user-input input-name="user_uuid"></user-input>
+            <lang-input input-name="lang"></lang-input>
         </div>
     </div>
     {!! Form::close() !!}

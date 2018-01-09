@@ -27,6 +27,14 @@ class DomainController extends Controller
         }
     }
 
+    function list(Request $request)
+    {
+        $per_page = $request->get('per_page', 50);
+        $domains = Domain::where('name', 'like', "%{$request->get('name')}%")
+            ->select(['uuid', 'name'])->paginate($per_page);
+        return response()->json($domains);
+    }
+
     /**
      * Display a listing of the resource.
      * @param Request $request

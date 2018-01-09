@@ -1,0 +1,5 @@
+//margin hide  icon in button
+.is-hidden + .icon {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}

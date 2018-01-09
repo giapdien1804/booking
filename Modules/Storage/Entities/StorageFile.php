@@ -12,6 +12,7 @@ namespace Modules\Storage\Entities;
 use App\Helpers\ModelTrait\UuIdTrait;
 use App\Helpers\Node\NodeTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Location\Entities\Location;
 use Modules\User\Entities\User;
 use Modules\User\Entities\UserUuidTrait;
 
@@ -25,6 +26,8 @@ class StorageFile extends \Eloquent
         'storage_size', 'storage_title', 'storage_desc', 'storage_status', 'storage_password', 'storage_share',
         'storage_permission', 'storage_extra'];
 
+    protected $hidden = ['storage_album_uuid', 'storage_password', 'storage_name'];
+
     function storageAlbum()
     {
         return $this->belongsTo(StorageAlbum::class);
@@ -33,5 +36,10 @@ class StorageFile extends \Eloquent
     function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    function locations()
+    {
+        return $this->hasMany(Location::class);
     }
 }

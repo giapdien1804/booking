@@ -4,12 +4,8 @@
 @import "variables";
 @import "~bulma";
 @import "~font-awesome/scss/font-awesome";
-@import "ext/switch";
-@import "ext/tooltip";
-@import "ext/divider";
-@import "ext/checkradio";
-@import "ext/badge";
-@import "ext/flex";
+@import "ext/all";
+@import "fix";
 
 .border-radius-0 {
   border-radius: 0;
@@ -37,10 +33,11 @@
 
 .top-link {
   li {
-    display: inline-block;
-    a {
-      display: block;
-      padding: 5px 10px;
+    display: block;
+    float: left;
+
+    button,.button {
+      border-radius: 0;
     }
   }
 }
@@ -182,7 +179,7 @@ $d_spacers: (
   margin-left: -20px;
 }
 
-.modal-card {
+/*.modal-card {
   max-height: inherit;
   overflow: auto;
 
@@ -192,7 +189,7 @@ $d_spacers: (
   .modal-card-head, .modal-card-foot {
     padding: 12px;
   }
-}
+}*/
 
 .tree-view {
   .menu-list li ul {
@@ -243,7 +240,7 @@ $d_spacers: (
   }
   position: inherit;
   .fmg-upload {
-    border: 2px dashed $primary;
+    box-shadow: rgb(0, 0, 0) 0 0 16px;
     .file {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -387,167 +384,6 @@ $d_spacers: (
           }
         }
       }
-    }
-  }
-}
-
-.steps {
-  margin: 40px;
-  padding: 0;
-  overflow: hidden;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  em {
-    display: block;
-    font-size: 1.1em;
-    font-weight: bold;
-  }
-  li {
-    float: left;
-    margin-left: 0;
-    width: 150px;
-    /* 100 / number of steps */
-    height: 70px;
-    /* total height */
-    list-style-type: none;
-    padding: 5px 5px 5px 30px;
-    /* padding around text, last should include arrow width */
-    border-right: 3px solid white;
-    /* width: gap between arrows, color: background of document */
-    position: relative;
-    &:first-child {
-      padding-left: 5px;
-    }
-    &:nth-child(n+2)::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      border-left: 25px solid white;
-      /* width: arrow width, color: background of document */
-      border-top: 40px solid transparent;
-      /* width: half height */
-      border-bottom: 40px solid transparent;
-      /* width: half height */
-      width: 0;
-      height: 0;
-      content: " ";
-    }
-    &::after {
-      z-index: 1;
-      /* need to bring this above the next item */
-      position: absolute;
-      top: 0;
-      right: -25px;
-      /* arrow width (negated) */
-      display: block;
-      border-left: 25px solid #7c8437;
-      /* width: arrow width */
-      border-top: 40px solid transparent;
-      /* width: half height */
-      border-bottom: 40px solid transparent;
-      /* width: half height */
-      width: 0;
-      height: 0;
-      content: " ";
-      border-left-color: #7c8437;
-    }
-    background-color: #7C8437;
-    &.current {
-      background-color: #C36615;
-      &::after {
-        border-left-color: #C36615;
-      }
-      ~ li {
-        background-color: #EBEBEB;
-        &::after {
-          border-left-color: #EBEBEB;
-        }
-      }
-    }
-    &:hover {
-      background-color: #696;
-      &::after {
-        border-left-color: #696;
-      }
-    }
-  }
-}
-
-/* remove extra padding on the first object since it doesn't have an arrow to the left */
-
-/* white arrow to the left to "erase" background (starting from the 2nd object) */
-
-/* colored arrow to the right */
-
-/* Setup colors (both the background and the arrow) */
-
-/* Completed */
-
-/* Current */
-
-/* Following */
-
-/* Hover for completed and current */
-
-.arrows {
-  white-space: nowrap;
-  li {
-    display: inline-block;
-    line-height: 26px;
-    margin: 0 9px 0 -10px;
-    padding: 0 20px;
-    position: relative;
-    &::before {
-      border-right: 1px solid #666666;
-      content: '';
-      display: block;
-      height: 50%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      z-index: -1;
-      transform: skewX(45deg);
-    }
-    &::after {
-      border-right: 1px solid #666666;
-      content: '';
-      display: block;
-      height: 50%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      z-index: -1;
-      transform: skewX(45deg);
-      bottom: 0;
-      top: auto;
-      transform: skewX(-45deg);
-    }
-    &:last-of-type {
-      &::before, &::after {
-        display: none;
-      }
-    }
-    a {
-      font: bold 24px Sans-Serif;
-      letter-spacing: -1px;
-      text-decoration: none;
-    }
-    &:nth-of-type(1) a {
-      color: hsl(0, 0%, 70%);
-    }
-    &:nth-of-type(2) a {
-      color: hsl(0, 0%, 65%);
-    }
-    &:nth-of-type(3) a {
-      color: hsl(0, 0%, 50%);
-    }
-    &:nth-of-type(4) a {
-      color: hsl(0, 0%, 45%);
     }
   }
 }
